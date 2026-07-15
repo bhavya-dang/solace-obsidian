@@ -1,0 +1,5085 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/*
+ * Solace — A minimal Obsidian theme with violet undertones and pastel syntax.
+ * Author: Bhavya Dang (bhavyadang.in)
+ *
+ * Variants:
+ *   Dark (default) — .theme-dark
+ *   Light           — add .solace-light to body
+ *   Dusk            — add .solace-dusk to body
+ *
+ * Install: copy this folder to .obsidian/themes/solace/
+ * Then enable "Solace" in Settings → Appearance → Themes.
+ */
+
+/* ──────────────────────────────────────────────────────────────
+   SOLACE DARK — Default
+   ────────────────────────────────────────────────────────────── */
+
+.theme-dark {
+  /* Base */
+  --background-primary: #16141F;
+  --background-primary-alt: #1B1827;
+  --background-secondary: #1B1827;
+  --background-secondary-alt: #1D1A2B;
+  --background-modifier-border: #231F30;
+  --background-modifier-form-field: #1D1A2B;
+  --background-modifier-form-field-hover: #221E31;
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
+  --background-modifier-success: #A8FFEC18;
+  --background-modifier-error: #FF80C815;
+  --background-modifier-error-hover: #FF80C825;
+
+  /* Text */
+  --text-normal: #F1EEF8;
+  --text-muted: #A09AB8;
+  --text-faint: #504A68;
+  --text-accent: #C9A8FF;
+  --text-accent-hover: #D4BAFF;
+  --text-error: #FF80C8;
+  --text-success: #A8FFEC;
+  --text-warning: #C9A8FF;
+  --text-on-accent: #16141F;
+  --text-on-accent-hover: #0E0D14;
+  --text-on-accent-inverted: #F1EEF8;
+
+  /* Interactive */
+  --interactive-normal: #231F30;
+  --interactive-hover: #2A2540;
+  --interactive-accent: #C9A8FF;
+  --interactive-accent-hover: #D4BAFF;
+  --interactive-success: #A8FFEC;
+  --interactive-muted: #1E1B2E;
+
+  /* Shadows */
+  --shadow-s: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-l: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+  /* Scrollbar */
+  --scrollbar-thumb: #A09AB815;
+  --scrollbar-thumb-active: #504A68;
+  --scrollbar-thumb-hover: #3A3448;
+  --scrollbar-track: transparent;
+
+  /* Fonts */
+  --font-interface: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-text: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-monospace: "JetBrains Mono", "Fira Code", "SF Mono", "Cascadia Code", "Source Code Pro", monospace;
+  --font-preview: inherit;
+
+  /* Sizing */
+  --size-4-1: 4px;
+  --size-4-2: 8px;
+  --size-4-3: 12px;
+  --size-4-4: 16px;
+  --size-4-5: 20px;
+  --size-4-6: 24px;
+  --size-4-7: 28px;
+  --size-4-8: 32px;
+  --size-4-9: 36px;
+  --size-4-10: 40px;
+  --size-4-11: 44px;
+  --size-4-12: 48px;
+
+  /* Spacing */
+  --spacing-unit: 4px;
+
+  /* Tabs */
+  --tab-active-background: #141220;
+  --tab-active-border: #C9A8FF;
+  --tab-active-border-color: #C9A8FF;
+  --tab-text-color-override: #A09AB8;
+  --tab-active-text-color: #F1EEF8;
+
+  /* Sidebar */
+  --sidebar-background: #16141F;
+  --sidebar-border-color: #1E1B2E;
+  --sidebar-tabs-background: #0E0D14;
+
+  /* Title bar */
+  --titlebar-background: #0E0D14;
+
+  /* Status bar */
+  --statusbar-background: #0E0D14;
+
+  /* Search */
+  --search-background: #C9A8FF30;
+  --search-match-color: #C9A8FF;
+
+  /* Callout */
+  --callout-default-color: #C9A8FF;
+  --callout-default-bg: #C9A8FF18;
+  --callout-info-color: #9880E8;
+  --callout-info-bg: #9880E818;
+  --callout-tip-color: #A8FFEC;
+  --callout-tip-bg: #A8FFEC18;
+  --callout-warning-color: #C9A8FF;
+  --callout-warning-bg: #C9A8FF18;
+  --callout-danger-color: #FF80C8;
+  --callout-danger-bg: #FF80C815;
+
+  /* Tag */
+  --tag-background: #C9A8FF18;
+  --tag-color: #C9A8FF;
+  --tag-border-color: #C9A8FF30;
+
+  /* Graph */
+  --graph-line-color: #231F30;
+
+  /* Inline title */
+  --inline-title-color: #C9A8FF;
+
+  /* Modal */
+  --modal-background: #1B1827;
+  --modal-border-color: #231F30;
+
+  /* Prompt */
+  --prompt-background: #1B1827;
+  --prompt-border-color: #231F30;
+
+  /* Popover */
+  --popover-background: #1B1827;
+  --popover-border-color: #231F30;
+
+  /* Tooltip */
+  --tooltip-background: #231F30;
+  --tooltip-border-color: #2A2540;
+
+  /* Checkbox */
+  --checkbox-color: #C9A8FF;
+  --checkbox-color-hover: #D4BAFF;
+
+  /* Radio */
+  --interactive-accent-hsl: 260 100% 80%;
+}
+
+/* ── Solace Dark: Scrollbar ─────────────────────────────────── */
+
+.theme-dark .nav-files-container,
+.theme-dark .nav-header,
+.theme-dark .tree-item-children,
+.theme-dark .cm-scroller,
+.theme-dark .markdown-preview-view,
+.theme-dark .setting-group,
+.theme-dark .suggestion-container,
+.theme-dark .prompt-list,
+.theme-dark .search-results-container,
+.theme-dark .modal-body,
+.theme-dark .workspace-leaf-content,
+.theme-dark .outline-pane .outline-item-container,
+.theme-dark .backlink-pane .backlink-card-container,
+.theme-dark .tag-pane-content,
+.theme-dark .graph-controls {
+  scrollbar-width: thin;
+  scrollbar-color: #A09AB830 transparent;
+}
+
+.theme-dark .nav-files-container::-webkit-scrollbar,
+.theme-dark .nav-header::-webkit-scrollbar,
+.theme-dark .tree-item-children::-webkit-scrollbar,
+.theme-dark .cm-scroller::-webkit-scrollbar,
+.theme-dark .markdown-preview-view::-webkit-scrollbar,
+.theme-dark .setting-group::-webkit-scrollbar,
+.theme-dark .suggestion-container::-webkit-scrollbar,
+.theme-dark .prompt-list::-webkit-scrollbar,
+.theme-dark .search-results-container::-webkit-scrollbar,
+.theme-dark .modal-body::-webkit-scrollbar,
+.theme-dark .workspace-leaf-content::-webkit-scrollbar,
+.theme-dark .outline-pane .outline-item-container::-webkit-scrollbar,
+.theme-dark .backlink-pane .backlink-card-container::-webkit-scrollbar,
+.theme-dark .tag-pane-content::-webkit-scrollbar,
+.theme-dark .graph-controls::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.theme-dark .nav-files-container::-webkit-scrollbar-track,
+.theme-dark .nav-header::-webkit-scrollbar-track,
+.theme-dark .tree-item-children::-webkit-scrollbar-track,
+.theme-dark .cm-scroller::-webkit-scrollbar-track,
+.theme-dark .markdown-preview-view::-webkit-scrollbar-track,
+.theme-dark .setting-group::-webkit-scrollbar-track,
+.theme-dark .suggestion-container::-webkit-scrollbar-track,
+.theme-dark .prompt-list::-webkit-scrollbar-track,
+.theme-dark .search-results-container::-webkit-scrollbar-track,
+.theme-dark .modal-body::-webkit-scrollbar-track,
+.theme-dark .workspace-leaf-content::-webkit-scrollbar-track,
+.theme-dark .outline-pane .outline-item-container::-webkit-scrollbar-track,
+.theme-dark .backlink-pane .backlink-card-container::-webkit-scrollbar-track,
+.theme-dark .tag-pane-content::-webkit-scrollbar-track,
+.theme-dark .graph-controls::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.theme-dark .nav-files-container::-webkit-scrollbar-thumb,
+.theme-dark .nav-header::-webkit-scrollbar-thumb,
+.theme-dark .tree-item-children::-webkit-scrollbar-thumb,
+.theme-dark .cm-scroller::-webkit-scrollbar-thumb,
+.theme-dark .markdown-preview-view::-webkit-scrollbar-thumb,
+.theme-dark .setting-group::-webkit-scrollbar-thumb,
+.theme-dark .suggestion-container::-webkit-scrollbar-thumb,
+.theme-dark .prompt-list::-webkit-scrollbar-thumb,
+.theme-dark .search-results-container::-webkit-scrollbar-thumb,
+.theme-dark .modal-body::-webkit-scrollbar-thumb,
+.theme-dark .workspace-leaf-content::-webkit-scrollbar-thumb,
+.theme-dark .outline-pane .outline-item-container::-webkit-scrollbar-thumb,
+.theme-dark .backlink-pane .backlink-card-container::-webkit-scrollbar-thumb,
+.theme-dark .tag-pane-content::-webkit-scrollbar-thumb,
+.theme-dark .graph-controls::-webkit-scrollbar-thumb {
+  background: #A09AB830;
+  border-radius: 4px;
+}
+
+.theme-dark .nav-files-container::-webkit-scrollbar-thumb:hover,
+.theme-dark .nav-header::-webkit-scrollbar-thumb:hover,
+.theme-dark .tree-item-children::-webkit-scrollbar-thumb:hover,
+.theme-dark .cm-scroller::-webkit-scrollbar-thumb:hover,
+.theme-dark .markdown-preview-view::-webkit-scrollbar-thumb:hover,
+.theme-dark .setting-group::-webkit-scrollbar-thumb:hover,
+.theme-dark .suggestion-container::-webkit-scrollbar-thumb:hover,
+.theme-dark .prompt-list::-webkit-scrollbar-thumb:hover,
+.theme-dark .search-results-container::-webkit-scrollbar-thumb:hover,
+.theme-dark .modal-body::-webkit-scrollbar-thumb:hover,
+.theme-dark .workspace-leaf-content::-webkit-scrollbar-thumb:hover,
+.theme-dark .outline-pane .outline-item-container::-webkit-scrollbar-thumb:hover,
+.theme-dark .backlink-pane .backlink-card-container::-webkit-scrollbar-thumb:hover,
+.theme-dark .tag-pane-content::-webkit-scrollbar-thumb:hover,
+.theme-dark .graph-controls::-webkit-scrollbar-thumb:hover {
+  background: #A09AB850;
+}
+
+.theme-dark .nav-files-container::-webkit-scrollbar-thumb:active,
+.theme-dark .nav-header::-webkit-scrollbar-thumb:active,
+.theme-dark .tree-item-children::-webkit-scrollbar-thumb:active,
+.theme-dark .cm-scroller::-webkit-scrollbar-thumb:active,
+.theme-dark .markdown-preview-view::-webkit-scrollbar-thumb:active,
+.theme-dark .setting-group::-webkit-scrollbar-thumb:active,
+.theme-dark .suggestion-container::-webkit-scrollbar-thumb:active,
+.theme-dark .prompt-list::-webkit-scrollbar-thumb:active,
+.theme-dark .search-results-container::-webkit-scrollbar-thumb:active,
+.theme-dark .modal-body::-webkit-scrollbar-thumb:active,
+.theme-dark .workspace-leaf-content::-webkit-scrollbar-thumb:active,
+.theme-dark .outline-pane .outline-item-container::-webkit-scrollbar-thumb:active,
+.theme-dark .backlink-pane .backlink-card-container::-webkit-scrollbar-thumb:active,
+.theme-dark .tag-pane-content::-webkit-scrollbar-thumb:active,
+.theme-dark .graph-controls::-webkit-scrollbar-thumb:active {
+  background: #504A68;
+}
+
+/* ── Solace Dark: Selection ─────────────────────────────────── */
+
+.theme-dark ::selection {
+  background-color: #C9A8FF40;
+  color: inherit;
+}
+
+/* ── Solace Dark: UI Chrome ─────────────────────────────────── */
+
+.theme-dark .workspace-leaf-content[data-type="explorer"] .nav-header,
+.theme-dark .workspace-leaf-content[data-type="file-explorer"] .nav-header,
+.theme-dark .sidebar {
+  background-color: var(--background-primary);
+}
+
+.theme-dark .nav-header,
+.theme-dark .nav-buttons-container {
+  border-color: var(--background-modifier-border);
+}
+
+.theme-dark .tab-container {
+  background-color: var(--sidebar-tabs-background);
+}
+
+.theme-dark .workspace-tabs .tab-container {
+  background-color: var(--sidebar-tabs-background);
+}
+
+.theme-dark .tab {
+  background-color: var(--sidebar-tabs-background);
+  border-color: var(--background-modifier-border);
+}
+
+.theme-dark .tab.active {
+  background-color: var(--tab-active-background);
+  border-bottom-color: var(--tab-active-border);
+}
+
+.theme-dark .workspace-leaf-content[data-type="outline"] .outlining-heading,
+.theme-dark .tree-item-self:hover {
+  background-color: var(--interactive-hover);
+}
+
+.theme-dark .suggestion-container .suggestion {
+  background-color: var(--background-primary);
+}
+
+.theme-dark .suggestion-container .suggestion.is-selected {
+  background-color: var(--interactive-hover);
+}
+
+.theme-dark .menu {
+  background-color: var(--popover-background);
+  border-color: var(--popover-border-color);
+}
+
+.theme-dark .menu-item:hover {
+  background-color: var(--interactive-hover);
+}
+
+.theme-dark .modal {
+  background-color: var(--modal-background);
+  border-color: var(--modal-border-color);
+}
+
+.theme-dark .modal .modal-close-button:hover {
+  color: var(--text-error);
+}
+
+.theme-dark .prompt {
+  background-color: var(--prompt-background);
+  border-color: var(--prompt-border-color);
+}
+
+.theme-dark .input {
+  background-color: var(--background-modifier-form-field);
+  border-color: var(--background-modifier-border);
+}
+
+.theme-dark .input:focus {
+  border-color: var(--interactive-accent);
+}
+
+.theme-dark .setting-item:hover {
+  background-color: var(--interactive-hover);
+}
+
+.theme-dark .setting-item-info {
+  color: var(--text-normal);
+}
+
+.theme-dark .setting-item-description {
+  color: var(--text-muted);
+}
+
+.theme-dark .setting-item-name {
+  color: var(--text-normal);
+}
+
+.theme-dark .btn {
+  background-color: var(--interactive-normal);
+  border-color: var(--background-modifier-border);
+  color: var(--text-normal);
+}
+
+.theme-dark .btn:hover {
+  background-color: var(--interactive-hover);
+  border-color: var(--interactive-accent);
+}
+
+.theme-dark .btn-primary {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-color: var(--interactive-accent);
+}
+
+.theme-dark .btn-primary:hover {
+  background-color: var(--interactive-accent-hover);
+}
+
+.theme-dark .internal-link {
+  color: var(--text-accent);
+}
+
+.theme-dark .internal-link:hover {
+  color: var(--text-accent-hover);
+}
+
+.theme-dark .external-link {
+  color: var(--text-accent);
+}
+
+.theme-dark .tag {
+  background-color: var(--tag-background);
+  color: var(--tag-color);
+  border-color: var(--tag-border-color);
+}
+
+.theme-dark .cm-panels {
+  background-color: var(--background-secondary);
+  border-color: var(--background-modifier-border);
+}
+
+.theme-dark .cm-panel {
+  background-color: var(--background-secondary);
+}
+
+.theme-dark .cm-searchMatch {
+  background-color: var(--search-match-color);
+}
+
+.theme-dark .cm-selectionBackground {
+  background-color: #C9A8FF30;
+}
+
+.theme-dark .cm-activeLine {
+  background-color: #1D1A2B;
+}
+
+.theme-dark .cm-gutters {
+  background-color: var(--background-primary);
+  color: #504A68;
+  border-color: var(--background-modifier-border);
+}
+
+.theme-dark .cm-activeLineGutter {
+  color: var(--interactive-accent);
+  background-color: #221E31;
+}
+
+.theme-dark .cm-lineNumbers .cm-gutterElement {
+  color: #504A68;
+  padding: 0 8px;
+}
+
+.theme-dark .cm-cursor {
+  border-left-color: #C9A8FF;
+}
+
+.theme-dark .cm-matchingBracket {
+  background-color: #C9A8FF20;
+  color: #C9A8FF !important;
+}
+
+.theme-dark .cm-focusMatchingBracket {
+  background-color: #C9A8FF30;
+  color: #C9A8FF !important;
+}
+
+.theme-dark .cm-foldPlaceholder {
+  background-color: #231F30;
+  color: #504A68;
+  border-color: #231F30;
+}
+
+.theme-dark .cm-foldPlaceholder:hover {
+  background-color: #2A2540;
+  color: #A09AB8;
+}
+
+/* ── Solace Dark: Callouts ──────────────────────────────────── */
+
+.theme-dark .callout[data-type="note"],
+.theme-dark .callout[data-type="info"] {
+  --callout-color: 152 128 232;
+  --callout-bg: rgba(152, 128, 232, 0.09);
+}
+
+.theme-dark .callout[data-type="tip"],
+.theme-dark .callout[data-type="success"],
+.theme-dark .callout[data-type="check"] {
+  --callout-color: 168 255 236;
+  --callout-bg: rgba(168, 255, 236, 0.09);
+}
+
+.theme-dark .callout[data-type="warning"],
+.theme-dark .callout[data-type="caution"] {
+  --callout-color: 201 168 255;
+  --callout-bg: rgba(201, 168, 255, 0.09);
+}
+
+.theme-dark .callout[data-type="danger"],
+.theme-dark .callout[data-type="error"] {
+  --callout-color: 255 128 200;
+  --callout-bg: rgba(255, 128, 200, 0.08);
+}
+
+.theme-dark .callout[data-type="quote"],
+.theme-dark .callout[data-type="abstract"] {
+  --callout-color: 160 154 184;
+  --callout-bg: rgba(160, 154, 184, 0.09);
+}
+
+.theme-dark .callout[data-type="example"] {
+  --callout-color: 255 179 209;
+  --callout-bg: rgba(255, 179, 209, 0.09);
+}
+
+.theme-dark .callout[data-type="bug"] {
+  --callout-color: 255 128 200;
+  --callout-bg: rgba(255, 128, 200, 0.09);
+}
+
+.theme-dark .callout[data-type="question"],
+.theme-dark .callout[data-type="help"] {
+  --callout-color: 152 128 232;
+  --callout-bg: rgba(152, 128, 232, 0.09);
+}
+
+.theme-dark .callout[data-type="example"] .callout-title {
+  --callout-color: 255 179 209;
+}
+
+/* ── Solace Dark: Syntax Highlighting ───────────────────────── */
+
+/* Comments */
+.theme-dark span.cm-comment {
+  color: #7D799A;
+  font-style: italic;
+}
+
+.theme-dark .markdown-preview-view span.cm-comment {
+  color: #7D799A;
+  font-style: italic;
+}
+
+/* Keywords — if, else, return, const, let, var, function, import, export, class, etc. */
+.theme-dark .cm-s-obsidian span.cm-keyword,
+.theme-dark span.cm-keyword {
+  color: #C7BFFF;
+}
+
+/* Strings */
+.theme-dark span.cm-string {
+  color: #F2B4FF;
+}
+
+.theme-dark span.cm-string-2 {
+  color: #F2B4FF;
+}
+
+/* Numbers */
+.theme-dark span.cm-number {
+  color: #FFD39A;
+}
+
+/* Booleans */
+.theme-dark span.cm-bool {
+  color: #FFB3D1;
+}
+
+/* Null/undefined */
+.theme-dark span.cm-null {
+  color: #FFB3D1;
+}
+
+/* Variables */
+.theme-dark span.cm-variable {
+  color: #FFFFFF;
+}
+
+.theme-dark span.cm-variable-2 {
+  color: #D8D3F0;
+}
+
+.theme-dark span.cm-variable-3 {
+  color: #B8A8FF;
+}
+
+/* Properties */
+.theme-dark span.cm-property {
+  color: #D8D3F0;
+}
+
+/* Definitions */
+.theme-dark span.cm-def {
+  color: #E0B8FF;
+}
+
+/* Operators */
+.theme-dark span.cm-operator {
+  color: #8D88A8;
+}
+
+/* Punctuation */
+.theme-dark span.cm-punctuation {
+  color: #8D88A8;
+}
+
+/* Brackets */
+.theme-dark span.cm-bracket {
+  color: #A09AB8;
+}
+
+/* Tags */
+.theme-dark span.cm-tag {
+  color: #A8FFEC;
+}
+
+/* Attributes */
+.theme-dark span.cm-attribute {
+  color: #A09AB8;
+}
+
+/* Links */
+.theme-dark span.cm-link {
+  color: #C9A8FF;
+  font-style: italic;
+}
+
+.theme-dark span.cm-url {
+  color: #C9A8FF;
+}
+
+/* Headings */
+.theme-dark span.cm-header {
+  color: #C9A8FF;
+  font-weight: 700;
+}
+
+/* Emphasis */
+.theme-dark span.cm-em {
+  color: #FFFFFF;
+  font-style: italic;
+}
+
+.theme-dark span.cm-strong {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+/* Formatting characters */
+.theme-dark span.cm-formatting {
+  color: #504A68;
+}
+
+/* Code */
+.theme-dark span.cm-meta {
+  color: #C9A8FF;
+}
+
+.theme-dark span.cm-atom {
+  color: #FFB3D1;
+}
+
+.theme-dark span.cm-builtin {
+  color: #D6B8FF;
+}
+
+.theme-dark span.cm-qualifier {
+  color: #A09AB8;
+}
+
+.theme-dark span.cm-callee {
+  color: #C9A8FF;
+}
+
+.theme-dark span.cm-hash {
+  color: #C9A8FF;
+}
+
+.theme-dark span.cm-dfn {
+  color: #E0B8FF;
+}
+
+/* Frontmatter */
+.theme-dark .frontmatter {
+  color: #A09AB8;
+}
+
+.theme-dark .frontmatter .cm-keyword {
+  color: #C7BFFF;
+}
+
+.theme-dark .frontmatter .cm-string {
+  color: #F2B4FF;
+}
+
+.theme-dark .frontmatter .cm-number {
+  color: #FFD39A;
+}
+
+/* Markdown preview — headings */
+.theme-dark .markdown-preview-view h1,
+.theme-dark .markdown-preview-view h2,
+.theme-dark .markdown-preview-view h3,
+.theme-dark .markdown-preview-view h4,
+.theme-dark .markdown-preview-view h5,
+.theme-dark .markdown-preview-view h6 {
+  color: #C9A8FF;
+}
+
+.theme-dark .markdown-preview-view h1 {
+  color: #C9A8FF;
+  font-weight: 700;
+}
+
+.theme-dark .markdown-preview-view h2 {
+  color: #C9A8FF;
+  font-weight: 700;
+}
+
+.theme-dark .markdown-preview-view h3 {
+  color: #D4BAFF;
+  font-weight: 700;
+}
+
+.theme-dark .markdown-preview-view h4 {
+  color: #D4BAFF;
+  font-weight: 600;
+}
+
+.theme-dark .markdown-preview-view h5 {
+  color: #B8A8FF;
+  font-weight: 600;
+}
+
+.theme-dark .markdown-preview-view h6 {
+  color: #B8A8FF;
+  font-weight: 600;
+}
+
+/* Markdown preview — links */
+.theme-dark .markdown-preview-view a {
+  color: var(--text-accent);
+}
+
+/* Markdown preview — bold */
+.theme-dark .markdown-preview-view strong {
+  color: #FFFFFF;
+}
+
+/* Markdown preview — italic */
+.theme-dark .markdown-preview-view em {
+  color: #FFFFFF;
+  font-style: italic;
+}
+
+/* Markdown preview — code */
+.theme-dark .markdown-preview-view code {
+  background-color: #231F30;
+  color: #C9A8FF;
+}
+
+.theme-dark .markdown-preview-view pre {
+  background-color: #0E0D14;
+  border-color: #1E1B2E;
+}
+
+.theme-dark .markdown-preview-view pre code {
+  color: #F1EEF8;
+  background-color: transparent;
+}
+
+/* Markdown preview — blockquotes */
+.theme-dark .markdown-preview-view blockquote {
+  border-left-color: #C9A8FF;
+  color: #A09AB8;
+}
+
+/* Markdown preview — horizontal rules */
+.theme-dark .markdown-preview-view hr {
+  border-color: #231F30;
+}
+
+/* Markdown preview — tables */
+.theme-dark .markdown-preview-view table {
+  border-color: #231F30;
+}
+
+.theme-dark .markdown-preview-view th {
+  background-color: #1B1827;
+  border-color: #231F30;
+  color: #C9A8FF;
+}
+
+.theme-dark .markdown-preview-view td {
+  border-color: #231F30;
+}
+
+.theme-dark .markdown-preview-view tr:nth-child(even) {
+  background-color: #1B182710;
+}
+
+/* Markdown preview — lists */
+.theme-dark .markdown-preview-view ul li::before {
+  color: #C9A8FF;
+}
+
+.theme-dark .markdown-preview-view ol li::before {
+  color: #C9A8FF;
+}
+
+/* Markdown preview — task lists */
+.theme-dark .markdown-preview-view .task-list-item-checkbox {
+  border-color: #504A68;
+}
+
+.theme-dark .markdown-preview-view .task-list-item-checkbox:checked {
+  background-color: var(--interactive-accent);
+  border-color: var(--interactive-accent);
+}
+
+/* Markdown preview — tags */
+.theme-dark .markdown-preview-view .tag {
+  background-color: var(--tag-background);
+  color: var(--tag-color);
+}
+
+/* Markdown preview — callouts */
+.theme-dark .markdown-preview-view .callout {
+  border-color: var(--callout-default-color);
+}
+
+/* Markdown preview — internal links */
+.theme-dark .markdown-preview-view .internal-link {
+  color: var(--text-accent);
+}
+
+/* Markdown preview — backlinks */
+.theme-dark .markdown-preview-view .backlink {
+  color: var(--text-accent);
+}
+
+/* Markdown preview — embeds */
+.theme-dark .markdown-preview-view .internal-embed {
+  border-color: var(--background-modifier-border);
+}
+
+/* Markdown preview — math */
+.theme-dark .markdown-preview-view .math {
+  color: #C9A8FF;
+}
+
+.theme-dark .markdown-preview-view .katex {
+  color: #C9A8FF;
+}
+
+/* Markdown preview — mermaid */
+.theme-dark .markdown-preview-view .mermaid {
+  background-color: transparent;
+}
+
+/* Markdown preview — dataview */
+.theme-dark .markdown-preview-view .dataview.table-view-table {
+  border-color: #231F30;
+}
+
+.theme-dark .markdown-preview-view .dataview.table-view-table th {
+  background-color: #1B1827;
+  color: #C9A8FF;
+  border-color: #231F30;
+}
+
+.theme-dark .markdown-preview-view .dataview.table-view-table td {
+  border-color: #231F30;
+}
+
+/* Markdown preview — kanban */
+.theme-dark .markdown-preview-view .kanban-plugin__board {
+  background-color: transparent;
+}
+
+.theme-dark .markdown-preview-view .kanban-plugin__lane {
+  background-color: #1B1827;
+  border-color: #231F30;
+}
+
+.theme-dark .markdown-preview-view .kanban-plugin__card {
+  background-color: var(--background-primary);
+  border-color: #231F30;
+}
+
+/* Reading view */
+.theme-dark .markdown-source-view .cm-content {
+  color: var(--text-normal);
+}
+
+.theme-dark .markdown-source-view .cm-line {
+  color: var(--text-normal);
+}
+
+.theme-dark .markdown-source-view .cm-heading {
+  color: #C9A8FF;
+}
+
+.theme-dark .markdown-source-view .cm-strong {
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.theme-dark .markdown-source-view .cm-em {
+  font-style: italic;
+  color: #FFFFFF;
+}
+
+.theme-dark .markdown-source-view .cm-link {
+  color: #C9A8FF;
+}
+
+.theme-dark .markdown-source-view .cm-url {
+  color: #C9A8FF;
+}
+
+.theme-dark .markdown-source-view .cm-code {
+  background-color: #231F30;
+  color: #C9A8FF;
+}
+
+.theme-dark .markdown-source-view .cm-strikethrough {
+  text-decoration: line-through;
+  color: #504A68;
+}
+
+/* Highlight */
+.theme-dark .markdown-preview-view mark {
+  background-color: #C9A8FF30;
+  color: inherit;
+}
+
+.theme-dark .markdown-source-view .cm-highlight {
+  background-color: #C9A8FF30;
+}
+
+/* Obsidian 1.4+ color variables */
+.theme-dark {
+  --color-red: #FF80C8;
+  --color-orange: #FFD39A;
+  --color-yellow: #FFD39A;
+  --color-green: #A8FFEC;
+  --color-cyan: #B8A8FF;
+  --color-blue: #9880E8;
+  --color-purple: #C9A8FF;
+  --color-pink: #FF80C8;
+
+  --color-base-00: #16141F;
+  --color-base-10: #1B1827;
+  --color-base-20: #1E1B2E;
+  --color-base-30: #231F30;
+  --color-base-40: #2A2540;
+  --color-base-50: #3A3448;
+  --color-base-60: #504A68;
+  --color-base-70: #7D799A;
+  --color-base-100: #A09AB8;
+  --color-base-120: #C7C2E8;
+  --color-base-150: #F1EEF8;
+
+  --color-accent: #C9A8FF;
+  --color-accent-1: #9880E8;
+  --color-accent-2: #A8FFEC;
+  --color-accent-3: #FF80C8;
+  --color-accent-4: #FFD39A;
+  --color-accent-5: #FFB3D1;
+  --color-accent-6: #B8A8FF;
+}
+
+/* ── Solace Dark: Ribbon ────────────────────────────────────── */
+
+.theme-dark .side-dock-ribbon {
+  background-color: var(--titlebar-background);
+}
+
+.theme-dark .side-dock-ribbon-modicator {
+  background-color: var(--titlebar-background);
+}
+
+.theme-dark .side-dock-ribbon-btn:hover {
+  background-color: var(--interactive-hover);
+}
+
+.theme-dark .side-dock-ribbon-btn.mod-action:hover {
+  background-color: var(--interactive-hover);
+}
+
+/* ── Solace Dark: Breadcrumbs ───────────────────────────────── */
+
+.theme-dark .breadcrumb-container {
+  background-color: var(--background-primary);
+}
+
+.theme-dark .breadcrumb-item {
+  color: var(--text-muted);
+}
+
+.theme-dark .breadcrumb-item.active {
+  color: var(--text-normal);
+}
+
+.theme-dark .breadcrumb-item:hover {
+  color: var(--text-accent);
+}
+
+/* ── Solace Dark: Backlinks ─────────────────────────────────── */
+
+.theme-dark .backlink-pane {
+  background-color: var(--background-primary);
+}
+
+.theme-dark .backlink-pane .backlink-title {
+  color: var(--text-accent);
+}
+
+/* ── Solace Dark: Outline ───────────────────────────────────── */
+
+.theme-dark .outline-pane {
+  background-color: var(--background-primary);
+}
+
+.theme-dark .outline-pane .outline-heading {
+  color: var(--text-normal);
+}
+
+.theme-dark .outline-pane .outline-heading:hover {
+  color: var(--text-accent);
+}
+
+/* ── Solace Dark: Starred ───────────────────────────────────── */
+
+.theme-dark .starred-pane {
+  background-color: var(--background-primary);
+}
+
+/* ── Solace Dark: Daily notes ───────────────────────────────── */
+
+.theme-dark .daily-notes {
+  background-color: var(--background-primary);
+}
+
+/* ── Solace Dark: Graph view ────────────────────────────────── */
+
+.theme-dark .graph-view {
+  background-color: var(--background-primary);
+}
+
+.theme-dark .graph-controls {
+  background-color: var(--background-secondary);
+  border-color: var(--background-modifier-border);
+}
+
+/* ── Solace Dark: File explorer ─────────────────────────────── */
+
+.theme-dark .nav-files-container {
+  background-color: var(--background-primary);
+}
+
+.theme-dark .tree-item-self:hover {
+  background-color: var(--interactive-hover);
+}
+
+.theme-dark .tree-item-self.is-selected {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+.theme-dark .tree-item-self.is-selected .tree-item-inner {
+  color: var(--text-on-accent);
+}
+
+.theme-dark .nav-folder-title {
+  color: var(--text-normal);
+}
+
+.theme-dark .nav-file-title {
+  color: var(--text-normal);
+}
+
+/* ── Solace Dark: Split view ────────────────────────────────── */
+
+.theme-dark .workspace-split {
+  background-color: var(--background-primary);
+}
+
+.theme-dark .workspace-leaf {
+  background-color: var(--background-primary);
+}
+
+/* ── Solace Dark: Find/replace ──────────────────────────────── */
+
+.theme-dark .search-dialog-container {
+  background-color: var(--modal-background);
+  border-color: var(--modal-border-color);
+}
+
+.theme-dark .search-input {
+  background-color: var(--background-modifier-form-field);
+  border-color: var(--background-modifier-border);
+}
+
+.theme-dark .search-input:focus {
+  border-color: var(--interactive-accent);
+}
+
+/* ── Solace Dark: Tag pane ──────────────────────────────────── */
+
+.theme-dark .tag-pane {
+  background-color: var(--background-primary);
+}
+
+.theme-dark .tag-pane .tag {
+  background-color: var(--tag-background);
+  color: var(--tag-color);
+}
+
+/* ── Solace Dark: Open in another app ───────────────────────── */
+
+.theme-dark .open-other-app-error {
+  color: var(--text-error);
+}
+
+/* ── Solace Dark: Settings ──────────────────────────────────── */
+
+.theme-dark .settings-container {
+  background-color: var(--background-primary);
+}
+
+.theme-dark .setting-group-title {
+  color: var(--text-accent);
+  border-bottom-color: var(--background-modifier-border);
+}
+
+.theme-dark .setting-item {
+  border-bottom-color: var(--background-modifier-border);
+}
+
+.theme-dark .setting-item:hover {
+  background-color: var(--interactive-hover);
+}
+
+.theme-dark .setting-item-control {
+  color: var(--text-muted);
+}
+
+.theme-dark .setting-item-name {
+  color: var(--text-normal);
+}
+
+.theme-dark .setting-item-description {
+  color: var(--text-muted);
+}
+
+.theme-dark .setting-item-warning {
+  color: var(--text-warning);
+}
+
+/* ── Solace Dark: Hotkeys ───────────────────────────────────── */
+
+.theme-dark .hotkeys-container {
+  background-color: var(--background-primary);
+}
+
+.theme-dark .setting-hotkey {
+  background-color: var(--interactive-normal);
+  color: var(--text-normal);
+}
+
+.theme-dark .setting-hotkey:hover {
+  background-color: var(--interactive-hover);
+}
+
+/* ── Solace Dark: Command palette ───────────────────────────── */
+
+.theme-dark .prompt-list {
+  background-color: var(--prompt-background);
+  border-color: var(--prompt-border-color);
+}
+
+.theme-dark .suggestion-item {
+  background-color: var(--prompt-background);
+}
+
+.theme-dark .suggestion-item.is-selected {
+  background-color: var(--interactive-hover);
+}
+
+.theme-dark .suggestion-item-title {
+  color: var(--text-normal);
+}
+
+.theme-dark .suggestion-item-description {
+  color: var(--text-muted);
+}
+
+/* ── Solace Dark: Switcher ──────────────────────────────────── */
+
+.theme-dark .switcher {
+  background-color: var(--prompt-background);
+}
+
+.theme-dark .switcher .suggestion-item {
+  background-color: var(--prompt-background);
+}
+
+.theme-dark .switcher .suggestion-item.is-selected {
+  background-color: var(--interactive-hover);
+}
+
+/* ── Solace Dark: URI scheme ────────────────────────────────── */
+
+.theme-dark .urischeme-dialog {
+  background-color: var(--modal-background);
+  border-color: var(--modal-border-color);
+}
+
+/* ── Solace Dark: Export ────────────────────────────────────── */
+
+.theme-dark .export-dialog {
+  background-color: var(--modal-background);
+  border-color: var(--modal-border-color);
+}
+
+/* ── Solace Dark: Import ────────────────────────────────────── */
+
+.theme-dark .import-dialog {
+  background-color: var(--modal-background);
+  border-color: var(--modal-border-color);
+}
+
+/* ── Solace Dark: Plugin browser ────────────────────────────── */
+
+.theme-dark .plugin-browser-container {
+  background-color: var(--background-primary);
+}
+
+.theme-dark .plugin-browser-container .markdown-preview-view {
+  background-color: var(--background-primary);
+}
+
+.theme-dark .plugin-browser-container .markdown-preview-view h1,
+.theme-dark .plugin-browser-container .markdown-preview-view h2,
+.theme-dark .plugin-browser-container .markdown-preview-view h3 {
+  color: var(--text-normal);
+}
+
+.theme-dark .plugin-browser-container .markdown-preview-view a {
+  color: var(--text-accent);
+}
+
+.theme-dark .plugin-browser-container .markdown-preview-view code {
+  color: var(--text-accent);
+  background-color: var(--background-secondary);
+}
+
+.theme-dark .plugin-browser-container .markdown-preview-view pre {
+  background-color: var(--background-secondary);
+  border-color: var(--background-modifier-border);
+}
+
+.theme-dark .plugin-browser-container .markdown-preview-view blockquote {
+  border-left-color: var(--interactive-accent);
+  color: var(--text-muted);
+}
+
+.theme-dark .plugin-browser-container .markdown-preview-view strong {
+  color: var(--text-normal);
+}
+
+.theme-dark .plugin-browser-container .markdown-preview-view em {
+  color: var(--text-muted);
+}
+
+.theme-dark .plugin-browser-container .markdown-preview-view ul li::before {
+  color: var(--text-accent);
+}
+
+.theme-dark .plugin-browser-container .markdown-preview-view ol li::before {
+  color: var(--text-accent);
+}
+
+.theme-dark .plugin-browser-container .markdown-preview-view hr {
+  border-color: var(--background-modifier-border);
+}
+
+.theme-dark .plugin-browser-container .markdown-preview-view table {
+  border-color: var(--background-modifier-border);
+}
+
+.theme-dark .plugin-browser-container .markdown-preview-view th {
+  background-color: var(--background-secondary);
+  border-color: var(--background-modifier-border);
+}
+
+.theme-dark .plugin-browser-container .markdown-preview-view td {
+  border-color: var(--background-modifier-border);
+}
+
+/* ── Solace Dark: Community themes ──────────────────────────── */
+
+.theme-dark .theme-browser-container {
+  background-color: var(--background-primary);
+}
+
+/* ── Solace Dark: Snippets ──────────────────────────────────── */
+
+.theme-dark .snippets-view {
+  background-color: var(--background-primary);
+}
+
+/* ── Solace Dark: Stats ─────────────────────────────────────── */
+
+.theme-dark .stats-view {
+  background-color: var(--background-primary);
+}
+
+/* ── Solace Dark: Debug ─────────────────────────────────────── */
+
+.theme-dark .debug-view {
+  background-color: var(--background-primary);
+}
+
+/* ── Solace Dark: Console ───────────────────────────────────── */
+
+.theme-dark .console-view {
+  background-color: var(--background-primary);
+}
+
+/* ── Solace Dark: Obsidian Sync ─────────────────────────────── */
+
+.theme-dark .sync-view {
+  background-color: var(--background-primary);
+}
+
+/* ── Solace Dark: Obsidian Publish ──────────────────────────── */
+
+.theme-dark .publish-view {
+  background-color: var(--background-primary);
+}
+
+/* ── Solace Dark: Canvas ────────────────────────────────────── */
+
+.theme-dark .canvas-node {
+  background-color: var(--background-secondary);
+  border-color: var(--background-modifier-border);
+}
+
+.theme-dark .canvas-node-label {
+  color: var(--text-normal);
+}
+
+/* ── Solace Dark: Table view (DB Folder, etc.) ──────────────── */
+
+.theme-dark .table-view-container {
+  background-color: var(--background-primary);
+}
+
+.theme-dark .table-view-header {
+  background-color: var(--background-secondary);
+  color: var(--text-accent);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   SOLACE LIGHT
+   ────────────────────────────────────────────────────────────── */
+
+.theme-dark.solace-light,
+.theme-light {
+  --background-primary: #F6F3FC;
+  --background-primary-alt: #F1EDF8;
+  --background-secondary: #ECE7F6;
+  --background-secondary-alt: #E7E0F1;
+  --background-modifier-border: #D8D0E6;
+  --background-modifier-form-field: #E7E0F1;
+  --background-modifier-form-field-hover: #EEE8F7;
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.06);
+  --background-modifier-success: rgba(63, 154, 133, 0.09);
+  --background-modifier-error: rgba(211, 91, 147, 0.09);
+  --background-modifier-error-hover: rgba(211, 91, 147, 0.15);
+
+  --text-normal: #2C2638;
+  --text-muted: #736C86;
+  --text-faint: #9A94AA;
+  --text-accent: #8A63D2;
+  --text-accent-hover: #714BC4;
+  --text-error: #D35B93;
+  --text-success: #3F9A85;
+  --text-warning: #8A63D2;
+  --text-on-accent: #F6F3FC;
+  --text-on-accent-hover: #FFFFFF;
+  --text-on-accent-inverted: #2C2638;
+
+  --interactive-normal: #DBD0EE;
+  --interactive-hover: #D8D0E6;
+  --interactive-accent: #8A63D2;
+  --interactive-accent-hover: #714BC4;
+  --interactive-success: #3F9A85;
+  --interactive-muted: #E5DDF3;
+
+  --shadow-s: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-l: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  --scrollbar-thumb: rgba(115, 108, 134, 0.08);
+  --scrollbar-thumb-active: #B0A9C0;
+  --scrollbar-thumb-hover: #CFC8DE;
+  --scrollbar-track: transparent;
+
+  --tab-active-background: #FAF8FD;
+  --tab-active-border: #8A63D2;
+  --tab-active-border-color: #8A63D2;
+  --tab-text-color-override: #736C86;
+  --tab-active-text-color: #2C2638;
+
+  --sidebar-background: #F6F3FC;
+  --sidebar-border-color: #D8D0E6;
+  --sidebar-tabs-background: #E4DDF0;
+
+  --titlebar-background: #E8E2F2;
+
+  --statusbar-background: #ECE7F6;
+
+  --search-background: rgba(138, 99, 210, 0.19);
+  --search-match-color: #8A63D2;
+
+  --callout-default-color: #8A63D2;
+  --callout-default-bg: rgba(138, 99, 210, 0.09);
+  --callout-info-color: #5675D6;
+  --callout-info-bg: rgba(86, 117, 214, 0.09);
+  --callout-tip-color: #3F9A85;
+  --callout-tip-bg: rgba(63, 154, 133, 0.09);
+  --callout-warning-color: #C07A2C;
+  --callout-warning-bg: rgba(192, 122, 44, 0.09);
+  --callout-danger-color: #D35B93;
+  --callout-danger-bg: rgba(211, 91, 147, 0.09);
+
+  --tag-background: rgba(138, 99, 210, 0.09);
+  --tag-color: #8A63D2;
+  --tag-border-color: rgba(138, 99, 210, 0.19);
+
+  --inline-title-color: #8A63D2;
+
+  --modal-background: #F0ECF8;
+  --modal-border-color: #D8D0E6;
+
+  --prompt-background: #F0ECF8;
+  --prompt-border-color: #D8D0E6;
+
+  --popover-background: #F0ECF8;
+  --popover-border-color: #D8D0E6;
+
+  --tooltip-background: #E8E0F2;
+  --tooltip-border-color: #D8D0E6;
+
+  --checkbox-color: #8A63D2;
+  --checkbox-color-hover: #714BC4;
+
+  --color-base-00: #F6F3FC;
+  --color-base-10: #F1EDF8;
+  --color-base-20: #ECE7F6;
+  --color-base-30: #E5DDF3;
+  --color-base-40: #DBD0EE;
+  --color-base-50: #CFC8DE;
+  --color-base-60: #B0A9C0;
+  --color-base-70: #8D88A8;
+  --color-base-100: #736C86;
+  --color-base-120: #5F5774;
+  --color-base-150: #2C2638;
+
+  --color-accent: #8A63D2;
+  --color-accent-1: #5675D6;
+  --color-accent-2: #3F9A85;
+  --color-accent-3: #D35B93;
+  --color-accent-4: #C07A2C;
+  --color-accent-5: #D35B93;
+  --color-accent-6: #A35FD0;
+
+  --color-red: #D35B93;
+  --color-orange: #C07A2C;
+  --color-yellow: #C07A2C;
+  --color-green: #3F9A85;
+  --color-cyan: #4B9AA8;
+  --color-blue: #5675D6;
+  --color-purple: #8A63D2;
+  --color-pink: #D35B93;
+
+  --graph-line-color: #D8D0E6;
+}
+
+/* ── Solace Light: Scrollbar ────────────────────────────────── */
+
+.theme-light .nav-files-container,
+.theme-light .nav-header,
+.theme-light .tree-item-children,
+.theme-light .cm-scroller,
+.theme-light .markdown-preview-view,
+.theme-light .setting-group,
+.theme-light .suggestion-container,
+.theme-light .prompt-list,
+.theme-light .search-results-container,
+.theme-light .modal-body,
+.theme-light .workspace-leaf-content,
+.theme-light .outline-pane .outline-item-container,
+.theme-light .backlink-pane .backlink-card-container,
+.theme-light .tag-pane-content,
+.theme-light .graph-controls,
+.theme-dark.solace-light .nav-files-container,
+.theme-dark.solace-light .nav-header,
+.theme-dark.solace-light .tree-item-children,
+.theme-dark.solace-light .cm-scroller,
+.theme-dark.solace-light .markdown-preview-view,
+.theme-dark.solace-light .setting-group,
+.theme-dark.solace-light .suggestion-container,
+.theme-dark.solace-light .prompt-list,
+.theme-dark.solace-light .search-results-container,
+.theme-dark.solace-light .modal-body,
+.theme-dark.solace-light .workspace-leaf-content,
+.theme-dark.solace-light .outline-pane .outline-item-container,
+.theme-dark.solace-light .backlink-pane .backlink-card-container,
+.theme-dark.solace-light .tag-pane-content,
+.theme-dark.solace-light .graph-controls {
+  scrollbar-width: thin;
+  scrollbar-color: #736C8630 transparent;
+}
+
+.theme-light .nav-files-container::-webkit-scrollbar,
+.theme-light .nav-header::-webkit-scrollbar,
+.theme-light .tree-item-children::-webkit-scrollbar,
+.theme-light .cm-scroller::-webkit-scrollbar,
+.theme-light .markdown-preview-view::-webkit-scrollbar,
+.theme-light .setting-group::-webkit-scrollbar,
+.theme-light .suggestion-container::-webkit-scrollbar,
+.theme-light .prompt-list::-webkit-scrollbar,
+.theme-light .search-results-container::-webkit-scrollbar,
+.theme-light .modal-body::-webkit-scrollbar,
+.theme-light .workspace-leaf-content::-webkit-scrollbar,
+.theme-light .outline-pane .outline-item-container::-webkit-scrollbar,
+.theme-light .backlink-pane .backlink-card-container::-webkit-scrollbar,
+.theme-light .tag-pane-content::-webkit-scrollbar,
+.theme-light .graph-controls::-webkit-scrollbar,
+.theme-dark.solace-light .nav-files-container::-webkit-scrollbar,
+.theme-dark.solace-light .nav-header::-webkit-scrollbar,
+.theme-dark.solace-light .tree-item-children::-webkit-scrollbar,
+.theme-dark.solace-light .cm-scroller::-webkit-scrollbar,
+.theme-dark.solace-light .markdown-preview-view::-webkit-scrollbar,
+.theme-dark.solace-light .setting-group::-webkit-scrollbar,
+.theme-dark.solace-light .suggestion-container::-webkit-scrollbar,
+.theme-dark.solace-light .prompt-list::-webkit-scrollbar,
+.theme-dark.solace-light .search-results-container::-webkit-scrollbar,
+.theme-dark.solace-light .modal-body::-webkit-scrollbar,
+.theme-dark.solace-light .workspace-leaf-content::-webkit-scrollbar,
+.theme-dark.solace-light .outline-pane .outline-item-container::-webkit-scrollbar,
+.theme-dark.solace-light .backlink-pane .backlink-card-container::-webkit-scrollbar,
+.theme-dark.solace-light .tag-pane-content::-webkit-scrollbar,
+.theme-dark.solace-light .graph-controls::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.theme-light .nav-files-container::-webkit-scrollbar-track,
+.theme-light .nav-header::-webkit-scrollbar-track,
+.theme-light .tree-item-children::-webkit-scrollbar-track,
+.theme-light .cm-scroller::-webkit-scrollbar-track,
+.theme-light .markdown-preview-view::-webkit-scrollbar-track,
+.theme-light .setting-group::-webkit-scrollbar-track,
+.theme-light .suggestion-container::-webkit-scrollbar-track,
+.theme-light .prompt-list::-webkit-scrollbar-track,
+.theme-light .search-results-container::-webkit-scrollbar-track,
+.theme-light .modal-body::-webkit-scrollbar-track,
+.theme-light .workspace-leaf-content::-webkit-scrollbar-track,
+.theme-light .outline-pane .outline-item-container::-webkit-scrollbar-track,
+.theme-light .backlink-pane .backlink-card-container::-webkit-scrollbar-track,
+.theme-light .tag-pane-content::-webkit-scrollbar-track,
+.theme-light .graph-controls::-webkit-scrollbar-track,
+.theme-dark.solace-light .nav-files-container::-webkit-scrollbar-track,
+.theme-dark.solace-light .nav-header::-webkit-scrollbar-track,
+.theme-dark.solace-light .tree-item-children::-webkit-scrollbar-track,
+.theme-dark.solace-light .cm-scroller::-webkit-scrollbar-track,
+.theme-dark.solace-light .markdown-preview-view::-webkit-scrollbar-track,
+.theme-dark.solace-light .setting-group::-webkit-scrollbar-track,
+.theme-dark.solace-light .suggestion-container::-webkit-scrollbar-track,
+.theme-dark.solace-light .prompt-list::-webkit-scrollbar-track,
+.theme-dark.solace-light .search-results-container::-webkit-scrollbar-track,
+.theme-dark.solace-light .modal-body::-webkit-scrollbar-track,
+.theme-dark.solace-light .workspace-leaf-content::-webkit-scrollbar-track,
+.theme-dark.solace-light .outline-pane .outline-item-container::-webkit-scrollbar-track,
+.theme-dark.solace-light .backlink-pane .backlink-card-container::-webkit-scrollbar-track,
+.theme-dark.solace-light .tag-pane-content::-webkit-scrollbar-track,
+.theme-dark.solace-light .graph-controls::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.theme-light .nav-files-container::-webkit-scrollbar-thumb,
+.theme-light .nav-header::-webkit-scrollbar-thumb,
+.theme-light .tree-item-children::-webkit-scrollbar-thumb,
+.theme-light .cm-scroller::-webkit-scrollbar-thumb,
+.theme-light .markdown-preview-view::-webkit-scrollbar-thumb,
+.theme-light .setting-group::-webkit-scrollbar-thumb,
+.theme-light .suggestion-container::-webkit-scrollbar-thumb,
+.theme-light .prompt-list::-webkit-scrollbar-thumb,
+.theme-light .search-results-container::-webkit-scrollbar-thumb,
+.theme-light .modal-body::-webkit-scrollbar-thumb,
+.theme-light .workspace-leaf-content::-webkit-scrollbar-thumb,
+.theme-light .outline-pane .outline-item-container::-webkit-scrollbar-thumb,
+.theme-light .backlink-pane .backlink-card-container::-webkit-scrollbar-thumb,
+.theme-light .tag-pane-content::-webkit-scrollbar-thumb,
+.theme-light .graph-controls::-webkit-scrollbar-thumb,
+.theme-dark.solace-light .nav-files-container::-webkit-scrollbar-thumb,
+.theme-dark.solace-light .nav-header::-webkit-scrollbar-thumb,
+.theme-dark.solace-light .tree-item-children::-webkit-scrollbar-thumb,
+.theme-dark.solace-light .cm-scroller::-webkit-scrollbar-thumb,
+.theme-dark.solace-light .markdown-preview-view::-webkit-scrollbar-thumb,
+.theme-dark.solace-light .setting-group::-webkit-scrollbar-thumb,
+.theme-dark.solace-light .suggestion-container::-webkit-scrollbar-thumb,
+.theme-dark.solace-light .prompt-list::-webkit-scrollbar-thumb,
+.theme-dark.solace-light .search-results-container::-webkit-scrollbar-thumb,
+.theme-dark.solace-light .modal-body::-webkit-scrollbar-thumb,
+.theme-dark.solace-light .workspace-leaf-content::-webkit-scrollbar-thumb,
+.theme-dark.solace-light .outline-pane .outline-item-container::-webkit-scrollbar-thumb,
+.theme-dark.solace-light .backlink-pane .backlink-card-container::-webkit-scrollbar-thumb,
+.theme-dark.solace-light .tag-pane-content::-webkit-scrollbar-thumb,
+.theme-dark.solace-light .graph-controls::-webkit-scrollbar-thumb {
+  background: #736C8630;
+  border-radius: 4px;
+}
+
+.theme-light .nav-files-container::-webkit-scrollbar-thumb:hover,
+.theme-light .nav-header::-webkit-scrollbar-thumb:hover,
+.theme-light .tree-item-children::-webkit-scrollbar-thumb:hover,
+.theme-light .cm-scroller::-webkit-scrollbar-thumb:hover,
+.theme-light .markdown-preview-view::-webkit-scrollbar-thumb:hover,
+.theme-light .setting-group::-webkit-scrollbar-thumb:hover,
+.theme-light .suggestion-container::-webkit-scrollbar-thumb:hover,
+.theme-light .prompt-list::-webkit-scrollbar-thumb:hover,
+.theme-light .search-results-container::-webkit-scrollbar-thumb:hover,
+.theme-light .modal-body::-webkit-scrollbar-thumb:hover,
+.theme-light .workspace-leaf-content::-webkit-scrollbar-thumb:hover,
+.theme-light .outline-pane .outline-item-container::-webkit-scrollbar-thumb:hover,
+.theme-light .backlink-pane .backlink-card-container::-webkit-scrollbar-thumb:hover,
+.theme-light .tag-pane-content::-webkit-scrollbar-thumb:hover,
+.theme-light .graph-controls::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-light .nav-files-container::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-light .nav-header::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-light .tree-item-children::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-light .cm-scroller::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-light .markdown-preview-view::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-light .setting-group::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-light .suggestion-container::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-light .prompt-list::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-light .search-results-container::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-light .modal-body::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-light .workspace-leaf-content::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-light .outline-pane .outline-item-container::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-light .backlink-pane .backlink-card-container::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-light .tag-pane-content::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-light .graph-controls::-webkit-scrollbar-thumb:hover {
+  background: #736C8650;
+}
+
+.theme-light .nav-files-container::-webkit-scrollbar-thumb:active,
+.theme-light .nav-header::-webkit-scrollbar-thumb:active,
+.theme-light .tree-item-children::-webkit-scrollbar-thumb:active,
+.theme-light .cm-scroller::-webkit-scrollbar-thumb:active,
+.theme-light .markdown-preview-view::-webkit-scrollbar-thumb:active,
+.theme-light .setting-group::-webkit-scrollbar-thumb:active,
+.theme-light .suggestion-container::-webkit-scrollbar-thumb:active,
+.theme-light .prompt-list::-webkit-scrollbar-thumb:active,
+.theme-light .search-results-container::-webkit-scrollbar-thumb:active,
+.theme-light .modal-body::-webkit-scrollbar-thumb:active,
+.theme-light .workspace-leaf-content::-webkit-scrollbar-thumb:active,
+.theme-light .outline-pane .outline-item-container::-webkit-scrollbar-thumb:active,
+.theme-light .backlink-pane .backlink-card-container::-webkit-scrollbar-thumb:active,
+.theme-light .tag-pane-content::-webkit-scrollbar-thumb:active,
+.theme-light .graph-controls::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-light .nav-files-container::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-light .nav-header::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-light .tree-item-children::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-light .cm-scroller::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-light .markdown-preview-view::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-light .setting-group::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-light .suggestion-container::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-light .prompt-list::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-light .search-results-container::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-light .modal-body::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-light .workspace-leaf-content::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-light .outline-pane .outline-item-container::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-light .backlink-pane .backlink-card-container::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-light .tag-pane-content::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-light .graph-controls::-webkit-scrollbar-thumb:active {
+  background: #B0A9C0;
+}
+
+/* ── Solace Light: Selection ────────────────────────────────── */
+
+.theme-light ::selection,
+.theme-dark.solace-light ::selection {
+  background-color: #8A63D230;
+  color: inherit;
+}
+
+/* ── Solace Light: UI Chrome ────────────────────────────────── */
+
+.theme-light .side-dock-ribbon,
+.theme-dark.solace-light .side-dock-ribbon {
+  background-color: var(--titlebar-background);
+}
+
+.theme-light .side-dock-ribbon-modicator,
+.theme-dark.solace-light .side-dock-ribbon-modicator {
+  background-color: var(--titlebar-background);
+}
+
+.theme-light .side-dock-ribbon-btn:hover,
+.theme-dark.solace-light .side-dock-ribbon-btn:hover {
+  background-color: var(--interactive-hover);
+}
+
+/* ── Solace Light: Syntax Highlighting ──────────────────────── */
+
+.theme-light span.cm-comment,
+.theme-dark.solace-light span.cm-comment {
+  color: #8D88A1;
+  font-style: italic;
+}
+
+.theme-light span.cm-keyword,
+.theme-dark.solace-light span.cm-keyword {
+  color: #7A66B6;
+}
+
+.theme-light span.cm-string,
+.theme-dark.solace-light span.cm-string {
+  color: #C155A3;
+}
+
+.theme-light span.cm-string-2,
+.theme-dark.solace-light span.cm-string-2 {
+  color: #C155A3;
+}
+
+.theme-light span.cm-number,
+.theme-dark.solace-light span.cm-number {
+  color: #C07A2C;
+}
+
+.theme-light span.cm-bool,
+.theme-dark.solace-light span.cm-bool {
+  color: #D35B93;
+}
+
+.theme-light span.cm-null,
+.theme-dark.solace-light span.cm-null {
+  color: #D35B93;
+}
+
+.theme-light span.cm-variable,
+.theme-dark.solace-light span.cm-variable {
+  color: #2C2638;
+}
+
+.theme-light span.cm-variable-2,
+.theme-dark.solace-light span.cm-variable-2 {
+  color: #736C86;
+}
+
+.theme-light span.cm-variable-3,
+.theme-dark.solace-light span.cm-variable-3 {
+  color: #7D66D6;
+}
+
+.theme-light span.cm-property,
+.theme-dark.solace-light span.cm-property {
+  color: #5F5774;
+}
+
+.theme-light span.cm-def,
+.theme-dark.solace-light span.cm-def {
+  color: #714BC4;
+}
+
+.theme-light span.cm-operator,
+.theme-dark.solace-light span.cm-operator {
+  color: #736C86;
+}
+
+.theme-light span.cm-punctuation,
+.theme-dark.solace-light span.cm-punctuation {
+  color: #736C86;
+}
+
+.theme-light span.cm-bracket,
+.theme-dark.solace-light span.cm-bracket {
+  color: #8A839A;
+}
+
+.theme-light span.cm-tag,
+.theme-dark.solace-light span.cm-tag {
+  color: #3F9A85;
+}
+
+.theme-light span.cm-attribute,
+.theme-dark.solace-light span.cm-attribute {
+  color: #736C86;
+}
+
+.theme-light span.cm-link,
+.theme-dark.solace-light span.cm-link {
+  color: #7E5ACB;
+  font-style: italic;
+}
+
+.theme-light span.cm-url,
+.theme-dark.solace-light span.cm-url {
+  color: #7E5ACB;
+}
+
+.theme-light span.cm-header,
+.theme-dark.solace-light span.cm-header {
+  color: #7E5ACB;
+  font-weight: 700;
+}
+
+.theme-light span.cm-em,
+.theme-dark.solace-light span.cm-em {
+  color: #2C2638;
+  font-style: italic;
+}
+
+.theme-light span.cm-strong,
+.theme-dark.solace-light span.cm-strong {
+  color: #2C2638;
+  font-weight: 700;
+}
+
+.theme-light span.cm-formatting,
+.theme-dark.solace-light span.cm-formatting {
+  color: #9A94AA;
+}
+
+.theme-light span.cm-meta,
+.theme-dark.solace-light span.cm-meta {
+  color: #7E5ACB;
+}
+
+.theme-light span.cm-atom,
+.theme-dark.solace-light span.cm-atom {
+  color: #D35B93;
+}
+
+.theme-light span.cm-builtin,
+.theme-dark.solace-light span.cm-builtin {
+  color: #9267D7;
+}
+
+.theme-light span.cm-qualifier,
+.theme-dark.solace-light span.cm-qualifier {
+  color: #736C86;
+}
+
+.theme-light span.cm-callee,
+.theme-dark.solace-light span.cm-callee {
+  color: #7E5ACB;
+}
+
+.theme-light span.cm-hash,
+.theme-dark.solace-light span.cm-hash {
+  color: #7E5ACB;
+}
+
+.theme-light span.cm-dfn,
+.theme-dark.solace-light span.cm-dfn {
+  color: #714BC4;
+}
+
+/* ── Solace Light: Markdown preview ─────────────────────────── */
+
+.theme-light .markdown-preview-view h1,
+.theme-light .markdown-preview-view h2,
+.theme-light .markdown-preview-view h3,
+.theme-light .markdown-preview-view h4,
+.theme-light .markdown-preview-view h5,
+.theme-light .markdown-preview-view h6,
+.theme-dark.solace-light .markdown-preview-view h1,
+.theme-dark.solace-light .markdown-preview-view h2,
+.theme-dark.solace-light .markdown-preview-view h3,
+.theme-dark.solace-light .markdown-preview-view h4,
+.theme-dark.solace-light .markdown-preview-view h5,
+.theme-dark.solace-light .markdown-preview-view h6 {
+  color: #7E5ACB;
+}
+
+.theme-light .markdown-preview-view a,
+.theme-dark.solace-light .markdown-preview-view a {
+  color: var(--text-accent);
+}
+
+.theme-light .markdown-preview-view code,
+.theme-dark.solace-light .markdown-preview-view code {
+  background-color: #E5DDF3;
+  color: #8A63D2;
+}
+
+.theme-light .markdown-preview-view pre,
+.theme-dark.solace-light .markdown-preview-view pre {
+  background-color: #ECE7F6;
+  border-color: #D8D0E6;
+}
+
+.theme-light .markdown-preview-view pre code,
+.theme-dark.solace-light .markdown-preview-view pre code {
+  color: #2C2638;
+  background-color: transparent;
+}
+
+.theme-light .markdown-preview-view blockquote,
+.theme-dark.solace-light .markdown-preview-view blockquote {
+  border-left-color: #8A63D2;
+  color: #736C86;
+}
+
+.theme-light .markdown-preview-view hr,
+.theme-dark.solace-light .markdown-preview-view hr {
+  border-color: #D8D0E6;
+}
+
+.theme-light .markdown-preview-view table,
+.theme-dark.solace-light .markdown-preview-view table {
+  border-color: #D8D0E6;
+}
+
+.theme-light .markdown-preview-view th,
+.theme-dark.solace-light .markdown-preview-view th {
+  background-color: #ECE7F6;
+  border-color: #D8D0E6;
+  color: #8A63D2;
+}
+
+.theme-light .markdown-preview-view td,
+.theme-dark.solace-light .markdown-preview-view td {
+  border-color: #D8D0E6;
+}
+
+.theme-light .markdown-preview-view tr:nth-child(even),
+.theme-dark.solace-light .markdown-preview-view tr:nth-child(even) {
+  background-color: rgba(236, 231, 246, 0.3);
+}
+
+.theme-light .markdown-preview-view ul li::before,
+.theme-dark.solace-light .markdown-preview-view ul li::before {
+  color: #8A63D2;
+}
+
+.theme-light .markdown-preview-view ol li::before,
+.theme-dark.solace-light .markdown-preview-view ol li::before {
+  color: #8A63D2;
+}
+
+.theme-light .markdown-preview-view .task-list-item-checkbox,
+.theme-dark.solace-light .markdown-preview-view .task-list-item-checkbox {
+  border-color: #9A94AA;
+}
+
+.theme-light .markdown-preview-view .task-list-item-checkbox:checked,
+.theme-dark.solace-light .markdown-preview-view .task-list-item-checkbox:checked {
+  background-color: var(--interactive-accent);
+  border-color: var(--interactive-accent);
+}
+
+.theme-light .markdown-preview-view .tag,
+.theme-dark.solace-light .markdown-preview-view .tag {
+  background-color: var(--tag-background);
+  color: var(--tag-color);
+}
+
+.theme-light .markdown-preview-view .internal-link,
+.theme-dark.solace-light .markdown-preview-view .internal-link {
+  color: var(--text-accent);
+}
+
+.theme-light .markdown-preview-view strong,
+.theme-dark.solace-light .markdown-preview-view strong {
+  color: #2C2638;
+}
+
+.theme-light .markdown-preview-view em,
+.theme-dark.solace-light .markdown-preview-view em {
+  color: #2C2638;
+  font-style: italic;
+}
+
+.theme-light .markdown-preview-view mark,
+.theme-dark.solace-light .markdown-preview-view mark {
+  background-color: rgba(138, 99, 210, 0.19);
+  color: inherit;
+}
+
+/* ── Solace Light: Callouts ─────────────────────────────────── */
+
+.theme-light .callout[data-type="note"],
+.theme-light .callout[data-type="info"],
+.theme-dark.solace-light .callout[data-type="note"],
+.theme-dark.solace-light .callout[data-type="info"] {
+  --callout-color: 138 99 210;
+  --callout-bg: rgba(138, 99, 210, 0.09);
+}
+
+.theme-light .callout[data-type="tip"],
+.theme-light .callout[data-type="success"],
+.theme-light .callout[data-type="check"],
+.theme-dark.solace-light .callout[data-type="tip"],
+.theme-dark.solace-light .callout[data-type="success"],
+.theme-dark.solace-light .callout[data-type="check"] {
+  --callout-color: 63 154 133;
+  --callout-bg: rgba(63, 154, 133, 0.09);
+}
+
+.theme-light .callout[data-type="warning"],
+.theme-light .callout[data-type="caution"],
+.theme-dark.solace-light .callout[data-type="warning"],
+.theme-dark.solace-light .callout[data-type="caution"] {
+  --callout-color: 192 122 44;
+  --callout-bg: rgba(192, 122, 44, 0.09);
+}
+
+.theme-light .callout[data-type="danger"],
+.theme-light .callout[data-type="error"],
+.theme-dark.solace-light .callout[data-type="danger"],
+.theme-dark.solace-light .callout[data-type="error"] {
+  --callout-color: 211 91 147;
+  --callout-bg: rgba(211, 91, 147, 0.09);
+}
+
+.theme-light .callout[data-type="quote"],
+.theme-light .callout[data-type="abstract"],
+.theme-dark.solace-light .callout[data-type="quote"],
+.theme-dark.solace-light .callout[data-type="abstract"] {
+  --callout-color: 115 108 134;
+  --callout-bg: rgba(115, 108, 134, 0.09);
+}
+
+.theme-light .callout[data-type="example"],
+.theme-dark.solace-light .callout[data-type="example"] {
+  --callout-color: 211 91 147;
+  --callout-bg: rgba(211, 91, 147, 0.09);
+}
+
+.theme-light .callout[data-type="bug"],
+.theme-dark.solace-light .callout[data-type="bug"] {
+  --callout-color: 211 91 147;
+  --callout-bg: rgba(211, 91, 147, 0.09);
+}
+
+.theme-light .callout[data-type="question"],
+.theme-light .callout[data-type="help"],
+.theme-dark.solace-light .callout[data-type="question"],
+.theme-dark.solace-light .callout[data-type="help"] {
+  --callout-color: 138 99 210;
+  --callout-bg: rgba(138, 99, 210, 0.09);
+}
+
+/* ── Solace Light: Frontmatter ──────────────────────────────── */
+
+.theme-light .frontmatter,
+.theme-dark.solace-light .frontmatter {
+  color: #736C86;
+}
+
+.theme-light .frontmatter .cm-keyword,
+.theme-dark.solace-light .frontmatter .cm-keyword {
+  color: #7A66B6;
+}
+
+.theme-light .frontmatter .cm-string,
+.theme-dark.solace-light .frontmatter .cm-string {
+  color: #C155A3;
+}
+
+.theme-light .frontmatter .cm-number,
+.theme-dark.solace-light .frontmatter .cm-number {
+  color: #C07A2C;
+}
+
+/* ── Solace Light: Canvas ───────────────────────────────────── */
+
+.theme-light .canvas-node,
+.theme-dark.solace-light .canvas-node {
+  background-color: #F0ECF8;
+  border-color: #D8D0E6;
+}
+
+.theme-light .canvas-node-label,
+.theme-dark.solace-light .canvas-node-label {
+  color: #2C2638;
+}
+
+/* ── Solace Light: Editor ───────────────────────────────────── */
+
+.theme-light .cm-s-obsidian .cm-content,
+.theme-dark.solace-light .cm-s-obsidian .cm-content {
+  color: var(--text-normal);
+}
+
+.theme-light .cm-s-obsidian .cm-line,
+.theme-dark.solace-light .cm-s-obsidian .cm-line {
+  color: var(--text-normal);
+}
+
+.theme-light .cm-s-obsidian .cm-heading,
+.theme-dark.solace-light .cm-s-obsidian .cm-heading {
+  color: #8A63D2;
+}
+
+.theme-light .cm-s-obsidian .cm-strong,
+.theme-dark.solace-light .cm-s-obsidian .cm-strong {
+  font-weight: 700;
+  color: #2C2638;
+}
+
+.theme-light .cm-s-obsidian .cm-em,
+.theme-dark.solace-light .cm-s-obsidian .cm-em {
+  font-style: italic;
+  color: #2C2638;
+}
+
+.theme-light .cm-s-obsidian .cm-link,
+.theme-dark.solace-light .cm-s-obsidian .cm-link {
+  color: #7E5ACB;
+}
+
+.theme-light .cm-s-obsidian .cm-url,
+.theme-dark.solace-light .cm-s-obsidian .cm-url {
+  color: #7E5ACB;
+}
+
+.theme-light .cm-s-obsidian .cm-code,
+.theme-dark.solace-light .cm-s-obsidian .cm-code {
+  background-color: #E5DDF3;
+  color: #8A63D2;
+}
+
+.theme-light .cm-s-obsidian .cm-strikethrough,
+.theme-dark.solace-light .cm-s-obsidian .cm-strikethrough {
+  text-decoration: line-through;
+  color: #9A94AA;
+}
+
+/* ── Solace Light: CM panels ────────────────────────────────── */
+
+.theme-light .cm-panels,
+.theme-dark.solace-light .cm-panels {
+  background-color: var(--background-secondary);
+  border-color: var(--background-modifier-border);
+}
+
+.theme-light .cm-panel,
+.theme-dark.solace-light .cm-panel {
+  background-color: var(--background-secondary);
+}
+
+.theme-light .cm-searchMatch,
+.theme-dark.solace-light .cm-searchMatch {
+  background-color: var(--search-match-color);
+}
+
+.theme-light .cm-selectionBackground,
+.theme-dark.solace-light .cm-selectionBackground {
+  background-color: rgba(138, 99, 210, 0.19);
+}
+
+.theme-light .cm-activeLine,
+.theme-dark.solace-light .cm-activeLine {
+  background-color: #E7E0F1;
+}
+
+.theme-light .cm-gutters,
+.theme-dark.solace-light .cm-gutters {
+  background-color: var(--background-primary);
+  color: #9A94AA;
+  border-color: var(--background-modifier-border);
+}
+
+.theme-light .cm-activeLineGutter,
+.theme-dark.solace-light .cm-activeLineGutter {
+  color: var(--interactive-accent);
+  background-color: #E8E0F2;
+}
+
+.theme-light .cm-lineNumbers .cm-gutterElement,
+.theme-dark.solace-light .cm-lineNumbers .cm-gutterElement {
+  color: #A19AB3;
+  padding: 0 8px;
+}
+
+.theme-light .cm-cursor,
+.theme-dark.solace-light .cm-cursor {
+  border-left-color: #8A63D2;
+}
+
+.theme-light .cm-matchingBracket,
+.theme-dark.solace-light .cm-matchingBracket {
+  background-color: rgba(138, 99, 210, 0.13);
+  color: #8A63D2 !important;
+}
+
+.theme-light .cm-foldPlaceholder,
+.theme-dark.solace-light .cm-foldPlaceholder {
+  background-color: #D8D0E6;
+  color: #9A94AA;
+  border-color: #D8D0E6;
+}
+
+.theme-light .cm-foldPlaceholder:hover,
+.theme-dark.solace-light .cm-foldPlaceholder:hover {
+  background-color: #CFC8DE;
+  color: #736C86;
+}
+
+/* ── Solace Light: Tab ──────────────────────────────────────── */
+
+.theme-light .tab,
+.theme-dark.solace-light .tab {
+  background-color: var(--sidebar-tabs-background);
+  border-color: var(--background-modifier-border);
+}
+
+.theme-light .tab.active,
+.theme-dark.solace-light .tab.active {
+  background-color: var(--tab-active-background);
+  border-bottom-color: var(--tab-active-border);
+}
+
+/* ── Solace Light: Sidebar ──────────────────────────────────── */
+
+.theme-light .workspace-leaf-content[data-type="explorer"] .nav-header,
+.theme-light .workspace-leaf-content[data-type="file-explorer"] .nav-header,
+.theme-dark.solace-light .workspace-leaf-content[data-type="explorer"] .nav-header,
+.theme-dark.solace-light .workspace-leaf-content[data-type="file-explorer"] .nav-header {
+  background-color: var(--background-primary);
+}
+
+.theme-light .nav-header,
+.theme-dark.solace-light .nav-header {
+  border-color: var(--background-modifier-border);
+}
+
+.theme-light .nav-buttons-container,
+.theme-dark.solace-light .nav-buttons-container {
+  border-color: var(--background-modifier-border);
+}
+
+/* ── Solace Light: Menu ─────────────────────────────────────── */
+
+.theme-light .menu,
+.theme-dark.solace-light .menu {
+  background-color: var(--popover-background);
+  border-color: var(--popover-border-color);
+}
+
+.theme-light .menu-item:hover,
+.theme-dark.solace-light .menu-item:hover {
+  background-color: var(--interactive-hover);
+}
+
+/* ── Solace Light: Modal ────────────────────────────────────── */
+
+.theme-light .modal,
+.theme-dark.solace-light .modal {
+  background-color: var(--modal-background);
+  border-color: var(--modal-border-color);
+}
+
+.theme-light .modal .modal-close-button:hover,
+.theme-dark.solace-light .modal .modal-close-button:hover {
+  color: var(--text-error);
+}
+
+/* ── Solace Light: Prompt ───────────────────────────────────── */
+
+.theme-light .prompt,
+.theme-dark.solace-light .prompt {
+  background-color: var(--prompt-background);
+  border-color: var(--prompt-border-color);
+}
+
+/* ── Solace Light: Input ────────────────────────────────────── */
+
+.theme-light .input,
+.theme-dark.solace-light .input {
+  background-color: var(--background-modifier-form-field);
+  border-color: var(--background-modifier-border);
+}
+
+.theme-light .input:focus,
+.theme-dark.solace-light .input:focus {
+  border-color: var(--interactive-accent);
+}
+
+/* ── Solace Light: Settings ─────────────────────────────────── */
+
+.theme-light .setting-item:hover,
+.theme-dark.solace-light .setting-item:hover {
+  background-color: var(--interactive-hover);
+}
+
+.theme-light .setting-item-info,
+.theme-dark.solace-light .setting-item-info {
+  color: var(--text-normal);
+}
+
+.theme-light .setting-item-description,
+.theme-dark.solace-light .setting-item-description {
+  color: var(--text-muted);
+}
+
+.theme-light .setting-item-name,
+.theme-dark.solace-light .setting-item-name {
+  color: var(--text-normal);
+}
+
+.theme-light .setting-group-title,
+.theme-dark.solace-light .setting-group-title {
+  color: var(--text-accent);
+  border-bottom-color: var(--background-modifier-border);
+}
+
+/* ── Solace Light: Buttons ──────────────────────────────────── */
+
+.theme-light .btn,
+.theme-dark.solace-light .btn {
+  background-color: var(--interactive-normal);
+  border-color: var(--background-modifier-border);
+  color: var(--text-normal);
+}
+
+.theme-light .btn:hover,
+.theme-dark.solace-light .btn:hover {
+  background-color: var(--interactive-hover);
+  border-color: var(--interactive-accent);
+}
+
+.theme-light .btn-primary,
+.theme-dark.solace-light .btn-primary {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-color: var(--interactive-accent);
+}
+
+.theme-light .btn-primary:hover,
+.theme-dark.solace-light .btn-primary:hover {
+  background-color: var(--interactive-accent-hover);
+}
+
+/* ── Solace Light: Internal link ────────────────────────────── */
+
+.theme-light .internal-link,
+.theme-dark.solace-light .internal-link {
+  color: var(--text-accent);
+}
+
+.theme-light .internal-link:hover,
+.theme-dark.solace-light .internal-link:hover {
+  color: var(--text-accent-hover);
+}
+
+.theme-light .external-link,
+.theme-dark.solace-light .external-link {
+  color: var(--text-accent);
+}
+
+/* ── Solace Light: Tag ──────────────────────────────────────── */
+
+.theme-light .tag,
+.theme-dark.solace-light .tag {
+  background-color: var(--tag-background);
+  color: var(--tag-color);
+  border-color: var(--tag-border-color);
+}
+
+/* ── Solace Light: Tree items ───────────────────────────────── */
+
+.theme-light .tree-item-self:hover,
+.theme-dark.solace-light .tree-item-self:hover {
+  background-color: var(--interactive-hover);
+}
+
+.theme-light .tree-item-self.is-selected,
+.theme-dark.solace-light .tree-item-self.is-selected {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+.theme-light .tree-item-self.is-selected .tree-item-inner,
+.theme-dark.solace-light .tree-item-self.is-selected .tree-item-inner {
+  color: var(--text-on-accent);
+}
+
+.theme-light .nav-folder-title,
+.theme-dark.solace-light .nav-folder-title {
+  color: var(--text-normal);
+}
+
+.theme-light .nav-file-title,
+.theme-dark.solace-light .nav-file-title {
+  color: var(--text-normal);
+}
+
+/* ── Solace Light: Suggestion ───────────────────────────────── */
+
+.theme-light .suggestion-container .suggestion,
+.theme-dark.solace-light .suggestion-container .suggestion {
+  background-color: var(--background-primary);
+}
+
+.theme-light .suggestion-container .suggestion.is-selected,
+.theme-dark.solace-light .suggestion-container .suggestion.is-selected {
+  background-color: var(--interactive-hover);
+}
+
+/* ── Solace Light: Prompt list ──────────────────────────────── */
+
+.theme-light .prompt-list,
+.theme-dark.solace-light .prompt-list {
+  background-color: var(--prompt-background);
+  border-color: var(--prompt-border-color);
+}
+
+.theme-light .suggestion-item,
+.theme-dark.solace-light .suggestion-item {
+  background-color: var(--prompt-background);
+}
+
+.theme-light .suggestion-item.is-selected,
+.theme-dark.solace-light .suggestion-item.is-selected {
+  background-color: var(--interactive-hover);
+}
+
+.theme-light .suggestion-item-title,
+.theme-dark.solace-light .suggestion-item-title {
+  color: var(--text-normal);
+}
+
+.theme-light .suggestion-item-description,
+.theme-dark.solace-light .suggestion-item-description {
+  color: var(--text-muted);
+}
+
+/* ── Solace Light: Breadcrumbs ──────────────────────────────── */
+
+.theme-light .breadcrumb-container,
+.theme-dark.solace-light .breadcrumb-container {
+  background-color: var(--background-primary);
+}
+
+.theme-light .breadcrumb-item,
+.theme-dark.solace-light .breadcrumb-item {
+  color: var(--text-muted);
+}
+
+.theme-light .breadcrumb-item.active,
+.theme-dark.solace-light .breadcrumb-item.active {
+  color: var(--text-normal);
+}
+
+.theme-light .breadcrumb-item:hover,
+.theme-dark.solace-light .breadcrumb-item:hover {
+  color: var(--text-accent);
+}
+
+/* ── Solace Light: Search ───────────────────────────────────── */
+
+.theme-light .search-dialog-container,
+.theme-dark.solace-light .search-dialog-container {
+  background-color: var(--modal-background);
+  border-color: var(--modal-border-color);
+}
+
+.theme-light .search-input,
+.theme-dark.solace-light .search-input {
+  background-color: var(--background-modifier-form-field);
+  border-color: var(--background-modifier-border);
+}
+
+.theme-light .search-input:focus,
+.theme-dark.solace-light .search-input:focus {
+  border-color: var(--interactive-accent);
+}
+
+/* ── Solace Light: Hotkeys ──────────────────────────────────── */
+
+.theme-light .setting-hotkey,
+.theme-dark.solace-light .setting-hotkey {
+  background-color: var(--interactive-normal);
+  color: var(--text-normal);
+}
+
+.theme-light .setting-hotkey:hover,
+.theme-dark.solace-light .setting-hotkey:hover {
+  background-color: var(--interactive-hover);
+}
+
+/* ── Solace Light: Tag pane ─────────────────────────────────── */
+
+.theme-light .tag-pane .tag,
+.theme-dark.solace-light .tag-pane .tag {
+  background-color: var(--tag-background);
+  color: var(--tag-color);
+}
+
+/* ── Solace Light: Plugin browser markdown ──────────────────── */
+
+.theme-light .plugin-browser-container .markdown-preview-view,
+.theme-dark.solace-light .plugin-browser-container .markdown-preview-view {
+  background-color: var(--background-primary);
+}
+
+.theme-light .plugin-browser-container .markdown-preview-view h1,
+.theme-light .plugin-browser-container .markdown-preview-view h2,
+.theme-light .plugin-browser-container .markdown-preview-view h3,
+.theme-dark.solace-light .plugin-browser-container .markdown-preview-view h1,
+.theme-dark.solace-light .plugin-browser-container .markdown-preview-view h2,
+.theme-dark.solace-light .plugin-browser-container .markdown-preview-view h3 {
+  color: var(--text-normal);
+}
+
+.theme-light .plugin-browser-container .markdown-preview-view a,
+.theme-dark.solace-light .plugin-browser-container .markdown-preview-view a {
+  color: var(--text-accent);
+}
+
+.theme-light .plugin-browser-container .markdown-preview-view code,
+.theme-dark.solace-light .plugin-browser-container .markdown-preview-view code {
+  color: var(--text-accent);
+  background-color: var(--background-secondary);
+}
+
+.theme-light .plugin-browser-container .markdown-preview-view pre,
+.theme-dark.solace-light .plugin-browser-container .markdown-preview-view pre {
+  background-color: var(--background-secondary);
+  border-color: var(--background-modifier-border);
+}
+
+.theme-light .plugin-browser-container .markdown-preview-view blockquote,
+.theme-dark.solace-light .plugin-browser-container .markdown-preview-view blockquote {
+  border-left-color: var(--interactive-accent);
+  color: var(--text-muted);
+}
+
+.theme-light .plugin-browser-container .markdown-preview-view strong,
+.theme-dark.solace-light .plugin-browser-container .markdown-preview-view strong {
+  color: var(--text-normal);
+}
+
+.theme-light .plugin-browser-container .markdown-preview-view em,
+.theme-dark.solace-light .plugin-browser-container .markdown-preview-view em {
+  color: var(--text-muted);
+}
+
+.theme-light .plugin-browser-container .markdown-preview-view ul li::before,
+.theme-dark.solace-light .plugin-browser-container .markdown-preview-view ul li::before {
+  color: var(--text-accent);
+}
+
+.theme-light .plugin-browser-container .markdown-preview-view ol li::before,
+.theme-dark.solace-light .plugin-browser-container .markdown-preview-view ol li::before {
+  color: var(--text-accent);
+}
+
+.theme-light .plugin-browser-container .markdown-preview-view hr,
+.theme-dark.solace-light .plugin-browser-container .markdown-preview-view hr {
+  border-color: var(--background-modifier-border);
+}
+
+.theme-light .plugin-browser-container .markdown-preview-view table,
+.theme-dark.solace-light .plugin-browser-container .markdown-preview-view table {
+  border-color: var(--background-modifier-border);
+}
+
+.theme-light .plugin-browser-container .markdown-preview-view th,
+.theme-dark.solace-light .plugin-browser-container .markdown-preview-view th {
+  background-color: var(--background-secondary);
+  border-color: var(--background-modifier-border);
+}
+
+.theme-light .plugin-browser-container .markdown-preview-view td,
+.theme-dark.solace-light .plugin-browser-container .markdown-preview-view td {
+  border-color: var(--background-modifier-border);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   SOLACE DUSK
+   ────────────────────────────────────────────────────────────── */
+
+.theme-dark.solace-dusk {
+  --background-primary: #191725;
+  --background-primary-alt: #1E1B2B;
+  --background-secondary: #1E1B2B;
+  --background-secondary-alt: #211E30;
+  --background-modifier-border: #282538;
+  --background-modifier-form-field: #211E30;
+  --background-modifier-form-field-hover: #282538;
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
+  --background-modifier-success: rgba(138, 216, 194, 0.09);
+  --background-modifier-error: rgba(232, 136, 184, 0.08);
+  --background-modifier-error-hover: rgba(232, 136, 184, 0.15);
+
+  --text-normal: #D4CFE4;
+  --text-muted: #8A84A0;
+  --text-faint: #504A68;
+  --text-accent: #B89EF0;
+  --text-accent-hover: #C8A8F2;
+  --text-error: #E888B8;
+  --text-success: #8AD8C2;
+  --text-warning: #B89EF0;
+  --text-on-accent: #191725;
+  --text-on-accent-hover: #11101A;
+  --text-on-accent-inverted: #D4CFE4;
+
+  --interactive-normal: #282538;
+  --interactive-hover: #302D42;
+  --interactive-accent: #B89EF0;
+  --interactive-accent-hover: #C8A8F2;
+  --interactive-success: #8AD8C2;
+  --interactive-muted: #232031;
+
+  --shadow-s: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-l: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+  --scrollbar-thumb: rgba(138, 132, 160, 0.08);
+  --scrollbar-thumb-active: #504A68;
+  --scrollbar-thumb-hover: #3A3448;
+  --scrollbar-track: transparent;
+
+  --tab-active-background: #141220;
+  --tab-active-border: #B89EF0;
+  --tab-active-border-color: #B89EF0;
+  --tab-text-color-override: #605A78;
+  --tab-active-text-color: #D4CFE4;
+
+  --sidebar-background: #191725;
+  --sidebar-border-color: #232031;
+  --sidebar-tabs-background: #11101A;
+
+  --titlebar-background: #11101A;
+
+  --statusbar-background: #11101A;
+
+  --search-background: rgba(184, 158, 240, 0.19);
+  --search-match-color: #B89EF0;
+
+  --callout-default-color: #B89EF0;
+  --callout-default-bg: rgba(184, 158, 240, 0.09);
+  --callout-info-color: #8B74D0;
+  --callout-info-bg: rgba(139, 116, 208, 0.09);
+  --callout-tip-color: #8AD8C2;
+  --callout-tip-bg: rgba(138, 216, 194, 0.09);
+  --callout-warning-color: #B89EF0;
+  --callout-warning-bg: rgba(184, 158, 240, 0.09);
+  --callout-danger-color: #E888B8;
+  --callout-danger-bg: rgba(232, 136, 184, 0.09);
+
+  --tag-background: rgba(184, 158, 240, 0.09);
+  --tag-color: #B89EF0;
+  --tag-border-color: rgba(184, 158, 240, 0.19);
+
+  --inline-title-color: #B89EF0;
+
+  --modal-background: #1E1B2B;
+  --modal-border-color: #282538;
+
+  --prompt-background: #1E1B2B;
+  --prompt-border-color: #282538;
+
+  --popover-background: #1E1B2B;
+  --popover-border-color: #282538;
+
+  --tooltip-background: #282538;
+  --tooltip-border-color: #302D42;
+
+  --checkbox-color: #B89EF0;
+  --checkbox-color-hover: #C8A8F2;
+
+  --color-base-00: #191725;
+  --color-base-10: #1E1B2B;
+  --color-base-20: #232031;
+  --color-base-30: #282538;
+  --color-base-40: #302D42;
+  --color-base-50: #3A3448;
+  --color-base-60: #504A68;
+  --color-base-70: #78719A;
+  --color-base-100: #8A84A0;
+  --color-base-120: #B8B3D0;
+  --color-base-150: #D4CFE4;
+
+  --color-accent: #B89EF0;
+  --color-accent-1: #8B74D0;
+  --color-accent-2: #8AD8C2;
+  --color-accent-3: #E888B8;
+  --color-accent-4: #DDB88C;
+  --color-accent-5: #E8A0C0;
+  --color-accent-6: #B098E0;
+
+  --color-red: #E888B8;
+  --color-orange: #DDB88C;
+  --color-yellow: #DDB88C;
+  --color-green: #8AD8C2;
+  --color-cyan: #B098E0;
+  --color-blue: #8B74D0;
+  --color-purple: #B89EF0;
+  --color-pink: #E888B8;
+
+  --graph-line-color: #282538;
+}
+
+/* ── Solace Dusk: Scrollbar ─────────────────────────────────── */
+
+.theme-dark.solace-dusk .nav-files-container,
+.theme-dark.solace-dusk .nav-header,
+.theme-dark.solace-dusk .tree-item-children,
+.theme-dark.solace-dusk .cm-scroller,
+.theme-dark.solace-dusk .markdown-preview-view,
+.theme-dark.solace-dusk .setting-group,
+.theme-dark.solace-dusk .suggestion-container,
+.theme-dark.solace-dusk .prompt-list,
+.theme-dark.solace-dusk .search-results-container,
+.theme-dark.solace-dusk .modal-body,
+.theme-dark.solace-dusk .workspace-leaf-content,
+.theme-dark.solace-dusk .outline-pane .outline-item-container,
+.theme-dark.solace-dusk .backlink-pane .backlink-card-container,
+.theme-dark.solace-dusk .tag-pane-content,
+.theme-dark.solace-dusk .graph-controls {
+  scrollbar-width: thin;
+  scrollbar-color: #8A84A030 transparent;
+}
+
+.theme-dark.solace-dusk .nav-files-container::-webkit-scrollbar,
+.theme-dark.solace-dusk .nav-header::-webkit-scrollbar,
+.theme-dark.solace-dusk .tree-item-children::-webkit-scrollbar,
+.theme-dark.solace-dusk .cm-scroller::-webkit-scrollbar,
+.theme-dark.solace-dusk .markdown-preview-view::-webkit-scrollbar,
+.theme-dark.solace-dusk .setting-group::-webkit-scrollbar,
+.theme-dark.solace-dusk .suggestion-container::-webkit-scrollbar,
+.theme-dark.solace-dusk .prompt-list::-webkit-scrollbar,
+.theme-dark.solace-dusk .search-results-container::-webkit-scrollbar,
+.theme-dark.solace-dusk .modal-body::-webkit-scrollbar,
+.theme-dark.solace-dusk .workspace-leaf-content::-webkit-scrollbar,
+.theme-dark.solace-dusk .outline-pane .outline-item-container::-webkit-scrollbar,
+.theme-dark.solace-dusk .backlink-pane .backlink-card-container::-webkit-scrollbar,
+.theme-dark.solace-dusk .tag-pane-content::-webkit-scrollbar,
+.theme-dark.solace-dusk .graph-controls::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.theme-dark.solace-dusk .nav-files-container::-webkit-scrollbar-track,
+.theme-dark.solace-dusk .nav-header::-webkit-scrollbar-track,
+.theme-dark.solace-dusk .tree-item-children::-webkit-scrollbar-track,
+.theme-dark.solace-dusk .cm-scroller::-webkit-scrollbar-track,
+.theme-dark.solace-dusk .markdown-preview-view::-webkit-scrollbar-track,
+.theme-dark.solace-dusk .setting-group::-webkit-scrollbar-track,
+.theme-dark.solace-dusk .suggestion-container::-webkit-scrollbar-track,
+.theme-dark.solace-dusk .prompt-list::-webkit-scrollbar-track,
+.theme-dark.solace-dusk .search-results-container::-webkit-scrollbar-track,
+.theme-dark.solace-dusk .modal-body::-webkit-scrollbar-track,
+.theme-dark.solace-dusk .workspace-leaf-content::-webkit-scrollbar-track,
+.theme-dark.solace-dusk .outline-pane .outline-item-container::-webkit-scrollbar-track,
+.theme-dark.solace-dusk .backlink-pane .backlink-card-container::-webkit-scrollbar-track,
+.theme-dark.solace-dusk .tag-pane-content::-webkit-scrollbar-track,
+.theme-dark.solace-dusk .graph-controls::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.theme-dark.solace-dusk .nav-files-container::-webkit-scrollbar-thumb,
+.theme-dark.solace-dusk .nav-header::-webkit-scrollbar-thumb,
+.theme-dark.solace-dusk .tree-item-children::-webkit-scrollbar-thumb,
+.theme-dark.solace-dusk .cm-scroller::-webkit-scrollbar-thumb,
+.theme-dark.solace-dusk .markdown-preview-view::-webkit-scrollbar-thumb,
+.theme-dark.solace-dusk .setting-group::-webkit-scrollbar-thumb,
+.theme-dark.solace-dusk .suggestion-container::-webkit-scrollbar-thumb,
+.theme-dark.solace-dusk .prompt-list::-webkit-scrollbar-thumb,
+.theme-dark.solace-dusk .search-results-container::-webkit-scrollbar-thumb,
+.theme-dark.solace-dusk .modal-body::-webkit-scrollbar-thumb,
+.theme-dark.solace-dusk .workspace-leaf-content::-webkit-scrollbar-thumb,
+.theme-dark.solace-dusk .outline-pane .outline-item-container::-webkit-scrollbar-thumb,
+.theme-dark.solace-dusk .backlink-pane .backlink-card-container::-webkit-scrollbar-thumb,
+.theme-dark.solace-dusk .tag-pane-content::-webkit-scrollbar-thumb,
+.theme-dark.solace-dusk .graph-controls::-webkit-scrollbar-thumb {
+  background: #8A84A030;
+  border-radius: 4px;
+}
+
+.theme-dark.solace-dusk .nav-files-container::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-dusk .nav-header::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-dusk .tree-item-children::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-dusk .cm-scroller::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-dusk .markdown-preview-view::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-dusk .setting-group::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-dusk .suggestion-container::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-dusk .prompt-list::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-dusk .search-results-container::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-dusk .modal-body::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-dusk .workspace-leaf-content::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-dusk .outline-pane .outline-item-container::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-dusk .backlink-pane .backlink-card-container::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-dusk .tag-pane-content::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-dusk .graph-controls::-webkit-scrollbar-thumb:hover {
+  background: #8A84A050;
+}
+
+.theme-dark.solace-dusk .nav-files-container::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-dusk .nav-header::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-dusk .tree-item-children::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-dusk .cm-scroller::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-dusk .markdown-preview-view::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-dusk .setting-group::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-dusk .suggestion-container::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-dusk .prompt-list::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-dusk .search-results-container::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-dusk .modal-body::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-dusk .workspace-leaf-content::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-dusk .outline-pane .outline-item-container::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-dusk .backlink-pane .backlink-card-container::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-dusk .tag-pane-content::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-dusk .graph-controls::-webkit-scrollbar-thumb:active {
+  background: #504A68;
+}
+
+/* ── Solace Dusk: Selection ─────────────────────────────────── */
+
+.theme-dark.solace-dusk ::selection {
+  background-color: #B89EF040;
+  color: inherit;
+}
+
+/* ── Solace Dusk: Syntax Highlighting ───────────────────────── */
+
+.theme-dark.solace-dusk span.cm-comment {
+  color: #78719A;
+  font-style: italic;
+}
+
+.theme-dark.solace-dusk span.cm-keyword {
+  color: #ADA6E0;
+}
+
+.theme-dark.solace-dusk span.cm-string {
+  color: #DBA8E0;
+}
+
+.theme-dark.solace-dusk span.cm-string-2 {
+  color: #DBA8E0;
+}
+
+.theme-dark.solace-dusk span.cm-number {
+  color: #DDB88C;
+}
+
+.theme-dark.solace-dusk span.cm-bool {
+  color: #E8A0C0;
+}
+
+.theme-dark.solace-dusk span.cm-null {
+  color: #E8A0C0;
+}
+
+.theme-dark.solace-dusk span.cm-variable {
+  color: #D4CFE4;
+}
+
+.theme-dark.solace-dusk span.cm-variable-2 {
+  color: #C0BBD8;
+}
+
+.theme-dark.solace-dusk span.cm-variable-3 {
+  color: #ADA6E0;
+}
+
+.theme-dark.solace-dusk span.cm-property {
+  color: #C0BBD8;
+}
+
+.theme-dark.solace-dusk span.cm-def {
+  color: #D0B0F0;
+}
+
+.theme-dark.solace-dusk span.cm-operator {
+  color: #7D78A0;
+}
+
+.theme-dark.solace-dusk span.cm-punctuation {
+  color: #7D78A0;
+}
+
+.theme-dark.solace-dusk span.cm-bracket {
+  color: #8A84A0;
+}
+
+.theme-dark.solace-dusk span.cm-tag {
+  color: #8AD8C2;
+}
+
+.theme-dark.solace-dusk span.cm-attribute {
+  color: #8A84A0;
+}
+
+.theme-dark.solace-dusk span.cm-link {
+  color: #B89EF0;
+  font-style: italic;
+}
+
+.theme-dark.solace-dusk span.cm-url {
+  color: #B89EF0;
+}
+
+.theme-dark.solace-dusk span.cm-header {
+  color: #B89EF0;
+  font-weight: 700;
+}
+
+.theme-dark.solace-dusk span.cm-em {
+  color: #D4CFE4;
+  font-style: italic;
+}
+
+.theme-dark.solace-dusk span.cm-strong {
+  color: #D4CFE4;
+  font-weight: 700;
+}
+
+.theme-dark.solace-dusk span.cm-formatting {
+  color: #504A68;
+}
+
+.theme-dark.solace-dusk span.cm-meta {
+  color: #B89EF0;
+}
+
+.theme-dark.solace-dusk span.cm-atom {
+  color: #E8A0C0;
+}
+
+.theme-dark.solace-dusk span.cm-builtin {
+  color: #C8A8F2;
+}
+
+.theme-dark.solace-dusk span.cm-qualifier {
+  color: #8A84A0;
+}
+
+.theme-dark.solace-dusk span.cm-callee {
+  color: #B89EF0;
+}
+
+.theme-dark.solace-dusk span.cm-hash {
+  color: #B89EF0;
+}
+
+.theme-dark.solace-dusk span.cm-dfn {
+  color: #D0B0F0;
+}
+
+/* ── Solace Dusk: Markdown preview ──────────────────────────── */
+
+.theme-dark.solace-dusk .markdown-preview-view h1,
+.theme-dark.solace-dusk .markdown-preview-view h2,
+.theme-dark.solace-dusk .markdown-preview-view h3,
+.theme-dark.solace-dusk .markdown-preview-view h4,
+.theme-dark.solace-dusk .markdown-preview-view h5,
+.theme-dark.solace-dusk .markdown-preview-view h6 {
+  color: #B89EF0;
+}
+
+.theme-dark.solace-dusk .markdown-preview-view a {
+  color: var(--text-accent);
+}
+
+.theme-dark.solace-dusk .markdown-preview-view code {
+  background-color: #282538;
+  color: #B89EF0;
+}
+
+.theme-dark.solace-dusk .markdown-preview-view pre {
+  background-color: #11101A;
+  border-color: #232031;
+}
+
+.theme-dark.solace-dusk .markdown-preview-view pre code {
+  color: #D4CFE4;
+  background-color: transparent;
+}
+
+.theme-dark.solace-dusk .markdown-preview-view blockquote {
+  border-left-color: #B89EF0;
+  color: #8A84A0;
+}
+
+.theme-dark.solace-dusk .markdown-preview-view hr {
+  border-color: #282538;
+}
+
+.theme-dark.solace-dusk .markdown-preview-view table {
+  border-color: #282538;
+}
+
+.theme-dark.solace-dusk .markdown-preview-view th {
+  background-color: #1E1B2B;
+  border-color: #282538;
+  color: #B89EF0;
+}
+
+.theme-dark.solace-dusk .markdown-preview-view td {
+  border-color: #282538;
+}
+
+.theme-dark.solace-dusk .markdown-preview-view tr:nth-child(even) {
+  background-color: rgba(30, 27, 43, 0.3);
+}
+
+.theme-dark.solace-dusk .markdown-preview-view ul li::before {
+  color: #B89EF0;
+}
+
+.theme-dark.solace-dusk .markdown-preview-view ol li::before {
+  color: #B89EF0;
+}
+
+.theme-dark.solace-dusk .markdown-preview-view .task-list-item-checkbox {
+  border-color: #504A68;
+}
+
+.theme-dark.solace-dusk .markdown-preview-view .task-list-item-checkbox:checked {
+  background-color: var(--interactive-accent);
+  border-color: var(--interactive-accent);
+}
+
+.theme-dark.solace-dusk .markdown-preview-view .tag {
+  background-color: var(--tag-background);
+  color: var(--tag-color);
+}
+
+.theme-dark.solace-dusk .markdown-preview-view .internal-link {
+  color: var(--text-accent);
+}
+
+.theme-dark.solace-dusk .markdown-preview-view strong {
+  color: #D4CFE4;
+}
+
+.theme-dark.solace-dusk .markdown-preview-view em {
+  color: #D4CFE4;
+  font-style: italic;
+}
+
+.theme-dark.solace-dusk .markdown-preview-view mark {
+  background-color: rgba(184, 158, 240, 0.19);
+  color: inherit;
+}
+
+/* ── Solace Dusk: Callouts ──────────────────────────────────── */
+
+.theme-dark.solace-dusk .callout[data-type="note"],
+.theme-dark.solace-dusk .callout[data-type="info"] {
+  --callout-color: 184 158 240;
+  --callout-bg: rgba(184, 158, 240, 0.09);
+}
+
+.theme-dark.solace-dusk .callout[data-type="tip"],
+.theme-dark.solace-dusk .callout[data-type="success"],
+.theme-dark.solace-dusk .callout[data-type="check"] {
+  --callout-color: 138 216 194;
+  --callout-bg: rgba(138, 216, 194, 0.09);
+}
+
+.theme-dark.solace-dusk .callout[data-type="warning"],
+.theme-dark.solace-dusk .callout[data-type="caution"] {
+  --callout-color: 221 184 140;
+  --callout-bg: rgba(221, 184, 140, 0.09);
+}
+
+.theme-dark.solace-dusk .callout[data-type="danger"],
+.theme-dark.solace-dusk .callout[data-type="error"] {
+  --callout-color: 232 136 184;
+  --callout-bg: rgba(232, 136, 184, 0.09);
+}
+
+.theme-dark.solace-dusk .callout[data-type="quote"],
+.theme-dark.solace-dusk .callout[data-type="abstract"] {
+  --callout-color: 138 132 160;
+  --callout-bg: rgba(138, 132, 160, 0.09);
+}
+
+.theme-dark.solace-dusk .callout[data-type="example"] {
+  --callout-color: 232 160 192;
+  --callout-bg: rgba(232, 160, 192, 0.09);
+}
+
+.theme-dark.solace-dusk .callout[data-type="bug"] {
+  --callout-color: 232 136 184;
+  --callout-bg: rgba(232, 136, 184, 0.09);
+}
+
+.theme-dark.solace-dusk .callout[data-type="question"],
+.theme-dark.solace-dusk .callout[data-type="help"] {
+  --callout-color: 139 116 208;
+  --callout-bg: rgba(139, 116, 208, 0.09);
+}
+
+/* ── Solace Dusk: Frontmatter ───────────────────────────────── */
+
+.theme-dark.solace-dusk .frontmatter {
+  color: #8A84A0;
+}
+
+.theme-dark.solace-dusk .frontmatter .cm-keyword {
+  color: #ADA6E0;
+}
+
+.theme-dark.solace-dusk .frontmatter .cm-string {
+  color: #DBA8E0;
+}
+
+.theme-dark.solace-dusk .frontmatter .cm-number {
+  color: #DDB88C;
+}
+
+/* ── Solace Dusk: Canvas ────────────────────────────────────── */
+
+.theme-dark.solace-dusk .canvas-node {
+  background-color: #1E1B2B;
+  border-color: #282538;
+}
+
+.theme-dark.solace-dusk .canvas-node-label {
+  color: #D4CFE4;
+}
+
+/* ── Solace Dusk: Editor ────────────────────────────────────── */
+
+.theme-dark.solace-dusk .cm-s-obsidian .cm-content {
+  color: var(--text-normal);
+}
+
+.theme-dark.solace-dusk .cm-s-obsidian .cm-line {
+  color: var(--text-normal);
+}
+
+.theme-dark.solace-dusk .cm-s-obsidian .cm-heading {
+  color: #B89EF0;
+}
+
+.theme-dark.solace-dusk .cm-s-obsidian .cm-strong {
+  font-weight: 700;
+  color: #D4CFE4;
+}
+
+.theme-dark.solace-dusk .cm-s-obsidian .cm-em {
+  font-style: italic;
+  color: #D4CFE4;
+}
+
+.theme-dark.solace-dusk .cm-s-obsidian .cm-link {
+  color: #B89EF0;
+}
+
+.theme-dark.solace-dusk .cm-s-obsidian .cm-url {
+  color: #B89EF0;
+}
+
+.theme-dark.solace-dusk .cm-s-obsidian .cm-code {
+  background-color: #282538;
+  color: #B89EF0;
+}
+
+.theme-dark.solace-dusk .cm-s-obsidian .cm-strikethrough {
+  text-decoration: line-through;
+  color: #504A68;
+}
+
+/* ── Solace Dusk: CM panels ─────────────────────────────────── */
+
+.theme-dark.solace-dusk .cm-panels {
+  background-color: var(--background-secondary);
+  border-color: var(--background-modifier-border);
+}
+
+.theme-dark.solace-dusk .cm-panel {
+  background-color: var(--background-secondary);
+}
+
+.theme-dark.solace-dusk .cm-searchMatch {
+  background-color: var(--search-match-color);
+}
+
+.theme-dark.solace-dusk .cm-selectionBackground {
+  background-color: rgba(184, 158, 240, 0.19);
+}
+
+.theme-dark.solace-dusk .cm-activeLine {
+  background-color: #211E30;
+}
+
+.theme-dark.solace-dusk .cm-gutters {
+  background-color: var(--background-primary);
+  color: #504A68;
+  border-color: var(--background-modifier-border);
+}
+
+.theme-dark.solace-dusk .cm-activeLineGutter {
+  color: var(--interactive-accent);
+  background-color: #282538;
+}
+
+.theme-dark.solace-dusk .cm-lineNumbers .cm-gutterElement {
+  color: #504A68;
+  padding: 0 8px;
+}
+
+.theme-dark.solace-dusk .cm-cursor {
+  border-left-color: #B89EF0;
+}
+
+.theme-dark.solace-dusk .cm-matchingBracket {
+  background-color: rgba(184, 158, 240, 0.13);
+  color: #B89EF0 !important;
+}
+
+.theme-dark.solace-dusk .cm-foldPlaceholder {
+  background-color: #282538;
+  color: #504A68;
+  border-color: #282538;
+}
+
+.theme-dark.solace-dusk .cm-foldPlaceholder:hover {
+  background-color: #302D42;
+  color: #8A84A0;
+}
+
+/* ── Solace Dusk: Tab ───────────────────────────────────────── */
+
+.theme-dark.solace-dusk .tab {
+  background-color: var(--sidebar-tabs-background);
+  border-color: var(--background-modifier-border);
+}
+
+.theme-dark.solace-dusk .tab.active {
+  background-color: var(--tab-active-background);
+  border-bottom-color: var(--tab-active-border);
+}
+
+/* ── Solace Dusk: Sidebar ───────────────────────────────────── */
+
+.theme-dark.solace-dusk .workspace-leaf-content[data-type="explorer"] .nav-header,
+.theme-dark.solace-dusk .workspace-leaf-content[data-type="file-explorer"] .nav-header {
+  background-color: var(--background-primary);
+}
+
+.theme-dark.solace-dusk .nav-header {
+  border-color: var(--background-modifier-border);
+}
+
+.theme-dark.solace-dusk .nav-buttons-container {
+  border-color: var(--background-modifier-border);
+}
+
+/* ── Solace Dusk: Menu ──────────────────────────────────────── */
+
+.theme-dark.solace-dusk .menu {
+  background-color: var(--popover-background);
+  border-color: var(--popover-border-color);
+}
+
+.theme-dark.solace-dusk .menu-item:hover {
+  background-color: var(--interactive-hover);
+}
+
+/* ── Solace Dusk: Modal ─────────────────────────────────────── */
+
+.theme-dark.solace-dusk .modal {
+  background-color: var(--modal-background);
+  border-color: var(--modal-border-color);
+}
+
+.theme-dark.solace-dusk .modal .modal-close-button:hover {
+  color: var(--text-error);
+}
+
+/* ── Solace Dusk: Prompt ────────────────────────────────────── */
+
+.theme-dark.solace-dusk .prompt {
+  background-color: var(--prompt-background);
+  border-color: var(--prompt-border-color);
+}
+
+/* ── Solace Dusk: Input ─────────────────────────────────────── */
+
+.theme-dark.solace-dusk .input {
+  background-color: var(--background-modifier-form-field);
+  border-color: var(--background-modifier-border);
+}
+
+.theme-dark.solace-dusk .input:focus {
+  border-color: var(--interactive-accent);
+}
+
+/* ── Solace Dusk: Settings ──────────────────────────────────── */
+
+.theme-dark.solace-dusk .setting-item:hover {
+  background-color: var(--interactive-hover);
+}
+
+.theme-dark.solace-dusk .setting-item-info {
+  color: var(--text-normal);
+}
+
+.theme-dark.solace-dusk .setting-item-description {
+  color: var(--text-muted);
+}
+
+.theme-dark.solace-dusk .setting-item-name {
+  color: var(--text-normal);
+}
+
+.theme-dark.solace-dusk .setting-group-title {
+  color: var(--text-accent);
+  border-bottom-color: var(--background-modifier-border);
+}
+
+/* ── Solace Dusk: Buttons ───────────────────────────────────── */
+
+.theme-dark.solace-dusk .btn {
+  background-color: var(--interactive-normal);
+  border-color: var(--background-modifier-border);
+  color: var(--text-normal);
+}
+
+.theme-dark.solace-dusk .btn:hover {
+  background-color: var(--interactive-hover);
+  border-color: var(--interactive-accent);
+}
+
+.theme-dark.solace-dusk .btn-primary {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-color: var(--interactive-accent);
+}
+
+.theme-dark.solace-dusk .btn-primary:hover {
+  background-color: var(--interactive-accent-hover);
+}
+
+/* ── Solace Dusk: Internal link ─────────────────────────────── */
+
+.theme-dark.solace-dusk .internal-link {
+  color: var(--text-accent);
+}
+
+.theme-dark.solace-dusk .internal-link:hover {
+  color: var(--text-accent-hover);
+}
+
+.theme-dark.solace-dusk .external-link {
+  color: var(--text-accent);
+}
+
+/* ── Solace Dusk: Tag ───────────────────────────────────────── */
+
+.theme-dark.solace-dusk .tag {
+  background-color: var(--tag-background);
+  color: var(--tag-color);
+  border-color: var(--tag-border-color);
+}
+
+/* ── Solace Dusk: Tree items ────────────────────────────────── */
+
+.theme-dark.solace-dusk .tree-item-self:hover {
+  background-color: var(--interactive-hover);
+}
+
+.theme-dark.solace-dusk .tree-item-self.is-selected {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+.theme-dark.solace-dusk .tree-item-self.is-selected .tree-item-inner {
+  color: var(--text-on-accent);
+}
+
+.theme-dark.solace-dusk .nav-folder-title {
+  color: var(--text-normal);
+}
+
+.theme-dark.solace-dusk .nav-file-title {
+  color: var(--text-normal);
+}
+
+/* ── Solace Dusk: Suggestion ────────────────────────────────── */
+
+.theme-dark.solace-dusk .suggestion-container .suggestion {
+  background-color: var(--background-primary);
+}
+
+.theme-dark.solace-dusk .suggestion-container .suggestion.is-selected {
+  background-color: var(--interactive-hover);
+}
+
+/* ── Solace Dusk: Prompt list ───────────────────────────────── */
+
+.theme-dark.solace-dusk .prompt-list {
+  background-color: var(--prompt-background);
+  border-color: var(--prompt-border-color);
+}
+
+.theme-dark.solace-dusk .suggestion-item {
+  background-color: var(--prompt-background);
+}
+
+.theme-dark.solace-dusk .suggestion-item.is-selected {
+  background-color: var(--interactive-hover);
+}
+
+.theme-dark.solace-dusk .suggestion-item-title {
+  color: var(--text-normal);
+}
+
+.theme-dark.solace-dusk .suggestion-item-description {
+  color: var(--text-muted);
+}
+
+/* ── Solace Dusk: Breadcrumbs ───────────────────────────────── */
+
+.theme-dark.solace-dusk .breadcrumb-container {
+  background-color: var(--background-primary);
+}
+
+.theme-dark.solace-dusk .breadcrumb-item {
+  color: var(--text-muted);
+}
+
+.theme-dark.solace-dusk .breadcrumb-item.active {
+  color: var(--text-normal);
+}
+
+.theme-dark.solace-dusk .breadcrumb-item:hover {
+  color: var(--text-accent);
+}
+
+/* ── Solace Dusk: Search ────────────────────────────────────── */
+
+.theme-dark.solace-dusk .search-dialog-container {
+  background-color: var(--modal-background);
+  border-color: var(--modal-border-color);
+}
+
+.theme-dark.solace-dusk .search-input {
+  background-color: var(--background-modifier-form-field);
+  border-color: var(--background-modifier-border);
+}
+
+.theme-dark.solace-dusk .search-input:focus {
+  border-color: var(--interactive-accent);
+}
+
+/* ── Solace Dusk: Hotkeys ───────────────────────────────────── */
+
+.theme-dark.solace-dusk .setting-hotkey {
+  background-color: var(--interactive-normal);
+  color: var(--text-normal);
+}
+
+.theme-dark.solace-dusk .setting-hotkey:hover {
+  background-color: var(--interactive-hover);
+}
+
+/* ── Solace Dusk: Tag pane ──────────────────────────────────── */
+
+.theme-dark.solace-dusk .tag-pane .tag {
+  background-color: var(--tag-background);
+  color: var(--tag-color);
+}
+
+/* ── Solace Dusk: Plugin browser markdown ───────────────────── */
+
+.theme-dark.solace-dusk .plugin-browser-container .markdown-preview-view {
+  background-color: var(--background-primary);
+}
+
+.theme-dark.solace-dusk .plugin-browser-container .markdown-preview-view h1,
+.theme-dark.solace-dusk .plugin-browser-container .markdown-preview-view h2,
+.theme-dark.solace-dusk .plugin-browser-container .markdown-preview-view h3 {
+  color: var(--text-normal);
+}
+
+.theme-dark.solace-dusk .plugin-browser-container .markdown-preview-view a {
+  color: var(--text-accent);
+}
+
+.theme-dark.solace-dusk .plugin-browser-container .markdown-preview-view code {
+  color: var(--text-accent);
+  background-color: var(--background-secondary);
+}
+
+.theme-dark.solace-dusk .plugin-browser-container .markdown-preview-view pre {
+  background-color: var(--background-secondary);
+  border-color: var(--background-modifier-border);
+}
+
+.theme-dark.solace-dusk .plugin-browser-container .markdown-preview-view blockquote {
+  border-left-color: var(--interactive-accent);
+  color: var(--text-muted);
+}
+
+.theme-dark.solace-dusk .plugin-browser-container .markdown-preview-view strong {
+  color: var(--text-normal);
+}
+
+.theme-dark.solace-dusk .plugin-browser-container .markdown-preview-view em {
+  color: var(--text-muted);
+}
+
+.theme-dark.solace-dusk .plugin-browser-container .markdown-preview-view ul li::before {
+  color: var(--text-accent);
+}
+
+.theme-dark.solace-dusk .plugin-browser-container .markdown-preview-view ol li::before {
+  color: var(--text-accent);
+}
+
+.theme-dark.solace-dusk .plugin-browser-container .markdown-preview-view hr {
+  border-color: var(--background-modifier-border);
+}
+
+.theme-dark.solace-dusk .plugin-browser-container .markdown-preview-view table {
+  border-color: var(--background-modifier-border);
+}
+
+.theme-dark.solace-dusk .plugin-browser-container .markdown-preview-view th {
+  background-color: var(--background-secondary);
+  border-color: var(--background-modifier-border);
+}
+
+.theme-dark.solace-dusk .plugin-browser-container .markdown-preview-view td {
+  border-color: var(--background-modifier-border);
+}
+
+/* ── Solace Dusk: Ribbon ────────────────────────────────────── */
+
+.theme-dark.solace-dusk .side-dock-ribbon {
+  background-color: var(--titlebar-background);
+}
+
+.theme-dark.solace-dusk .side-dock-ribbon-modicator {
+  background-color: var(--titlebar-background);
+}
+
+.theme-dark.solace-dusk .side-dock-ribbon-btn:hover {
+  background-color: var(--interactive-hover);
+}
+
+/* ── Solace Dusk: File explorer ─────────────────────────────── */
+
+.theme-dark.solace-dusk .nav-files-container {
+  background-color: var(--background-primary);
+}
+
+/* ── Solace Dusk: Split view ────────────────────────────────── */
+
+.theme-dark.solace-dusk .workspace-split {
+  background-color: var(--background-primary);
+}
+
+.theme-dark.solace-dusk .workspace-leaf {
+  background-color: var(--background-primary);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   STYLE SETTINGS (solace-obsidian Style Settings config)
+   ────────────────────────────────────────────────────────────── */
+
+/*
+  @settings
+
+  name: Solace
+  id: solace-obsidian
+  description: "A minimal theme with violet undertones and pastel syntax."
+  author: Bhavya Dang
+  authorUrl: https://bhavyadang.in
+  version: 1.0.0
+  minimumVersion: 1.0.0
+
+  settings:
+    - id: solace-variant
+      title: Theme Variant
+      type: dropdown
+      default: dark
+      description: "Choose between Solace Dark, Light, and Dusk."
+      options:
+        - Dark
+        - Light
+        - Dusk
+
+  - title: Typography
+    settings:
+      - id: solace-font-family
+        title: Interface font
+        type: variable-font-family
+        default: inherit
+      - id: solace-font-text
+        title: Text font
+        type: variable-font-family
+        default: inherit
+      - id: solace-font-mono
+        title: Monospace font
+        type: variable-font-family
+        default: "JetBrains Mono, Fira Code, SF Mono, Cascadia Code, Source Code Pro, monospace"
+
+  - title: Colors
+    settings:
+      - id: solace-accent
+        title: Accent color
+        type: variable-color
+        default: "#C9A8FF"
+        format: "hex6"
+      - id: solace-text-accent
+        title: Text accent color
+        type: variable-color
+        default: "#C9A8FF"
+        format: "hex6"
+      - id: solace-background
+        title: Background color
+        type: variable-color
+        default: "#16141F"
+        format: "hex6"
+      - id: solace-text
+        title: Text color
+        type: variable-color
+        default: "#F1EEF8"
+        format: "hex6"
+
+  - title: Editor
+    settings:
+      - id: solace-line-height
+        title: Line height
+        type: variable-number
+        default: 1.6
+        min: 1.2
+        max: 2.0
+        step: 0.1
+        description: "Line height for the editor."
+      - id: solace-font-size
+        title: Font size
+        type: variable-number
+        default: 16
+        min: 12
+        max: 24
+        step: 1
+        description: "Font size in pixels for the editor."
+      - id: solace-max-width
+        title: Maximum width
+        type: variable-number
+        default: 900
+        min: 600
+        max: 1400
+        step: 50
+        description: "Maximum width of the editor in pixels."
+      - id: solace-css
+        title: Custom CSS
+        type: variable-text
+        default: ""
+        description: "Add custom CSS rules to further customize the theme."
+
+  - title: Code Blocks
+    settings:
+      - id: solace-code-font-size
+        title: Code font size
+        type: variable-number
+        default: 14
+        min: 10
+        max: 20
+        step: 1
+      - id: solace-code-line-height
+        title: Code line height
+        type: variable-number
+        default: 1.5
+        min: 1.0
+        max: 2.0
+        step: 0.1
+      - id: solace-code-padding
+        title: Code block padding
+        type: variable-number
+        default: 16
+        min: 8
+        max: 32
+        step: 4
+
+  - title: UI
+    settings:
+      - id: solace-radius
+        title: Border radius
+        type: variable-number
+        default: 8
+        min: 0
+        max: 20
+        step: 1
+        description: "Border radius for UI elements."
+      - id: solace-transition
+        title: Transition speed
+        type: variable-number
+        default: 150
+        min: 0
+        max: 500
+        step: 25
+        description: "Transition speed in milliseconds."
+
+  - title: Callouts
+    settings:
+      - id: solace-callout-radius
+        title: Callout border radius
+        type: variable-number
+        default: 8
+        min: 0
+        max: 20
+        step: 1
+      - id: solace-callout-padding
+        title: Callout padding
+        type: variable-number
+        default: 16
+        min: 8
+        max: 32
+        step: 4
+      - id: solace-callout-border-width
+        title: Callout border width
+        type: variable-number
+        default: 3
+        min: 0
+        max: 6
+        step: 1
+
+  - title: Tables
+    settings:
+      - id: solace-table-radius
+        title: Table border radius
+        type: variable-number
+        default: 8
+        min: 0
+        max: 20
+        step: 1
+      - id: solace-table-padding
+        title: Table cell padding
+        type: variable-number
+        default: 12
+        min: 4
+        max: 24
+        step: 2
+
+  - title: Images
+    settings:
+      - id: solace-image-radius
+        title: Image border radius
+        type: variable-number
+        default: 8
+        min: 0
+        max: 20
+        step: 1
+      - id: solace-image-border
+        title: Image border
+        type: variable-text
+        default: "none"
+        description: "Border for images."
+
+  - title: Links
+    settings:
+      - id: solace-link-underline
+        title: Link underline
+        type: variable-text
+        default: "underline"
+        description: "Underline style for links."
+
+  - title: Headings
+    settings:
+      - id: solace-heading-color
+        title: Heading color
+        type: variable-color
+        default: "#C9A8FF"
+        format: "hex6"
+      - id: solace-heading-decoration
+        title: Heading decoration
+        type: variable-text
+        default: "none"
+        description: "Text decoration for headings."
+
+  - title: Reading view
+    settings:
+      - id: solace-reading-max-width
+        title: Reading view max width
+        type: variable-number
+        default: 800
+        min: 600
+        max: 1200
+        step: 50
+        description: "Maximum width of the reading view in pixels."
+
+  - title: Sidebar
+    settings:
+      - id: solace-sidebar-width
+        title: Sidebar width
+        type: variable-number
+        default: 260
+        min: 200
+        max: 400
+        step: 10
+        description: "Width of the sidebar in pixels."
+
+  - title: Graph view
+    settings:
+      - id: solace-graph-line-width
+        title: Graph line width
+        type: variable-number
+        default: 1
+        min: 0.5
+        max: 4
+        step: 0.5
+
+  - title: Ribbon
+    settings:
+      - id: solace-ribbon-width
+        title: Ribbon width
+        type: variable-number
+        default: 48
+        min: 36
+        max: 72
+        step: 4
+
+  - title: Breadcrumbs
+    settings:
+      - id: solace-breadcrumb-separator
+        title: Breadcrumb separator
+        type: variable-text
+        default: "/"
+        description: "Separator between breadcrumb items."
+
+  - title: Search
+    settings:
+      - id: solace-search-highlight-color
+        title: Search highlight color
+        type: variable-color
+        default: "#C9A8FF"
+        format: "hex6"
+  */
+
+/* ── Typography ─────────────────────────────────────────────── */
+
+.theme-dark,
+.theme-light {
+  --font-interface: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-text: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-monospace: "JetBrains Mono", "Fira Code", "SF Mono", "Cascadia Code", "Source Code Pro", monospace;
+}
+
+.theme-dark .app-container,
+.theme-light .app-container {
+  font-family: var(--font-interface);
+}
+
+.theme-dark .markdown-preview-view,
+.theme-light .markdown-preview-view {
+  font-family: var(--font-text);
+}
+
+.theme-dark .markdown-preview-view code,
+.theme-dark .markdown-preview-view pre,
+.theme-light .markdown-preview-view code,
+.theme-light .markdown-preview-view pre,
+.theme-dark .cm-s-obsidian .cm-content,
+.theme-light .cm-s-obsidian .cm-content {
+  font-family: var(--font-monospace);
+}
+
+/* ── Style Settings: Color overrides ────────────────────────── */
+
+.theme-dark {
+  --interactive-accent: var(--solace-accent, #C9A8FF);
+  --text-accent: var(--solace-text-accent, #C9A8FF);
+  --background-primary: var(--solace-background, #16141F);
+  --text-normal: var(--solace-text, #F1EEF8);
+}
+
+.theme-light,
+.theme-dark.solace-light {
+  --interactive-accent: var(--solace-accent, #8A63D2);
+  --text-accent: var(--solace-text-accent, #8A63D2);
+  --background-primary: var(--solace-background, #F6F3FC);
+  --text-normal: var(--solace-text, #2C2638);
+}
+
+.theme-dark.solace-dusk {
+  --interactive-accent: var(--solace-accent, #B89EF0);
+  --text-accent: var(--solace-text-accent, #B89EF0);
+  --background-primary: var(--solace-background, #191725);
+  --text-normal: var(--solace-text, #D4CFE4);
+}
+
+/* ── Style Settings: Editor overrides ───────────────────────── */
+
+.theme-dark .cm-s-obsidian .cm-content,
+.theme-light .cm-s-obsidian .cm-content {
+  line-height: var(--solace-line-height, 1.6);
+  font-size: var(--solace-font-size, 16px);
+}
+
+.theme-dark .markdown-preview-view,
+.theme-light .markdown-preview-view {
+  max-width: var(--solace-max-width, 900px);
+}
+
+/* ── Style Settings: Code block overrides ───────────────────── */
+
+.theme-dark .markdown-preview-view pre code,
+.theme-dark .markdown-preview-view code,
+.theme-light .markdown-preview-view pre code,
+.theme-light .markdown-preview-view code {
+  font-size: var(--solace-code-font-size, 14px);
+  line-height: var(--solace-code-line-height, 1.5);
+}
+
+.theme-dark .markdown-preview-view pre,
+.theme-light .markdown-preview-view pre {
+  padding: var(--solace-code-padding, 16px);
+}
+
+/* ── Style Settings: UI overrides ───────────────────────────── */
+
+.theme-dark .markdown-preview-view img,
+.theme-light .markdown-preview-view img {
+  border-radius: var(--solace-image-radius, 8px);
+  border: var(--solace-image-border, none);
+}
+
+.theme-dark .markdown-preview-view table,
+.theme-light .markdown-preview-view table {
+  border-radius: var(--solace-table-radius, 8px);
+  overflow: hidden;
+}
+
+.theme-dark .markdown-preview-view td,
+.theme-light .markdown-preview-view td {
+  padding: var(--solace-table-padding, 12px);
+}
+
+.theme-dark .callout,
+.theme-light .callout {
+  border-radius: var(--solace-callout-radius, 8px);
+  padding: var(--solace-callout-padding, 16px);
+  border-left-width: var(--solace-callout-border-width, 3px);
+}
+
+.theme-dark .markdown-preview-view a,
+.theme-light .markdown-preview-view a {
+  text-decoration: var(--solace-link-underline, underline);
+}
+
+.theme-dark .markdown-preview-view h1,
+.theme-dark .markdown-preview-view h2,
+.theme-dark .markdown-preview-view h3,
+.theme-dark .markdown-preview-view h4,
+.theme-dark .markdown-preview-view h5,
+.theme-dark .markdown-preview-view h6,
+.theme-light .markdown-preview-view h1,
+.theme-light .markdown-preview-view h2,
+.theme-light .markdown-preview-view h3,
+.theme-light .markdown-preview-view h4,
+.theme-light .markdown-preview-view h5,
+.theme-light .markdown-preview-view h6 {
+  color: var(--solace-heading-color, #C9A8FF);
+  text-decoration: var(--solace-heading-decoration, none);
+}
+
+.theme-dark .markdown-preview-view,
+.theme-light .markdown-preview-view {
+  max-width: var(--solace-reading-max-width, 800px);
+}
+
+.theme-dark .nav-files-container,
+.theme-light .nav-files-container {
+  width: var(--solace-sidebar-width, 260px);
+}
+
+.theme-dark .side-dock-ribbon,
+.theme-light .side-dock-ribbon {
+  width: var(--solace-ribbon-width, 48px);
+}
+
+.theme-dark .search-match,
+.theme-light .search-match {
+  background-color: var(--solace-search-highlight-color, #C9A8FF);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FULL THEME CSS — All missing sections
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Notices / Toasts ───────────────────────────────────────── */
+
+.theme-dark .notice,
+.theme-light .notice,
+.theme-dark.solace-light .notice,
+.theme-dark.solace-dusk .notice {
+  border-radius: 8px;
+  padding: 12px 16px;
+  border: 1px solid var(--background-modifier-border);
+  box-shadow: var(--shadow-l);
+}
+
+.theme-dark .notice,
+.theme-dark.solace-dusk .notice {
+  background-color: #1B1827;
+  color: var(--text-normal);
+}
+
+.theme-light .notice,
+.theme-dark.solace-light .notice {
+  background-color: #F0ECF8;
+  color: var(--text-normal);
+}
+
+.theme-dark .notice-success,
+.theme-dark.solace-dusk .notice-success {
+  background-color: rgba(168, 255, 236, 0.09);
+  border-left: 3px solid #A8FFEC;
+}
+
+.theme-light .notice-success,
+.theme-dark.solace-light .notice-success {
+  background-color: rgba(63, 154, 133, 0.09);
+  border-left: 3px solid #3F9A85;
+}
+
+.theme-dark .notice-warning,
+.theme-dark.solace-dusk .notice-warning {
+  background-color: rgba(201, 168, 255, 0.09);
+  border-left: 3px solid #C9A8FF;
+}
+
+.theme-light .notice-warning,
+.theme-dark.solace-light .notice-warning {
+  background-color: rgba(192, 122, 44, 0.09);
+  border-left: 3px solid #C07A2C;
+}
+
+.theme-dark .notice-error,
+.theme-dark.solace-dusk .notice-error {
+  background-color: rgba(255, 128, 200, 0.08);
+  border-left: 3px solid #FF80C8;
+}
+
+.theme-light .notice-error,
+.theme-dark.solace-light .notice-error {
+  background-color: rgba(211, 91, 147, 0.09);
+  border-left: 3px solid #D35B93;
+}
+
+/* ── Progress Bars ──────────────────────────────────────────── */
+
+.theme-dark .progress-bar,
+.theme-light .progress-bar,
+.theme-dark.solace-light .progress-bar,
+.theme-dark.solace-dusk .progress-bar {
+  height: 4px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.theme-dark .progress-bar,
+.theme-dark.solace-dusk .progress-bar {
+  background-color: #231F30;
+}
+
+.theme-light .progress-bar,
+.theme-dark.solace-light .progress-bar {
+  background-color: #D8D0E6;
+}
+
+.theme-dark .progress-bar-indicator,
+.theme-dark.solace-dusk .progress-bar-indicator {
+  background-color: #C9A8FF;
+}
+
+.theme-light .progress-bar-indicator,
+.theme-dark.solace-light .progress-bar-indicator {
+  background-color: #8A63D2;
+}
+
+/* ── Context Menus ──────────────────────────────────────────── */
+
+.theme-dark .context-menu,
+.theme-dark.solace-dusk .context-menu {
+  background-color: #1B1827;
+  border-color: #231F30;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.theme-light .context-menu,
+.theme-dark.solace-light .context-menu {
+  background-color: #F0ECF8;
+  border-color: #D8D0E6;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+}
+
+.theme-dark .context-menu-item,
+.theme-dark.solace-dusk .context-menu-item {
+  color: #F1EEF8;
+}
+
+.theme-dark .context-menu-item:hover,
+.theme-dark.solace-dusk .context-menu-item:hover {
+  background-color: #231F30;
+}
+
+.theme-dark .context-menu-item.selected,
+.theme-dark.solace-dusk .context-menu-item.selected {
+  background-color: #C9A8FF20;
+}
+
+.theme-light .context-menu-item,
+.theme-dark.solace-light .context-menu-item {
+  color: #2C2638;
+}
+
+.theme-light .context-menu-item:hover,
+.theme-dark.solace-light .context-menu-item:hover {
+  background-color: #E8E0F2;
+}
+
+.theme-light .context-menu-item.selected,
+.theme-dark.solace-light .context-menu-item.selected {
+  background-color: #8A63D220;
+}
+
+.theme-dark .context-menu-separator,
+.theme-dark.solace-dusk .context-menu-separator {
+  border-color: #231F30;
+}
+
+.theme-light .context-menu-separator,
+.theme-dark.solace-light .context-menu-separator {
+  border-color: #D8D0E6;
+}
+
+.theme-dark .context-menu-item-icon,
+.theme-dark.solace-dusk .context-menu-item-icon {
+  color: #A09AB8;
+}
+
+.theme-light .context-menu-item-icon,
+.theme-dark.solace-light .context-menu-item-icon {
+  color: #736C86;
+}
+
+.theme-dark .context-menu-item-shortcut,
+.theme-dark.solace-dusk .context-menu-item-shortcut {
+  color: #504A68;
+}
+
+.theme-light .context-menu-item-shortcut,
+.theme-dark.solace-light .context-menu-item-shortcut {
+  color: #9A94AA;
+}
+
+/* ── Popover Menus ──────────────────────────────────────────── */
+
+.theme-dark .popover,
+.theme-dark.solace-dusk .popover {
+  background-color: #1B1827;
+  border-color: #231F30;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.theme-light .popover,
+.theme-dark.solace-light .popover {
+  background-color: #F0ECF8;
+  border-color: #D8D0E6;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+}
+
+.theme-dark .popover-content,
+.theme-dark.solace-dusk .popover-content {
+  background-color: #1B1827;
+}
+
+.theme-light .popover-content,
+.theme-dark.solace-light .popover-content {
+  background-color: #F0ECF8;
+}
+
+.theme-dark .popover .menu,
+.theme-dark.solace-dusk .popover .menu {
+  background-color: transparent;
+  border: none;
+}
+
+.theme-light .popover .menu,
+.theme-dark.solace-light .popover .menu {
+  background-color: transparent;
+  border: none;
+}
+
+/* ── Suggest Popup ──────────────────────────────────────────── */
+
+.theme-dark .suggest-popup,
+.theme-dark.solace-dusk .suggest-popup {
+  background-color: #1B1827;
+  border-color: #231F30;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.theme-light .suggest-popup,
+.theme-dark.solace-light .suggest-popup {
+  background-color: #F0ECF8;
+  border-color: #D8D0E6;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+}
+
+.theme-dark .suggest-title,
+.theme-dark.solace-dusk .suggest-title {
+  color: #A09AB8;
+  border-bottom-color: #231F30;
+}
+
+.theme-light .suggest-title,
+.theme-dark.solace-light .suggest-title {
+  color: #736C86;
+  border-bottom-color: #D8D0E6;
+}
+
+.theme-dark .suggest-item,
+.theme-dark.solace-dusk .suggest-item {
+  color: #F1EEF8;
+}
+
+.theme-dark .suggest-item:hover,
+.theme-dark.solace-dusk .suggest-item:hover {
+  background-color: #231F30;
+}
+
+.theme-dark .suggest-item.selected,
+.theme-dark.solace-dusk .suggest-item.selected {
+  background-color: #C9A8FF20;
+  color: #F1EEF8;
+}
+
+.theme-light .suggest-item,
+.theme-dark.solace-light .suggest-item {
+  color: #2C2638;
+}
+
+.theme-light .suggest-item:hover,
+.theme-dark.solace-light .suggest-item:hover {
+  background-color: #E8E0F2;
+}
+
+.theme-light .suggest-item.selected,
+.theme-dark.solace-light .suggest-item.selected {
+  background-color: #8A63D220;
+  color: #2C2638;
+}
+
+/* ── Workspace Tab Headers ──────────────────────────────────── */
+
+.theme-dark .workspace-tab-header,
+.theme-dark.solace-dusk .workspace-tab-header {
+  color: #A09AB8;
+}
+
+.theme-dark .workspace-tab-header:hover,
+.theme-dark.solace-dusk .workspace-tab-header:hover {
+  background-color: #231F30;
+}
+
+.theme-dark .workspace-tab-header.is-active,
+.theme-dark.solace-dusk .workspace-tab-header.is-active {
+  color: #F1EEF8;
+}
+
+.theme-light .workspace-tab-header,
+.theme-dark.solace-light .workspace-tab-header {
+  color: #736C86;
+}
+
+.theme-light .workspace-tab-header:hover,
+.theme-dark.solace-light .workspace-tab-header:hover {
+  background-color: #E8E0F2;
+}
+
+.theme-light .workspace-tab-header.is-active,
+.theme-dark.solace-light .workspace-tab-header.is-active {
+  color: #2C2638;
+}
+
+.theme-dark .workspace-tab-header .workspace-tab-close,
+.theme-dark.solace-dusk .workspace-tab-header .workspace-tab-close {
+  color: #504A68;
+}
+
+.theme-dark .workspace-tab-header .workspace-tab-close:hover,
+.theme-dark.solace-dusk .workspace-tab-header .workspace-tab-close:hover {
+  color: #FF80C8;
+  background-color: #FF80C818;
+}
+
+.theme-light .workspace-tab-header .workspace-tab-close,
+.theme-dark.solace-light .workspace-tab-header .workspace-tab-close {
+  color: #9A94AA;
+}
+
+.theme-light .workspace-tab-header .workspace-tab-close:hover,
+.theme-dark.solace-light .workspace-tab-header .workspace-tab-close:hover {
+  color: #D35B93;
+  background-color: #D35B9318;
+}
+
+.theme-dark .workspace-tab-header-container,
+.theme-dark.solace-dusk .workspace-tab-header-container {
+  border-bottom-color: #1E1B2E;
+}
+
+.theme-light .workspace-tab-header-container,
+.theme-dark.solace-light .workspace-tab-header-container {
+  border-bottom-color: #D8D0E6;
+}
+
+.theme-dark .workspace-tab-header-tooltip,
+.theme-dark.solace-dusk .workspace-tab-header-tooltip {
+  background-color: #231F30;
+  color: #F1EEF8;
+  border-color: #2A2540;
+}
+
+.theme-light .workspace-tab-header-tooltip,
+.theme-dark.solace-light .workspace-tab-header-tooltip {
+  background-color: #E8E0F2;
+  color: #2C2638;
+  border-color: #D8D0E6;
+}
+
+/* ── Workspace Split Dividers ───────────────────────────────── */
+
+.theme-dark .workspace-split-divider,
+.theme-dark.solace-dusk .workspace-split-divider {
+  background-color: #1E1B2E;
+}
+
+.theme-light .workspace-split-divider,
+.theme-dark.solace-light .workspace-split-divider {
+  background-color: #D8D0E6;
+}
+
+.theme-dark .workspace-split-divider:hover,
+.theme-dark.solace-dusk .workspace-split-divider:hover {
+  background-color: #C9A8FF;
+}
+
+.theme-light .workspace-split-divider:hover,
+.theme-dark.solace-light .workspace-split-divider:hover {
+  background-color: #8A63D2;
+}
+
+.theme-dark .workspace-split-divider.dragging,
+.theme-dark.solace-dusk .workspace-split-divider.dragging {
+  background-color: #C9A8FF;
+}
+
+.theme-light .workspace-split-divider.dragging,
+.theme-dark.solace-light .workspace-split-divider.dragging {
+  background-color: #8A63D2;
+}
+
+/* ── Tab Stacks ─────────────────────────────────────────────── */
+
+.theme-dark .tab-stack,
+.theme-dark.solace-dusk .tab-stack {
+  border-color: #1E1B2E;
+}
+
+.theme-light .tab-stack,
+.theme-dark.solace-light .tab-stack {
+  border-color: #D8D0E6;
+}
+
+/* ── Inline Title ───────────────────────────────────────────── */
+
+.theme-dark .inline-title,
+.theme-dark.solace-dusk .inline-title {
+  color: var(--inline-title-color);
+  font-weight: 700;
+  border-bottom: 2px solid #231F30;
+  padding-bottom: 4px;
+}
+
+.theme-light .inline-title,
+.theme-dark.solace-light .inline-title {
+  color: var(--inline-title-color);
+  font-weight: 700;
+  border-bottom: 2px solid #E5DDF3;
+  padding-bottom: 4px;
+}
+
+.theme-dark .inline-title:hover,
+.theme-dark.solace-dusk .inline-title:hover {
+  border-bottom-color: #C9A8FF;
+}
+
+.theme-light .inline-title:hover,
+.theme-dark.solace-light .inline-title:hover {
+  border-bottom-color: #8A63D2;
+}
+
+.theme-dark .inline-title:empty,
+.theme-dark.solace-dusk .inline-title:empty {
+  border-bottom-color: #1E1B2E;
+}
+
+.theme-light .inline-title:empty,
+.theme-dark.solace-light .inline-title:empty {
+  border-bottom-color: #E5DDF3;
+}
+
+/* ── Reading View ───────────────────────────────────────────── */
+
+.theme-dark .markdown-preview-view .markdown-preview-section,
+.theme-light .markdown-preview-view .markdown-preview-section,
+.theme-dark.solace-light .markdown-preview-view .markdown-preview-section,
+.theme-dark.solace-dusk .markdown-preview-view .markdown-preview-section {
+  padding-top: 24px;
+  padding-bottom: 48px;
+  line-height: 1.7;
+}
+
+/* ── Task List Checkboxes (source mode) ─────────────────────── */
+
+.theme-dark .markdown-source-view .task-list-item-checkbox,
+.theme-dark.solace-dusk .markdown-source-view .task-list-item-checkbox {
+  border-color: #504A68;
+  background-color: transparent;
+}
+
+.theme-dark .markdown-source-view .task-list-item-checkbox:hover,
+.theme-dark.solace-dusk .markdown-source-view .task-list-item-checkbox:hover {
+  border-color: #C9A8FF;
+}
+
+.theme-dark .markdown-source-view .task-list-item-checkbox:checked,
+.theme-dark.solace-dusk .markdown-source-view .task-list-item-checkbox:checked {
+  background-color: #C9A8FF;
+  border-color: #C9A8FF;
+}
+
+.theme-dark .markdown-source-view .task-list-item-checkbox:focus,
+.theme-dark.solace-dusk .markdown-source-view .task-list-item-checkbox:focus {
+  box-shadow: 0 0 0 2px #C9A8FF40;
+}
+
+.theme-light .markdown-source-view .task-list-item-checkbox,
+.theme-dark.solace-light .markdown-source-view .task-list-item-checkbox {
+  border-color: #9A94AA;
+  background-color: transparent;
+}
+
+.theme-light .markdown-source-view .task-list-item-checkbox:hover,
+.theme-dark.solace-light .markdown-source-view .task-list-item-checkbox:hover {
+  border-color: #8A63D2;
+}
+
+.theme-light .markdown-source-view .task-list-item-checkbox:checked,
+.theme-dark.solace-light .markdown-source-view .task-list-item-checkbox:checked {
+  background-color: #8A63D2;
+  border-color: #8A63D2;
+}
+
+.theme-light .markdown-source-view .task-list-item-checkbox:focus,
+.theme-dark.solace-light .markdown-source-view .task-list-item-checkbox:focus {
+  box-shadow: 0 0 0 2px #8A63D240;
+}
+
+.theme-dark .task-list-item-checkbox,
+.theme-dark.solace-dusk .task-list-item-checkbox {
+  border-color: #504A68;
+}
+
+.theme-dark .task-list-item-checkbox:hover,
+.theme-dark.solace-dusk .task-list-item-checkbox:hover {
+  border-color: #C9A8FF;
+}
+
+.theme-dark .task-list-item-checkbox:checked,
+.theme-dark.solace-dusk .task-list-item-checkbox:checked {
+  background-color: #C9A8FF;
+  border-color: #C9A8FF;
+}
+
+.theme-light .task-list-item-checkbox,
+.theme-dark.solace-light .task-list-item-checkbox {
+  border-color: #9A94AA;
+}
+
+.theme-light .task-list-item-checkbox:hover,
+.theme-dark.solace-light .task-list-item-checkbox:hover {
+  border-color: #8A63D2;
+}
+
+.theme-light .task-list-item-checkbox:checked,
+.theme-dark.solace-light .task-list-item-checkbox:checked {
+  background-color: #8A63D2;
+  border-color: #8A63D2;
+}
+
+/* ── Drag and Drop ──────────────────────────────────────────── */
+
+.theme-dark .drag-indicator,
+.theme-dark.solace-dusk .drag-indicator {
+  color: #C9A8FF;
+}
+
+.theme-light .drag-indicator,
+.theme-dark.solace-light .drag-indicator {
+  color: #8A63D2;
+}
+
+.theme-dark .drop-indicator,
+.theme-dark.solace-dusk .drop-indicator {
+  background-color: #C9A8FF;
+}
+
+.theme-light .drop-indicator,
+.theme-dark.solace-light .drop-indicator {
+  background-color: #8A63D2;
+}
+
+.theme-dark .is-being-dragged,
+.theme-dark.solace-dusk .is-being-dragged {
+  opacity: 0.5;
+}
+
+.theme-light .is-being-dragged,
+.theme-dark.solace-light .is-being-dragged {
+  opacity: 0.5;
+}
+
+.theme-dark .is-drop-target,
+.theme-dark.solace-dusk .is-drop-target {
+  background-color: #C9A8FF18;
+  border-color: #C9A8FF;
+}
+
+.theme-light .is-drop-target,
+.theme-dark.solace-light .is-drop-target {
+  background-color: #8A63D218;
+  border-color: #8A63D2;
+}
+
+/* ── Switcher (full) ────────────────────────────────────────── */
+
+.theme-dark .switcher,
+.theme-dark.solace-dusk .switcher {
+  background-color: #1B1827;
+}
+
+.theme-light .switcher,
+.theme-dark.solace-light .switcher {
+  background-color: #F0ECF8;
+}
+
+.theme-dark .switcher .suggestion-item,
+.theme-dark.solace-dusk .switcher .suggestion-item {
+  color: #F1EEF8;
+}
+
+.theme-dark .switcher .suggestion-item.is-selected,
+.theme-dark.solace-dusk .switcher .suggestion-item.is-selected {
+  background-color: #231F30;
+  color: #F1EEF8;
+}
+
+.theme-light .switcher .suggestion-item,
+.theme-dark.solace-light .switcher .suggestion-item {
+  color: #2C2638;
+}
+
+.theme-light .switcher .suggestion-item.is-selected,
+.theme-dark.solace-light .switcher .suggestion-item.is-selected {
+  background-color: #E8E0F2;
+  color: #2C2638;
+}
+
+.theme-dark .quick-switcher,
+.theme-dark.solace-dusk .quick-switcher {
+  background-color: #1B1827;
+}
+
+.theme-light .quick-switcher,
+.theme-dark.solace-light .quick-switcher {
+  background-color: #F0ECF8;
+}
+
+/* ── Vault Switcher ─────────────────────────────────────────── */
+
+.theme-dark .workspace-switcher,
+.theme-dark.solace-dusk .workspace-switcher {
+  background-color: #1B1827;
+  border-color: #231F30;
+}
+
+.theme-light .workspace-switcher,
+.theme-dark.solace-light .workspace-switcher {
+  background-color: #F0ECF8;
+  border-color: #D8D0E6;
+}
+
+.theme-dark .workspace-switcher-item,
+.theme-dark.solace-dusk .workspace-switcher-item {
+  color: #F1EEF8;
+}
+
+.theme-dark .workspace-switcher-item:hover,
+.theme-dark.solace-dusk .workspace-switcher-item:hover {
+  background-color: #231F30;
+}
+
+.theme-dark .workspace-switcher-item.is-selected,
+.theme-dark.solace-dusk .workspace-switcher-item.is-selected {
+  background-color: #C9A8FF20;
+}
+
+.theme-light .workspace-switcher-item,
+.theme-dark.solace-light .workspace-switcher-item {
+  color: #2C2638;
+}
+
+.theme-light .workspace-switcher-item:hover,
+.theme-dark.solace-light .workspace-switcher-item:hover {
+  background-color: #E8E0F2;
+}
+
+.theme-light .workspace-switcher-item.is-selected,
+.theme-dark.solace-light .workspace-switcher-item.is-selected {
+  background-color: #8A63D220;
+}
+
+/* ── Import/Export Dialogs (light + dusk) ────────────────────── */
+
+.theme-light .export-dialog,
+.theme-dark.solace-light .export-dialog,
+.theme-dark.solace-dusk .export-dialog {
+  background-color: var(--modal-background);
+  border-color: var(--modal-border-color);
+}
+
+.theme-light .import-dialog,
+.theme-dark.solace-light .import-dialog,
+.theme-dark.solace-dusk .import-dialog {
+  background-color: var(--modal-background);
+  border-color: var(--modal-border-color);
+}
+
+/* ── Debug Console (light + dusk) ───────────────────────────── */
+
+.theme-light .debug-view,
+.theme-dark.solace-light .debug-view,
+.theme-dark.solace-dusk .debug-view {
+  background-color: var(--background-primary);
+}
+
+.theme-light .console-view,
+.theme-dark.solace-light .console-view,
+.theme-dark.solace-dusk .console-view {
+  background-color: var(--background-primary);
+}
+
+.theme-dark .console-view .console-line,
+.theme-dark.solace-dusk .console-view .console-line {
+  color: #F1EEF8;
+  border-bottom-color: #1E1B2E;
+}
+
+.theme-light .console-view .console-line,
+.theme-dark.solace-light .console-view .console-line {
+  color: #2C2638;
+  border-bottom-color: #E5DDF3;
+}
+
+.theme-dark .console-view .console-error,
+.theme-dark.solace-dusk .console-view .console-error {
+  color: #FF80C8;
+}
+
+.theme-light .console-view .console-error,
+.theme-dark.solace-light .console-view .console-error {
+  color: #D35B93;
+}
+
+.theme-dark .console-view .console-warn,
+.theme-dark.solace-dusk .console-view .console-warn {
+  color: #FFD39A;
+}
+
+.theme-light .console-view .console-warn,
+.theme-dark.solace-light .console-view .console-warn {
+  color: #C07A2C;
+}
+
+/* ── Obsidian Publish (light + dusk) ────────────────────────── */
+
+.theme-light .publish-view,
+.theme-dark.solace-light .publish-view,
+.theme-dark.solace-dusk .publish-view {
+  background-color: var(--background-primary);
+}
+
+/* ── Obsidian Sync (light + dusk) ───────────────────────────── */
+
+.theme-light .sync-view,
+.theme-dark.solace-light .sync-view,
+.theme-dark.solace-dusk .sync-view {
+  background-color: var(--background-primary);
+}
+
+/* ── Canvas (full) ──────────────────────────────────────────── */
+
+.theme-dark .canvas-node-editing,
+.theme-dark.solace-dusk .canvas-node-editing {
+  border-color: #C9A8FF;
+}
+
+.theme-light .canvas-node-editing,
+.theme-dark.solace-light .canvas-node-editing {
+  border-color: #8A63D2;
+}
+
+.theme-dark .canvas-node-content,
+.theme-dark.solace-dusk .canvas-node-content {
+  color: #F1EEF8;
+}
+
+.theme-light .canvas-node-content,
+.theme-dark.solace-light .canvas-node-content {
+  color: #2C2638;
+}
+
+.theme-dark .canvas-node-menu,
+.theme-dark.solace-dusk .canvas-node-menu {
+  background-color: #1B1827;
+  border-color: #231F30;
+}
+
+.theme-light .canvas-node-menu,
+.theme-dark.solace-light .canvas-node-menu {
+  background-color: #F0ECF8;
+  border-color: #D8D0E6;
+}
+
+.theme-dark .canvas-node-menu .button,
+.theme-dark.solace-dusk .canvas-node-menu .button {
+  color: #A09AB8;
+}
+
+.theme-dark .canvas-node-menu .button:hover,
+.theme-dark.solace-dusk .canvas-node-menu .button:hover {
+  color: #C9A8FF;
+}
+
+.theme-light .canvas-node-menu .button,
+.theme-dark.solace-light .canvas-node-menu .button {
+  color: #736C86;
+}
+
+.theme-light .canvas-node-menu .button:hover,
+.theme-dark.solace-light .canvas-node-menu .button:hover {
+  color: #8A63D2;
+}
+
+.theme-dark .canvas-background,
+.theme-dark.solace-dusk .canvas-background {
+  background-color: #0E0D14;
+}
+
+.theme-light .canvas-background,
+.theme-dark.solace-light .canvas-background {
+  background-color: #ECE7F6;
+}
+
+.theme-dark .canvas-edge,
+.theme-dark.solace-dusk .canvas-edge {
+  stroke: #504A68;
+}
+
+.theme-light .canvas-edge,
+.theme-dark.solace-light .canvas-edge {
+  stroke: #9A94AA;
+}
+
+.theme-dark .canvas-edge:hover,
+.theme-dark.solace-dusk .canvas-edge:hover {
+  stroke: #C9A8FF;
+}
+
+.theme-light .canvas-edge:hover,
+.theme-dark.solace-light .canvas-edge:hover {
+  stroke: #8A63D2;
+}
+
+.theme-dark .canvas-color-presets,
+.theme-dark.solace-dusk .canvas-color-presets {
+  background-color: #1B1827;
+  border-color: #231F30;
+}
+
+.theme-light .canvas-color-presets,
+.theme-dark.solace-light .canvas-color-presets {
+  background-color: #F0ECF8;
+  border-color: #D8D0E6;
+}
+
+/* ── Dataview (light + dusk) ────────────────────────────────── */
+
+.theme-light .dataview.table-view-table,
+.theme-dark.solace-light .dataview.table-view-table,
+.theme-dark.solace-dusk .dataview.table-view-table {
+  border-color: var(--background-modifier-border);
+}
+
+.theme-light .dataview.table-view-table th,
+.theme-dark.solace-light .dataview.table-view-table th,
+.theme-dark.solace-dusk .dataview.table-view-table th {
+  background-color: var(--background-secondary);
+  border-color: var(--background-modifier-border);
+  color: var(--text-accent);
+}
+
+.theme-light .dataview.table-view-table td,
+.theme-dark.solace-light .dataview.table-view-table td,
+.theme-dark.solace-dusk .dataview.table-view-table td {
+  border-color: var(--background-modifier-border);
+  color: var(--text-normal);
+}
+
+.theme-light .dataview.table-view-table tr:hover,
+.theme-dark.solace-light .dataview.table-view-table tr:hover,
+.theme-dark.solace-dusk .dataview.table-view-table tr:hover {
+  background-color: var(--background-modifier-hover);
+}
+
+.theme-light .table-view-container,
+.theme-dark.solace-light .table-view-container,
+.theme-dark.solace-dusk .table-view-container {
+  background-color: var(--background-primary);
+}
+
+.theme-light .table-view-header,
+.theme-dark.solace-light .table-view-header,
+.theme-dark.solace-dusk .table-view-header {
+  background-color: var(--background-secondary);
+  color: var(--text-accent);
+}
+
+/* ── Kanban (light + dusk) ──────────────────────────────────── */
+
+.theme-light .kanban-plugin__board,
+.theme-dark.solace-light .kanban-plugin__board,
+.theme-dark.solace-dusk .kanban-plugin__board {
+  background-color: transparent;
+}
+
+.theme-light .kanban-plugin__lane,
+.theme-dark.solace-light .kanban-plugin__lane,
+.theme-dark.solace-dusk .kanban-plugin__lane {
+  background-color: var(--background-secondary);
+  border-color: var(--background-modifier-border);
+}
+
+.theme-light .kanban-plugin__card,
+.theme-dark.solace-light .kanban-plugin__card,
+.theme-dark.solace-dusk .kanban-plugin__card {
+  background-color: var(--background-primary);
+  border-color: var(--background-modifier-border);
+}
+
+.theme-light .kanban-plugin__card:hover,
+.theme-dark.solace-light .kanban-plugin__card:hover,
+.theme-dark.solace-dusk .kanban-plugin__card:hover {
+  background-color: var(--background-modifier-hover);
+}
+
+.theme-light .kanban-plugin__lane-header,
+.theme-dark.solace-light .kanban-plugin__lane-header,
+.theme-dark.solace-dusk .kanban-plugin__lane-header {
+  color: var(--text-accent);
+}
+
+.theme-light .kanban-plugin__title-input,
+.theme-dark.solace-light .kanban-plugin__title-input,
+.theme-dark.solace-dusk .kanban-plugin__title-input {
+  color: var(--text-normal);
+}
+
+.theme-light .kanban-plugin__meta,
+.theme-dark.solace-light .kanban-plugin__meta,
+.theme-dark.solace-dusk .kanban-plugin__meta {
+  color: var(--text-muted);
+}
+
+.theme-light .kanban-plugin__date,
+.theme-dark.solace-light .kanban-plugin__date,
+.theme-dark.solace-dusk .kanban-plugin__date {
+  color: var(--text-muted);
+}
+
+/* ── Markdown Source View (full) ────────────────────────────── */
+
+.theme-dark .markdown-source-view .cm-hmd-internal-link,
+.theme-dark.solace-dusk .markdown-source-view .cm-hmd-internal-link {
+  color: #C9A8FF;
+}
+
+.theme-light .markdown-source-view .cm-hmd-internal-link,
+.theme-dark.solace-light .markdown-source-view .cm-hmd-internal-link {
+  color: #7E5ACB;
+}
+
+.theme-dark .markdown-source-view .cm-hmd-external-link,
+.theme-dark.solace-dusk .markdown-source-view .cm-hmd-external-link {
+  color: #C9A8FF;
+  text-decoration: underline;
+}
+
+.theme-light .markdown-source-view .cm-hmd-external-link,
+.theme-dark.solace-light .markdown-source-view .cm-hmd-external-link {
+  color: #7E5ACB;
+  text-decoration: underline;
+}
+
+.theme-dark .markdown-source-view .cm-hmd-tag,
+.theme-dark.solace-dusk .markdown-source-view .cm-hmd-tag {
+  color: #C9A8FF;
+}
+
+.theme-light .markdown-source-view .cm-hmd-tag,
+.theme-dark.solace-light .markdown-source-view .cm-hmd-tag {
+  color: #8A63D2;
+}
+
+.theme-dark .markdown-source-view .cm-meta,
+.theme-dark.solace-dusk .markdown-source-view .cm-meta {
+  color: #C9A8FF;
+}
+
+.theme-light .markdown-source-view .cm-meta,
+.theme-dark.solace-light .markdown-source-view .cm-meta {
+  color: #7E5ACB;
+}
+
+.theme-dark .markdown-source-view .cm-formatting,
+.theme-dark.solace-dusk .markdown-source-view .cm-formatting {
+  color: #504A68;
+}
+
+.theme-light .markdown-source-view .cm-formatting,
+.theme-dark.solace-light .markdown-source-view .cm-formatting {
+  color: #9A94AA;
+}
+
+.theme-dark .markdown-source-view .cm-embed,
+.theme-dark.solace-dusk .markdown-source-view .cm-embed {
+  color: #C9A8FF;
+}
+
+.theme-light .markdown-source-view .cm-embed,
+.theme-dark.solace-light .markdown-source-view .cm-embed {
+  color: #7E5ACB;
+}
+
+/* ── Mobile ─────────────────────────────────────────────────── */
+
+.theme-dark .is-mobile .sidebar,
+.theme-dark.solace-dusk .is-mobile .sidebar {
+  background-color: #16141F;
+}
+
+.theme-light .is-mobile .sidebar,
+.theme-dark.solace-light .is-mobile .sidebar {
+  background-color: #F6F3FC;
+}
+
+.theme-dark .is-mobile .side-dock-ribbon,
+.theme-dark.solace-dusk .is-mobile .side-dock-ribbon {
+  background-color: #0E0D14;
+}
+
+.theme-light .is-mobile .side-dock-ribbon,
+.theme-dark.solace-light .is-mobile .side-dock-ribbon {
+  background-color: #E8E2F2;
+}
+
+.theme-dark .is-mobile .modal,
+.theme-dark.solace-dusk .is-mobile .modal {
+  width: calc(100vw - 16px);
+  max-height: calc(100vh - 32px);
+}
+
+.theme-light .is-mobile .modal,
+.theme-dark.solace-light .is-mobile .modal {
+  width: calc(100vw - 16px);
+  max-height: calc(100vh - 32px);
+}
+
+.theme-dark .is-mobile .markdown-preview-view,
+.theme-dark.solace-dusk .is-mobile .markdown-preview-view {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.theme-light .is-mobile .markdown-preview-view,
+.theme-dark.solace-light .is-mobile .markdown-preview-view {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.theme-dark .is-mobile .tab-container,
+.theme-dark.solace-dusk .is-mobile .tab-container {
+  background-color: #0E0D14;
+}
+
+.theme-light .is-mobile .tab-container,
+.theme-dark.solace-light .is-mobile .tab-container {
+  background-color: #E4DDF0;
+}
+
+/* ── Workspace Tab Header (full) ────────────────────────────── */
+
+.theme-dark .workspace-tab-header,
+.theme-dark.solace-dusk .workspace-tab-header {
+  border-color: #1E1B2E;
+}
+
+.theme-light .workspace-tab-header,
+.theme-dark.solace-light .workspace-tab-header {
+  border-color: #D8D0E6;
+}
+
+.theme-dark .workspace-tab-header .workspace-tab-icon,
+.theme-dark.solace-dusk .workspace-tab-header .workspace-tab-icon {
+  color: #504A68;
+}
+
+.theme-light .workspace-tab-header .workspace-tab-icon,
+.theme-dark.solace-light .workspace-tab-header .workspace-tab-icon {
+  color: #9A94AA;
+}
+
+.theme-dark .workspace-tab-header.is-active .workspace-tab-icon,
+.theme-dark.solace-dusk .workspace-tab-header.is-active .workspace-tab-icon {
+  color: #C9A8FF;
+}
+
+.theme-light .workspace-tab-header.is-active .workspace-tab-icon,
+.theme-dark.solace-light .workspace-tab-header.is-active .workspace-tab-icon {
+  color: #8A63D2;
+}
+
+.theme-dark .workspace-tab-header .workspace-tab-title,
+.theme-dark.solace-dusk .workspace-tab-header .workspace-tab-title {
+  color: #A09AB8;
+}
+
+.theme-dark .workspace-tab-header.is-active .workspace-tab-title,
+.theme-dark.solace-dusk .workspace-tab-header.is-active .workspace-tab-title {
+  color: #F1EEF8;
+}
+
+.theme-light .workspace-tab-header .workspace-tab-title,
+.theme-dark.solace-light .workspace-tab-header .workspace-tab-title {
+  color: #736C86;
+}
+
+.theme-light .workspace-tab-header.is-active .workspace-tab-title,
+.theme-dark.solace-light .workspace-tab-header.is-active .workspace-tab-title {
+  color: #2C2638;
+}
