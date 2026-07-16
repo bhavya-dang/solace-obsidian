@@ -149,6 +149,7 @@
   /* Checkbox */
   --checkbox-color: #C9A8FF;
   --checkbox-color-hover: #D4BAFF;
+  --checkbox-color-halfway: #C9A8FF;
 
   /* Radio */
   --interactive-accent-hsl: 260 100% 80%;
@@ -810,6 +811,29 @@
   border-color: var(--interactive-accent);
 }
 
+/* Markdown preview — task lists (halfway) */
+.theme-dark .markdown-preview-view input[data-task="/"]:checked,
+.theme-dark .markdown-preview-view li[data-task="/"] > input:checked,
+.theme-dark .markdown-preview-view li[data-task="/"] > p > input:checked {
+  --checkbox-marker-color: transparent;
+  background-color: transparent;
+  border-color: var(--checkbox-color-halfway);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-dark .markdown-preview-view input[data-task="/"]:checked::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: var(--checkbox-color-halfway);
+  -webkit-mask-image: none;
+}
+
 /* Markdown preview — tags */
 .theme-dark .markdown-preview-view .tag {
   background-color: var(--tag-background);
@@ -1449,6 +1473,7 @@
 
   --checkbox-color: #8A63D2;
   --checkbox-color-hover: #714BC4;
+  --checkbox-color-halfway: #8A63D2;
 
   --color-base-00: #F6F3FC;
   --color-base-10: #F1EDF8;
@@ -1959,6 +1984,33 @@
 .theme-dark.solace-light .markdown-preview-view .task-list-item-checkbox:checked {
   background-color: var(--interactive-accent);
   border-color: var(--interactive-accent);
+}
+
+/* Markdown preview — task lists (halfway) */
+.theme-light .markdown-preview-view input[data-task="/"]:checked,
+.theme-light .markdown-preview-view li[data-task="/"] > input:checked,
+.theme-light .markdown-preview-view li[data-task="/"] > p > input:checked,
+.theme-dark.solace-light .markdown-preview-view input[data-task="/"]:checked,
+.theme-dark.solace-light .markdown-preview-view li[data-task="/"] > input:checked,
+.theme-dark.solace-light .markdown-preview-view li[data-task="/"] > p > input:checked {
+  --checkbox-marker-color: transparent;
+  background-color: transparent;
+  border-color: var(--checkbox-color-halfway);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-light .markdown-preview-view input[data-task="/"]:checked::after,
+.theme-dark.solace-light .markdown-preview-view input[data-task="/"]:checked::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: var(--checkbox-color-halfway);
+  -webkit-mask-image: none;
 }
 
 .theme-light .markdown-preview-view .tag,
@@ -2673,6 +2725,7 @@
 
   --checkbox-color: #B89EF0;
   --checkbox-color-hover: #C8A8F2;
+  --checkbox-color-halfway: #B89EF0;
 
   --color-base-00: #191725;
   --color-base-10: #1E1B2B;
@@ -3025,6 +3078,29 @@
 .theme-dark.solace-dusk .markdown-preview-view .task-list-item-checkbox:checked {
   background-color: var(--interactive-accent);
   border-color: var(--interactive-accent);
+}
+
+/* Markdown preview — task lists (halfway) */
+.theme-dark.solace-dusk .markdown-preview-view input[data-task="/"]:checked,
+.theme-dark.solace-dusk .markdown-preview-view li[data-task="/"] > input:checked,
+.theme-dark.solace-dusk .markdown-preview-view li[data-task="/"] > p > input:checked {
+  --checkbox-marker-color: transparent;
+  background-color: transparent;
+  border-color: var(--checkbox-color-halfway);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-dark.solace-dusk .markdown-preview-view input[data-task="/"]:checked::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: var(--checkbox-color-halfway);
+  -webkit-mask-image: none;
 }
 
 .theme-dark.solace-dusk .markdown-preview-view .tag {
@@ -3629,6 +3705,12 @@
         type: variable-color
         default: "#F1EEF8"
         format: "hex6"
+      - id: solace-checkbox-halfway
+        title: Halfway checkbox color
+        type: variable-color
+        default: "#C9A8FF"
+        format: "hex6"
+        description: "Color for [/] in-progress task checkboxes."
 
   - title: Editor
     settings:
@@ -4458,6 +4540,29 @@
   box-shadow: 0 0 0 2px #C9A8FF40;
 }
 
+/* Source mode — task lists (halfway) */
+.theme-dark .markdown-source-view input[data-task="/"]:checked,
+.theme-dark.solace-dusk .markdown-source-view input[data-task="/"]:checked {
+  --checkbox-marker-color: transparent;
+  background-color: transparent;
+  border-color: var(--checkbox-color-halfway);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-dark .markdown-source-view input[data-task="/"]:checked::after,
+.theme-dark.solace-dusk .markdown-source-view input[data-task="/"]:checked::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: var(--checkbox-color-halfway);
+  -webkit-mask-image: none;
+}
+
 .theme-light .markdown-source-view .task-list-item-checkbox,
 .theme-dark.solace-light .markdown-source-view .task-list-item-checkbox {
   border-color: #9A94AA;
@@ -4480,6 +4585,29 @@
   box-shadow: 0 0 0 2px #8A63D240;
 }
 
+/* Source mode — task lists (halfway) */
+.theme-light .markdown-source-view input[data-task="/"]:checked,
+.theme-dark.solace-light .markdown-source-view input[data-task="/"]:checked {
+  --checkbox-marker-color: transparent;
+  background-color: transparent;
+  border-color: var(--checkbox-color-halfway);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-light .markdown-source-view input[data-task="/"]:checked::after,
+.theme-dark.solace-light .markdown-source-view input[data-task="/"]:checked::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: var(--checkbox-color-halfway);
+  -webkit-mask-image: none;
+}
+
 .theme-dark .task-list-item-checkbox,
 .theme-dark.solace-dusk .task-list-item-checkbox {
   border-color: #504A68;
@@ -4496,6 +4624,29 @@
   border-color: #C9A8FF;
 }
 
+/* General — task lists (halfway) */
+.theme-dark input[data-task="/"]:checked,
+.theme-dark.solace-dusk input[data-task="/"]:checked {
+  --checkbox-marker-color: transparent;
+  background-color: transparent;
+  border-color: var(--checkbox-color-halfway);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-dark input[data-task="/"]:checked::after,
+.theme-dark.solace-dusk input[data-task="/"]:checked::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: var(--checkbox-color-halfway);
+  -webkit-mask-image: none;
+}
+
 .theme-light .task-list-item-checkbox,
 .theme-dark.solace-light .task-list-item-checkbox {
   border-color: #9A94AA;
@@ -4510,6 +4661,29 @@
 .theme-dark.solace-light .task-list-item-checkbox:checked {
   background-color: #8A63D2;
   border-color: #8A63D2;
+}
+
+/* General — task lists (halfway) */
+.theme-light input[data-task="/"]:checked,
+.theme-dark.solace-light input[data-task="/"]:checked {
+  --checkbox-marker-color: transparent;
+  background-color: transparent;
+  border-color: var(--checkbox-color-halfway);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-light input[data-task="/"]:checked::after,
+.theme-dark.solace-light input[data-task="/"]:checked::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: var(--checkbox-color-halfway);
+  -webkit-mask-image: none;
 }
 
 /* ── Drag and Drop ──────────────────────────────────────────── */
