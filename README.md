@@ -24,6 +24,13 @@ Solace is a clean, minimal theme built around a soft violet palette. Originally 
 - **Mobile optimized:** Dedicated styles for sidebar, ribbon, and markdown preview.
 - **Callouts:** Color-coded styling for all built-in types.
 
+## Preview
+
+<div align="center">
+    <img src="./preview/demo2.png" alt="solace dark peview">
+    <img src="./preview/demo1.png" alt="solace light peview">
+</div>
+
 ## Installation
 
 **Community Themes:**
