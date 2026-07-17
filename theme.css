@@ -1,5 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
+.theme-dark,
+.theme-light,
+.theme-dark.solace-light,
+.theme-dark.solace-dusk {
+    box-sizing: border-box;
+}
+
+.theme-dark *,
+.theme-light *,
+.theme-dark.solace-light *,
+.theme-dark.solace-dusk *,
+.theme-dark *::before,
+.theme-light *::before,
+.theme-dark.solace-light *::before,
+.theme-dark.solace-dusk *::before,
+.theme-dark *::after,
+.theme-light *::after,
+.theme-dark.solace-light *::after,
+.theme-dark.solace-dusk *::after {
+    box-sizing: inherit;
+}
+
 /*
  * Solace — A minimal Obsidian theme with violet undertones and pastel syntax.
  * Author: Bhavya Dang (bhavyadang.in)
@@ -43,6 +65,7 @@
     --text-on-accent: #16141f;
     --text-on-accent-hover: #0e0d14;
     --text-on-accent-inverted: #f1eef8;
+    --text-selection: rgba(201, 168, 255, 0.3);
 
     /* Interactive */
     --interactive-normal: #231f30;
@@ -157,131 +180,10 @@
     --interactive-accent-hsl: 260 100% 80%;
 }
 
-/* ── Solace Dark: Scrollbar ─────────────────────────────────── */
-
-.theme-dark .nav-files-container,
-.theme-dark .nav-header,
-.theme-dark .tree-item-children,
-.theme-dark .cm-scroller,
-.theme-dark .markdown-preview-view,
-.theme-dark .setting-group,
-.theme-dark .suggestion-container,
-.theme-dark .prompt-list,
-.theme-dark .search-results-container,
-.theme-dark .modal-body,
-.theme-dark .workspace-leaf-content,
-.theme-dark .outline-pane .outline-item-container,
-.theme-dark .backlink-pane .backlink-card-container,
-.theme-dark .tag-pane-content,
-.theme-dark .graph-controls {
-    scrollbar-width: thin;
-    scrollbar-color: #a09ab830 transparent;
-}
-
-.theme-dark .nav-files-container::-webkit-scrollbar,
-.theme-dark .nav-header::-webkit-scrollbar,
-.theme-dark .tree-item-children::-webkit-scrollbar,
-.theme-dark .cm-scroller::-webkit-scrollbar,
-.theme-dark .markdown-preview-view::-webkit-scrollbar,
-.theme-dark .setting-group::-webkit-scrollbar,
-.theme-dark .suggestion-container::-webkit-scrollbar,
-.theme-dark .prompt-list::-webkit-scrollbar,
-.theme-dark .search-results-container::-webkit-scrollbar,
-.theme-dark .modal-body::-webkit-scrollbar,
-.theme-dark .workspace-leaf-content::-webkit-scrollbar,
-.theme-dark .outline-pane .outline-item-container::-webkit-scrollbar,
-.theme-dark .backlink-pane .backlink-card-container::-webkit-scrollbar,
-.theme-dark .tag-pane-content::-webkit-scrollbar,
-.theme-dark .graph-controls::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
-
-.theme-dark .nav-files-container::-webkit-scrollbar-track,
-.theme-dark .nav-header::-webkit-scrollbar-track,
-.theme-dark .tree-item-children::-webkit-scrollbar-track,
-.theme-dark .cm-scroller::-webkit-scrollbar-track,
-.theme-dark .markdown-preview-view::-webkit-scrollbar-track,
-.theme-dark .setting-group::-webkit-scrollbar-track,
-.theme-dark .suggestion-container::-webkit-scrollbar-track,
-.theme-dark .prompt-list::-webkit-scrollbar-track,
-.theme-dark .search-results-container::-webkit-scrollbar-track,
-.theme-dark .modal-body::-webkit-scrollbar-track,
-.theme-dark .workspace-leaf-content::-webkit-scrollbar-track,
-.theme-dark .outline-pane .outline-item-container::-webkit-scrollbar-track,
-.theme-dark .backlink-pane .backlink-card-container::-webkit-scrollbar-track,
-.theme-dark .tag-pane-content::-webkit-scrollbar-track,
-.theme-dark .graph-controls::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.theme-dark .nav-files-container::-webkit-scrollbar-thumb,
-.theme-dark .nav-header::-webkit-scrollbar-thumb,
-.theme-dark .tree-item-children::-webkit-scrollbar-thumb,
-.theme-dark .cm-scroller::-webkit-scrollbar-thumb,
-.theme-dark .markdown-preview-view::-webkit-scrollbar-thumb,
-.theme-dark .setting-group::-webkit-scrollbar-thumb,
-.theme-dark .suggestion-container::-webkit-scrollbar-thumb,
-.theme-dark .prompt-list::-webkit-scrollbar-thumb,
-.theme-dark .search-results-container::-webkit-scrollbar-thumb,
-.theme-dark .modal-body::-webkit-scrollbar-thumb,
-.theme-dark .workspace-leaf-content::-webkit-scrollbar-thumb,
-.theme-dark .outline-pane .outline-item-container::-webkit-scrollbar-thumb,
-.theme-dark .backlink-pane .backlink-card-container::-webkit-scrollbar-thumb,
-.theme-dark .tag-pane-content::-webkit-scrollbar-thumb,
-.theme-dark .graph-controls::-webkit-scrollbar-thumb {
-    background: #a09ab830;
-    border-radius: 4px;
-}
-
-.theme-dark .nav-files-container::-webkit-scrollbar-thumb:hover,
-.theme-dark .nav-header::-webkit-scrollbar-thumb:hover,
-.theme-dark .tree-item-children::-webkit-scrollbar-thumb:hover,
-.theme-dark .cm-scroller::-webkit-scrollbar-thumb:hover,
-.theme-dark .markdown-preview-view::-webkit-scrollbar-thumb:hover,
-.theme-dark .setting-group::-webkit-scrollbar-thumb:hover,
-.theme-dark .suggestion-container::-webkit-scrollbar-thumb:hover,
-.theme-dark .prompt-list::-webkit-scrollbar-thumb:hover,
-.theme-dark .search-results-container::-webkit-scrollbar-thumb:hover,
-.theme-dark .modal-body::-webkit-scrollbar-thumb:hover,
-.theme-dark .workspace-leaf-content::-webkit-scrollbar-thumb:hover,
-.theme-dark
-    .outline-pane
-    .outline-item-container::-webkit-scrollbar-thumb:hover,
-.theme-dark
-    .backlink-pane
-    .backlink-card-container::-webkit-scrollbar-thumb:hover,
-.theme-dark .tag-pane-content::-webkit-scrollbar-thumb:hover,
-.theme-dark .graph-controls::-webkit-scrollbar-thumb:hover {
-    background: #a09ab850;
-}
-
-.theme-dark .nav-files-container::-webkit-scrollbar-thumb:active,
-.theme-dark .nav-header::-webkit-scrollbar-thumb:active,
-.theme-dark .tree-item-children::-webkit-scrollbar-thumb:active,
-.theme-dark .cm-scroller::-webkit-scrollbar-thumb:active,
-.theme-dark .markdown-preview-view::-webkit-scrollbar-thumb:active,
-.theme-dark .setting-group::-webkit-scrollbar-thumb:active,
-.theme-dark .suggestion-container::-webkit-scrollbar-thumb:active,
-.theme-dark .prompt-list::-webkit-scrollbar-thumb:active,
-.theme-dark .search-results-container::-webkit-scrollbar-thumb:active,
-.theme-dark .modal-body::-webkit-scrollbar-thumb:active,
-.theme-dark .workspace-leaf-content::-webkit-scrollbar-thumb:active,
-.theme-dark
-    .outline-pane
-    .outline-item-container::-webkit-scrollbar-thumb:active,
-.theme-dark
-    .backlink-pane
-    .backlink-card-container::-webkit-scrollbar-thumb:active,
-.theme-dark .tag-pane-content::-webkit-scrollbar-thumb:active,
-.theme-dark .graph-controls::-webkit-scrollbar-thumb:active {
-    background: #504a68;
-}
-
 /* ── Solace Dark: Selection ─────────────────────────────────── */
 
 .theme-dark ::selection {
-    background-color: #c9a8ff40;
+    background-color: var(--text-selection, rgba(201, 168, 255, 0.3));
     color: inherit;
 }
 
@@ -361,10 +263,6 @@
     border-color: var(--interactive-accent);
 }
 
-.theme-dark .setting-item:hover {
-    background-color: var(--interactive-hover);
-}
-
 .theme-dark .setting-item-info {
     color: var(--text-normal);
 }
@@ -410,10 +308,41 @@
     color: var(--text-accent);
 }
 
-.theme-dark .tag {
+.theme-dark .tag,
+.theme-dark a.tag {
     background-color: var(--tag-background);
     color: var(--tag-color);
     border-color: var(--tag-border-color);
+    padding: var(--tag-padding-y, 0.25em) var(--tag-padding-x, 0.65em);
+    line-height: 1;
+    overflow: visible;
+    vertical-align: baseline;
+}
+
+.theme-dark .cm-hashtag {
+    background-color: var(--tag-background);
+    color: var(--tag-color);
+    border-color: var(--tag-border-color);
+    padding-top: var(--tag-padding-y, 0.25em);
+    padding-bottom: var(--tag-padding-y, 0.25em);
+    line-height: 1;
+    vertical-align: baseline;
+}
+
+.theme-dark .cm-hashtag.cm-hashtag-begin {
+    border-start-start-radius: var(--tag-radius, 2em);
+    border-end-start-radius: var(--tag-radius, 2em);
+    border-inline-end: none;
+    border-inline-start: var(--tag-border-width, 0px) solid var(--tag-border-color);
+    padding-inline-start: var(--tag-padding-x, 0.65em);
+}
+
+.theme-dark .cm-hashtag.cm-hashtag-end {
+    border-start-end-radius: var(--tag-radius, 2em);
+    border-end-end-radius: var(--tag-radius, 2em);
+    border-inline-start: none;
+    border-inline-end: var(--tag-border-width, 0px) solid var(--tag-border-color);
+    padding-inline-end: var(--tag-padding-x, 0.65em);
 }
 
 .theme-dark .cm-panels {
@@ -480,55 +409,59 @@
 
 /* ── Solace Dark: Callouts ──────────────────────────────────── */
 
-.theme-dark .callout[data-type="note"],
-.theme-dark .callout[data-type="info"] {
+.theme-dark .callout[data-callout="note"],
+.theme-dark .callout[data-callout="info"],
+.theme-dark .callout[data-callout="todo"] {
     --callout-color: 152 128 232;
-    --callout-bg: rgba(152, 128, 232, 0.09);
 }
 
-.theme-dark .callout[data-type="tip"],
-.theme-dark .callout[data-type="success"],
-.theme-dark .callout[data-type="check"] {
+.theme-dark .callout[data-callout="tip"],
+.theme-dark .callout[data-callout="hint"],
+.theme-dark .callout[data-callout="important"] {
     --callout-color: 168 255 236;
-    --callout-bg: rgba(168, 255, 236, 0.09);
 }
 
-.theme-dark .callout[data-type="warning"],
-.theme-dark .callout[data-type="caution"] {
-    --callout-color: 201 168 255;
-    --callout-bg: rgba(201, 168, 255, 0.09);
+.theme-dark .callout[data-callout="success"] {
+    --callout-color: 168 255 236;
 }
 
-.theme-dark .callout[data-type="danger"],
-.theme-dark .callout[data-type="error"] {
+.theme-dark .callout[data-callout="warning"],
+.theme-dark .callout[data-callout="caution"],
+.theme-dark .callout[data-callout="attention"] {
+    --callout-color: 255 214 102;
+}
+
+.theme-dark .callout[data-callout="danger"],
+.theme-dark .callout[data-callout="error"] {
     --callout-color: 255 128 200;
-    --callout-bg: rgba(255, 128, 200, 0.08);
 }
 
-.theme-dark .callout[data-type="quote"],
-.theme-dark .callout[data-type="abstract"] {
+.theme-dark .callout[data-callout="failure"] {
+    --callout-color: 255 128 200;
+}
+
+.theme-dark .callout[data-callout="bug"] {
+    --callout-color: 255 128 200;
+}
+
+.theme-dark .callout[data-callout="example"] {
+    --callout-color: 255 179 209;
+}
+
+.theme-dark .callout[data-callout="quote"],
+.theme-dark .callout[data-callout="cite"] {
     --callout-color: 160 154 184;
-    --callout-bg: rgba(160, 154, 184, 0.09);
 }
 
-.theme-dark .callout[data-type="example"] {
-    --callout-color: 255 179 209;
-    --callout-bg: rgba(255, 179, 209, 0.09);
+.theme-dark .callout[data-callout="abstract"],
+.theme-dark .callout[data-callout="summary"] {
+    --callout-color: 160 154 184;
 }
 
-.theme-dark .callout[data-type="bug"] {
-    --callout-color: 255 128 200;
-    --callout-bg: rgba(255, 128, 200, 0.09);
-}
-
-.theme-dark .callout[data-type="question"],
-.theme-dark .callout[data-type="help"] {
+.theme-dark .callout[data-callout="question"],
+.theme-dark .callout[data-callout="help"],
+.theme-dark .callout[data-callout="faq"] {
     --callout-color: 152 128 232;
-    --callout-bg: rgba(152, 128, 232, 0.09);
-}
-
-.theme-dark .callout[data-type="example"] .callout-title {
-    --callout-color: 255 179 209;
 }
 
 /* ── Solace Dark: Syntax Highlighting ───────────────────────── */
@@ -851,10 +784,6 @@
 }
 
 /* Markdown preview — callouts */
-.theme-dark .markdown-preview-view .callout {
-    border-color: var(--callout-default-color);
-}
-
 /* Markdown preview — internal links */
 .theme-dark .markdown-preview-view .internal-link {
     color: var(--text-accent);
@@ -1165,10 +1094,6 @@
     border-bottom-color: var(--background-modifier-border);
 }
 
-.theme-dark .setting-item:hover {
-    background-color: var(--interactive-hover);
-}
-
 .theme-dark .setting-item-control {
     color: var(--text-muted);
 }
@@ -1419,6 +1344,7 @@
     --text-on-accent: #f6f3fc;
     --text-on-accent-hover: #ffffff;
     --text-on-accent-inverted: #2c2638;
+    --text-selection: rgba(138, 99, 210, 0.2);
 
     --interactive-normal: #dbd0ee;
     --interactive-hover: #d8d0e6;
@@ -1512,9 +1438,13 @@
     --graph-line-color: #d8d0e6;
 }
 
-/* ── Scrollbar (Light) ──────────────────────────────────────── */
-
 /* ── Solace Light: UI Chrome ────────────────────────────────── */
+
+.theme-light ::selection,
+.theme-dark.solace-light ::selection {
+    background-color: var(--text-selection, rgba(138, 99, 210, 0.2));
+    color: inherit;
+}
 
 .theme-light .side-dock-ribbon,
 .theme-dark.solace-light .side-dock-ribbon {
@@ -1850,66 +1780,81 @@
 
 /* ── Solace Light: Callouts ─────────────────────────────────── */
 
-.theme-light .callout[data-type="note"],
-.theme-light .callout[data-type="info"],
-.theme-dark.solace-light .callout[data-type="note"],
-.theme-dark.solace-light .callout[data-type="info"] {
+.theme-light .callout[data-callout="note"],
+.theme-light .callout[data-callout="info"],
+.theme-light .callout[data-callout="todo"],
+.theme-dark.solace-light .callout[data-callout="note"],
+.theme-dark.solace-light .callout[data-callout="info"],
+.theme-dark.solace-light .callout[data-callout="todo"] {
     --callout-color: 138 99 210;
-    --callout-bg: rgba(138, 99, 210, 0.09);
 }
 
-.theme-light .callout[data-type="tip"],
-.theme-light .callout[data-type="success"],
-.theme-light .callout[data-type="check"],
-.theme-dark.solace-light .callout[data-type="tip"],
-.theme-dark.solace-light .callout[data-type="success"],
-.theme-dark.solace-light .callout[data-type="check"] {
+.theme-light .callout[data-callout="tip"],
+.theme-light .callout[data-callout="hint"],
+.theme-light .callout[data-callout="important"],
+.theme-dark.solace-light .callout[data-callout="tip"],
+.theme-dark.solace-light .callout[data-callout="hint"],
+.theme-dark.solace-light .callout[data-callout="important"] {
     --callout-color: 63 154 133;
-    --callout-bg: rgba(63, 154, 133, 0.09);
 }
 
-.theme-light .callout[data-type="warning"],
-.theme-light .callout[data-type="caution"],
-.theme-dark.solace-light .callout[data-type="warning"],
-.theme-dark.solace-light .callout[data-type="caution"] {
+.theme-light .callout[data-callout="success"],
+.theme-dark.solace-light .callout[data-callout="success"] {
+    --callout-color: 63 154 133;
+}
+
+.theme-light .callout[data-callout="warning"],
+.theme-light .callout[data-callout="caution"],
+.theme-light .callout[data-callout="attention"],
+.theme-dark.solace-light .callout[data-callout="warning"],
+.theme-dark.solace-light .callout[data-callout="caution"],
+.theme-dark.solace-light .callout[data-callout="attention"] {
     --callout-color: 192 122 44;
-    --callout-bg: rgba(192, 122, 44, 0.09);
 }
 
-.theme-light .callout[data-type="danger"],
-.theme-light .callout[data-type="error"],
-.theme-dark.solace-light .callout[data-type="danger"],
-.theme-dark.solace-light .callout[data-type="error"] {
+.theme-light .callout[data-callout="danger"],
+.theme-light .callout[data-callout="error"],
+.theme-dark.solace-light .callout[data-callout="danger"],
+.theme-dark.solace-light .callout[data-callout="error"] {
     --callout-color: 211 91 147;
-    --callout-bg: rgba(211, 91, 147, 0.09);
 }
 
-.theme-light .callout[data-type="quote"],
-.theme-light .callout[data-type="abstract"],
-.theme-dark.solace-light .callout[data-type="quote"],
-.theme-dark.solace-light .callout[data-type="abstract"] {
+.theme-light .callout[data-callout="failure"],
+.theme-dark.solace-light .callout[data-callout="failure"] {
+    --callout-color: 211 91 147;
+}
+
+.theme-light .callout[data-callout="bug"],
+.theme-dark.solace-light .callout[data-callout="bug"] {
+    --callout-color: 211 91 147;
+}
+
+.theme-light .callout[data-callout="example"],
+.theme-dark.solace-light .callout[data-callout="example"] {
+    --callout-color: 211 91 147;
+}
+
+.theme-light .callout[data-callout="quote"],
+.theme-light .callout[data-callout="cite"],
+.theme-dark.solace-light .callout[data-callout="quote"],
+.theme-dark.solace-light .callout[data-callout="cite"] {
     --callout-color: 115 108 134;
-    --callout-bg: rgba(115, 108, 134, 0.09);
 }
 
-.theme-light .callout[data-type="example"],
-.theme-dark.solace-light .callout[data-type="example"] {
-    --callout-color: 211 91 147;
-    --callout-bg: rgba(211, 91, 147, 0.09);
+.theme-light .callout[data-callout="abstract"],
+.theme-light .callout[data-callout="summary"],
+.theme-dark.solace-light .callout[data-callout="abstract"],
+.theme-dark.solace-light .callout[data-callout="summary"] {
+    --callout-color: 115 108 134;
 }
 
-.theme-light .callout[data-type="bug"],
-.theme-dark.solace-light .callout[data-type="bug"] {
-    --callout-color: 211 91 147;
-    --callout-bg: rgba(211, 91, 147, 0.09);
-}
-
-.theme-light .callout[data-type="question"],
-.theme-light .callout[data-type="help"],
-.theme-dark.solace-light .callout[data-type="question"],
-.theme-dark.solace-light .callout[data-type="help"] {
+.theme-light .callout[data-callout="question"],
+.theme-light .callout[data-callout="help"],
+.theme-light .callout[data-callout="faq"],
+.theme-dark.solace-light .callout[data-callout="question"],
+.theme-dark.solace-light .callout[data-callout="help"],
+.theme-dark.solace-light .callout[data-callout="faq"] {
     --callout-color: 138 99 210;
-    --callout-bg: rgba(138, 99, 210, 0.09);
 }
 
 /* ── Solace Light: Frontmatter ──────────────────────────────── */
@@ -2155,11 +2100,6 @@
 
 /* ── Solace Light: Settings ─────────────────────────────────── */
 
-.theme-light .setting-item:hover,
-.theme-dark.solace-light .setting-item:hover {
-    background-color: var(--interactive-hover);
-}
-
 .theme-light .setting-item-info,
 .theme-dark.solace-light .setting-item-info {
     color: var(--text-normal);
@@ -2228,10 +2168,45 @@
 /* ── Solace Light: Tag ──────────────────────────────────────── */
 
 .theme-light .tag,
-.theme-dark.solace-light .tag {
+.theme-dark.solace-light .tag,
+.theme-light a.tag,
+.theme-dark.solace-light a.tag {
     background-color: var(--tag-background);
     color: var(--tag-color);
     border-color: var(--tag-border-color);
+    padding: var(--tag-padding-y, 0.25em) var(--tag-padding-x, 0.65em);
+    line-height: 1;
+    overflow: visible;
+    vertical-align: baseline;
+}
+
+.theme-light .cm-hashtag,
+.theme-dark.solace-light .cm-hashtag {
+    background-color: var(--tag-background);
+    color: var(--tag-color);
+    border-color: var(--tag-border-color);
+    padding-top: var(--tag-padding-y, 0.25em);
+    padding-bottom: var(--tag-padding-y, 0.25em);
+    line-height: 1;
+    vertical-align: baseline;
+}
+
+.theme-light .cm-hashtag.cm-hashtag-begin,
+.theme-dark.solace-light .cm-hashtag.cm-hashtag-begin {
+    border-start-start-radius: var(--tag-radius, 2em);
+    border-end-start-radius: var(--tag-radius, 2em);
+    border-inline-end: none;
+    border-inline-start: var(--tag-border-width, 0px) solid var(--tag-border-color);
+    padding-inline-start: var(--tag-padding-x, 0.65em);
+}
+
+.theme-light .cm-hashtag.cm-hashtag-end,
+.theme-dark.solace-light .cm-hashtag.cm-hashtag-end {
+    border-start-end-radius: var(--tag-radius, 2em);
+    border-end-end-radius: var(--tag-radius, 2em);
+    border-inline-start: none;
+    border-inline-end: var(--tag-border-width, 0px) solid var(--tag-border-color);
+    padding-inline-end: var(--tag-padding-x, 0.65em);
 }
 
 /* ── Solace Light: Tree items ───────────────────────────────── */
@@ -2489,6 +2464,7 @@
     --text-on-accent: #191725;
     --text-on-accent-hover: #11101a;
     --text-on-accent-inverted: #d4cfe4;
+    --text-selection: rgba(184, 158, 240, 0.25);
 
     --interactive-normal: #282538;
     --interactive-hover: #302d42;
@@ -2582,12 +2558,10 @@
     --graph-line-color: #282538;
 }
 
-/* ── Scrollbar (Dusk) ──────────────────────────────────────── */
-
 /* ── Solace Dusk: Selection ─────────────────────────────────── */
 
 .theme-dark.solace-dusk ::selection {
-    background-color: #b89ef040;
+    background-color: var(--text-selection, rgba(184, 158, 240, 0.25));
     color: inherit;
 }
 
@@ -2851,51 +2825,59 @@
 
 /* ── Solace Dusk: Callouts ──────────────────────────────────── */
 
-.theme-dark.solace-dusk .callout[data-type="note"],
-.theme-dark.solace-dusk .callout[data-type="info"] {
+.theme-dark.solace-dusk .callout[data-callout="note"],
+.theme-dark.solace-dusk .callout[data-callout="info"],
+.theme-dark.solace-dusk .callout[data-callout="todo"] {
     --callout-color: 184 158 240;
-    --callout-bg: rgba(184, 158, 240, 0.09);
 }
 
-.theme-dark.solace-dusk .callout[data-type="tip"],
-.theme-dark.solace-dusk .callout[data-type="success"],
-.theme-dark.solace-dusk .callout[data-type="check"] {
+.theme-dark.solace-dusk .callout[data-callout="tip"],
+.theme-dark.solace-dusk .callout[data-callout="hint"],
+.theme-dark.solace-dusk .callout[data-callout="important"] {
     --callout-color: 138 216 194;
-    --callout-bg: rgba(138, 216, 194, 0.09);
 }
 
-.theme-dark.solace-dusk .callout[data-type="warning"],
-.theme-dark.solace-dusk .callout[data-type="caution"] {
+.theme-dark.solace-dusk .callout[data-callout="success"] {
+    --callout-color: 138 216 194;
+}
+
+.theme-dark.solace-dusk .callout[data-callout="warning"],
+.theme-dark.solace-dusk .callout[data-callout="caution"],
+.theme-dark.solace-dusk .callout[data-callout="attention"] {
     --callout-color: 221 184 140;
-    --callout-bg: rgba(221, 184, 140, 0.09);
 }
 
-.theme-dark.solace-dusk .callout[data-type="danger"],
-.theme-dark.solace-dusk .callout[data-type="error"] {
+.theme-dark.solace-dusk .callout[data-callout="danger"],
+.theme-dark.solace-dusk .callout[data-callout="error"] {
     --callout-color: 232 136 184;
-    --callout-bg: rgba(232, 136, 184, 0.09);
 }
 
-.theme-dark.solace-dusk .callout[data-type="quote"],
-.theme-dark.solace-dusk .callout[data-type="abstract"] {
-    --callout-color: 138 132 160;
-    --callout-bg: rgba(138, 132, 160, 0.09);
+.theme-dark.solace-dusk .callout[data-callout="failure"] {
+    --callout-color: 232 136 184;
 }
 
-.theme-dark.solace-dusk .callout[data-type="example"] {
+.theme-dark.solace-dusk .callout[data-callout="bug"] {
+    --callout-color: 232 136 184;
+}
+
+.theme-dark.solace-dusk .callout[data-callout="example"] {
     --callout-color: 232 160 192;
-    --callout-bg: rgba(232, 160, 192, 0.09);
 }
 
-.theme-dark.solace-dusk .callout[data-type="bug"] {
-    --callout-color: 232 136 184;
-    --callout-bg: rgba(232, 136, 184, 0.09);
+.theme-dark.solace-dusk .callout[data-callout="quote"],
+.theme-dark.solace-dusk .callout[data-callout="cite"] {
+    --callout-color: 138 132 160;
 }
 
-.theme-dark.solace-dusk .callout[data-type="question"],
-.theme-dark.solace-dusk .callout[data-type="help"] {
+.theme-dark.solace-dusk .callout[data-callout="abstract"],
+.theme-dark.solace-dusk .callout[data-callout="summary"] {
+    --callout-color: 138 132 160;
+}
+
+.theme-dark.solace-dusk .callout[data-callout="question"],
+.theme-dark.solace-dusk .callout[data-callout="help"],
+.theme-dark.solace-dusk .callout[data-callout="faq"] {
     --callout-color: 139 116 208;
-    --callout-bg: rgba(139, 116, 208, 0.09);
 }
 
 /* ── Solace Dusk: Frontmatter ───────────────────────────────── */
@@ -3101,10 +3083,6 @@
 
 /* ── Solace Dusk: Settings ──────────────────────────────────── */
 
-.theme-dark.solace-dusk .setting-item:hover {
-    background-color: var(--interactive-hover);
-}
-
 .theme-dark.solace-dusk .setting-item-info {
     color: var(--text-normal);
 }
@@ -3161,10 +3139,41 @@
 
 /* ── Solace Dusk: Tag ───────────────────────────────────────── */
 
-.theme-dark.solace-dusk .tag {
+.theme-dark.solace-dusk .tag,
+.theme-dark.solace-dusk a.tag {
     background-color: var(--tag-background);
     color: var(--tag-color);
     border-color: var(--tag-border-color);
+    padding: var(--tag-padding-y, 0.25em) var(--tag-padding-x, 0.65em);
+    line-height: 1;
+    overflow: visible;
+    vertical-align: baseline;
+}
+
+.theme-dark.solace-dusk .cm-hashtag {
+    background-color: var(--tag-background);
+    color: var(--tag-color);
+    border-color: var(--tag-border-color);
+    padding-top: var(--tag-padding-y, 0.25em);
+    padding-bottom: var(--tag-padding-y, 0.25em);
+    line-height: 1;
+    vertical-align: baseline;
+}
+
+.theme-dark.solace-dusk .cm-hashtag.cm-hashtag-begin {
+    border-start-start-radius: var(--tag-radius, 2em);
+    border-end-start-radius: var(--tag-radius, 2em);
+    border-inline-end: none;
+    border-inline-start: var(--tag-border-width, 0px) solid var(--tag-border-color);
+    padding-inline-start: var(--tag-padding-x, 0.65em);
+}
+
+.theme-dark.solace-dusk .cm-hashtag.cm-hashtag-end {
+    border-start-end-radius: var(--tag-radius, 2em);
+    border-end-end-radius: var(--tag-radius, 2em);
+    border-inline-start: none;
+    border-inline-end: var(--tag-border-width, 0px) solid var(--tag-border-color);
+    padding-inline-end: var(--tag-padding-x, 0.65em);
 }
 
 /* ── Solace Dusk: Tree items ────────────────────────────────── */
@@ -3388,281 +3397,263 @@
    ────────────────────────────────────────────────────────────── */
 
 /*
-  @settings
+@settings
 
-  name: Solace
-  id: solace-obsidian
-  description: "A minimal theme with violet undertones and pastel syntax."
-  author: Bhavya Dang
-  authorUrl: https://bhavyadang.in
-  version: 1.0.0
-  minimumVersion: 1.0.0
+name: Solace
+id: solace-obsidian
+description: "A minimal theme with violet undertones and pastel syntax."
+author: Bhavya Dang
+authorUrl: https://bhavyadang.in
+version: 1.0.0
+minimumVersion: 1.0.0
 
-  settings:
+settings:
     - id: solace-variant
       title: Theme Variant
-      type: dropdown
-      default: dark
-      description: "Choose between Solace Dark, Light, and Dusk."
+      type: class-select
+      allowEmpty: false
+      default: solace-dark
+      description: "Switch between Dark, Light, and Dusk."
       options:
-        - Dark
-        - Light
-        - Dusk
+          -
+              label: Dark
+              value: solace-dark
+          -
+              label: Light
+              value: solace-light
+          -
+              label: Dusk
+              value: solace-dusk
 
-  - title: Typography
-    settings:
-      - id: solace-font-family
-        title: Interface font
-        type: variable-font-family
-        default: inherit
-      - id: solace-font-text
-        title: Text font
-        type: variable-font-family
-        default: inherit
-      - id: solace-font-mono
-        title: Monospace font
-        type: variable-font-family
-        default: "JetBrains Mono, Fira Code, SF Mono, Cascadia Code, Source Code Pro, monospace"
+    - title: Typography
+      settings:
+          - id: solace-font-family
+            title: Interface font
+            type: variable-text
+            default: inherit
+          - id: solace-font-text
+            title: Text font
+            type: variable-text
+            default: inherit
+          - id: solace-font-mono
+            title: Monospace font
+            type: variable-text
+            default: "JetBrains Mono, Fira Code, SF Mono, Cascadia Code, Source Code Pro, monospace"
 
-  - title: Colors
-    settings:
-      - id: solace-accent
-        title: Accent color
-        type: variable-color
-        default: "#C9A8FF"
-        format: "hex6"
-      - id: solace-text-accent
-        title: Text accent color
-        type: variable-color
-        default: "#C9A8FF"
-        format: "hex6"
-      - id: solace-background
-        title: Background color
-        type: variable-color
-        default: "#16141F"
-        format: "hex6"
-      - id: solace-text
-        title: Text color
-        type: variable-color
-        default: "#F1EEF8"
-        format: "hex6"
-      - id: solace-checkbox-halfway
-        title: Halfway checkbox color
-        type: variable-color
-        default: "#C9A8FF"
-        format: "hex6"
-        description: "Color for [/] in-progress task checkboxes."
+    - title: Colors
+      settings:
+          - id: solace-accent
+            title: Accent color
+            type: variable-color
+            default: "#C9A8FF"
+            format: hex6
+          - id: solace-text-accent
+            title: Text accent color
+            type: variable-color
+            default: "#C9A8FF"
+            format: hex6
+          - id: solace-background
+            title: Background color
+            type: variable-color
+            default: "#16141F"
+            format: hex6
+          - id: solace-text
+            title: Text color
+            type: variable-color
+            default: "#F1EEF8"
+            format: hex6
+          - id: solace-checkbox-halfway
+            title: Halfway checkbox color
+            type: variable-color
+            default: "#C9A8FF"
+            format: hex6
+            description: "Color for [/] in-progress task checkboxes."
 
-  - title: Editor
-    settings:
-      - id: solace-line-height
-        title: Line height
-        type: variable-number
-        default: 1.6
-        min: 1.2
-        max: 2.0
-        step: 0.1
-        description: "Line height for the editor."
-      - id: solace-font-size
-        title: Font size
-        type: variable-number
-        default: 16
-        min: 12
-        max: 24
-        step: 1
-        description: "Font size in pixels for the editor."
-      - id: solace-max-width
-        title: Maximum width
-        type: variable-number
-        default: 900
-        min: 600
-        max: 1400
-        step: 50
-        description: "Maximum width of the editor in pixels."
-      - id: solace-css
-        title: Custom CSS
-        type: variable-text
-        default: ""
-        description: "Add custom CSS rules to further customize the theme."
+    - title: Editor
+      settings:
+          - id: solace-line-height
+            title: Line height
+            type: variable-number
+            default: 1.6
+            min: 1.2
+            max: 2.0
+            step: 0.1
+            description: "Line height for the editor."
+          - id: solace-font-size
+            title: Font size
+            type: variable-number
+            default: 16
+            min: 12
+            max: 24
+            step: 1
+            description: "Font size in pixels for the editor."
+          - id: solace-max-width
+            title: Maximum width
+            type: variable-number
+            default: 900
+            min: 600
+            max: 1400
+            step: 50
+            description: "Maximum width of the editor in pixels."
 
-  - title: Code Blocks
-    settings:
-      - id: solace-code-font-size
-        title: Code font size
-        type: variable-number
-        default: 14
-        min: 10
-        max: 20
-        step: 1
-      - id: solace-code-line-height
-        title: Code line height
-        type: variable-number
-        default: 1.5
-        min: 1.0
-        max: 2.0
-        step: 0.1
-      - id: solace-code-padding
-        title: Code block padding
-        type: variable-number
-        default: 16
-        min: 8
-        max: 32
-        step: 4
+    - title: Code Blocks
+      settings:
+          - id: solace-code-font-size
+            title: Code font size
+            type: variable-number
+            default: 14
+            min: 10
+            max: 20
+            step: 1
+          - id: solace-code-line-height
+            title: Code line height
+            type: variable-number
+            default: 1.5
+            min: 1.0
+            max: 2.0
+            step: 0.1
+          - id: solace-code-padding
+            title: Code block padding
+            type: variable-number
+            default: 16
+            min: 8
+            max: 32
+            step: 4
 
-  - title: UI
-    settings:
-      - id: solace-radius
-        title: Border radius
-        type: variable-number
-        default: 8
-        min: 0
-        max: 20
-        step: 1
-        description: "Border radius for UI elements."
-      - id: solace-transition
-        title: Transition speed
-        type: variable-number
-        default: 150
-        min: 0
-        max: 500
-        step: 25
-        description: "Transition speed in milliseconds."
+    - title: UI
+      settings:
+          - id: solace-radius
+            title: Border radius
+            type: variable-number
+            default: 8
+            min: 0
+            max: 20
+            step: 1
+            description: "Border radius for UI elements."
+          - id: solace-transition
+            title: Transition speed
+            type: variable-number
+            default: 150
+            min: 0
+            max: 500
+            step: 25
+            description: "Transition speed in milliseconds."
 
-  - title: Callouts
-    settings:
-      - id: solace-callout-radius
-        title: Callout border radius
-        type: variable-number
-        default: 8
-        min: 0
-        max: 20
-        step: 1
-      - id: solace-callout-padding
-        title: Callout padding
-        type: variable-number
-        default: 16
-        min: 8
-        max: 32
-        step: 4
-      - id: solace-callout-border-width
-        title: Callout border width
-        type: variable-number
-        default: 3
-        min: 0
-        max: 6
-        step: 1
+    - title: Callouts
+      settings:
+          - id: solace-callout-style
+            title: Callout style
+            type: class-select
+            allowEmpty: false
+            default: callout-style-filled
+            options:
+                -
+                    label: Filled
+                    value: callout-style-filled
+                -
+                    label: Outlined
+                    value: callout-style-outlined
+                -
+                    label: Minimal
+                    value: callout-style-minimal
+          - id: solace-callout-radius
+            title: Callout border radius
+            type: variable-number
+            default: 8
+            min: 0
+            max: 20
+            step: 1
+          - id: solace-callout-padding
+            title: Callout padding
+            type: variable-number
+            default: 16
+            min: 8
+            max: 32
+            step: 4
+          - id: solace-callout-border-width
+            title: Callout border width
+            type: variable-number
+            default: 4
+            min: 0
+            max: 8
+            step: 1
 
-  - title: Tables
-    settings:
-      - id: solace-table-radius
-        title: Table border radius
-        type: variable-number
-        default: 8
-        min: 0
-        max: 20
-        step: 1
-      - id: solace-table-padding
-        title: Table cell padding
-        type: variable-number
-        default: 12
-        min: 4
-        max: 24
-        step: 2
+    - title: Tables
+      settings:
+          - id: solace-table-radius
+            title: Table border radius
+            type: variable-number
+            default: 8
+            min: 0
+            max: 20
+            step: 1
+          - id: solace-table-padding
+            title: Table cell padding
+            type: variable-number
+            default: 12
+            min: 4
+            max: 24
+            step: 2
 
-  - title: Images
-    settings:
-      - id: solace-image-radius
-        title: Image border radius
-        type: variable-number
-        default: 8
-        min: 0
-        max: 20
-        step: 1
-      - id: solace-image-border
-        title: Image border
-        type: variable-text
-        default: "none"
-        description: "Border for images."
+    - title: Images
+      settings:
+          - id: solace-image-radius
+            title: Image border radius
+            type: variable-number
+            default: 8
+            min: 0
+            max: 20
+            step: 1
+          - id: solace-image-border
+            title: Image border
+            type: variable-text
+            default: "none"
+            description: "Border for images."
 
-  - title: Links
-    settings:
-      - id: solace-link-underline
-        title: Link underline
-        type: variable-text
-        default: "underline"
-        description: "Underline style for links."
+    - title: Links
+      settings:
+          - id: solace-link-underline
+            title: Link underline
+            type: variable-text
+            default: "underline"
+            description: "Underline style for links."
 
-  - title: Headings
-    settings:
-      - id: solace-heading-color
-        title: Heading color
-        type: variable-color
-        default: "#C9A8FF"
-        format: "hex6"
-      - id: solace-heading-decoration
-        title: Heading decoration
-        type: variable-text
-        default: "none"
-        description: "Text decoration for headings."
+    - title: Headings
+      settings:
+          - id: solace-heading-color
+            title: Heading color
+            type: variable-color
+            default: "#C9A8FF"
+            format: hex6
+          - id: solace-heading-decoration
+            title: Heading decoration
+            type: variable-text
+            default: "none"
+            description: "Text decoration for headings."
 
-  - title: Reading view
-    settings:
-      - id: solace-reading-max-width
-        title: Reading view max width
-        type: variable-number
-        default: 800
-        min: 600
-        max: 1200
-        step: 50
-        description: "Maximum width of the reading view in pixels."
+    - title: Reading view
+      settings:
+          - id: solace-reading-max-width
+            title: Reading view max width
+            type: variable-number
+            default: 800
+            min: 600
+            max: 1200
+            step: 50
+            description: "Maximum width of the reading view in pixels."
 
-  - title: Sidebar
-    settings:
-      - id: solace-sidebar-width
-        title: Sidebar width
-        type: variable-number
-        default: 260
-        min: 200
-        max: 400
-        step: 10
-        description: "Width of the sidebar in pixels."
+    - title: Sidebar
+      settings:
+          - id: solace-sidebar-width
+            title: Sidebar width
+            type: variable-number
+            default: 260
+            min: 200
+            max: 400
+            step: 10
+            description: "Width of the sidebar in pixels."
 
-  - title: Graph view
-    settings:
-      - id: solace-graph-line-width
-        title: Graph line width
-        type: variable-number
-        default: 1
-        min: 0.5
-        max: 4
-        step: 0.5
-
-  - title: Ribbon
-    settings:
-      - id: solace-ribbon-width
-        title: Ribbon width
-        type: variable-number
-        default: 48
-        min: 36
-        max: 72
-        step: 4
-
-  - title: Breadcrumbs
-    settings:
-      - id: solace-breadcrumb-separator
-        title: Breadcrumb separator
-        type: variable-text
-        default: "/"
-        description: "Separator between breadcrumb items."
-
-  - title: Search
-    settings:
-      - id: solace-search-highlight-color
-        title: Search highlight color
-        type: variable-color
-        default: "#C9A8FF"
-        format: "hex6"
-  */
+*/
 
 /* ── Typography ─────────────────────────────────────────────── */
 
@@ -3730,11 +3721,6 @@
     font-size: var(--solace-font-size, 16px);
 }
 
-.theme-dark .markdown-preview-view,
-.theme-light .markdown-preview-view {
-    max-width: var(--solace-max-width, 900px);
-}
-
 /* ── Style Settings: Code block overrides ───────────────────── */
 
 .theme-dark .markdown-preview-view pre code,
@@ -3769,11 +3755,76 @@
     padding: var(--solace-table-padding, 12px);
 }
 
-.theme-dark .callout,
-.theme-light .callout {
-    border-radius: var(--solace-callout-radius, 8px);
-    padding: var(--solace-callout-padding, 16px);
-    border-left-width: var(--solace-callout-border-width, 3px);
+/* ── Callout Base ────────────────────────────────────────────── */
+
+.callout {
+    --callout-icon: lucide-pencil;
+    border-left-color: rgb(var(--callout-color, 152 128 232));
+    border-left-width: var(--callout-border-width, 4px);
+    border-radius: var(--callout-radius, 8px);
+    padding: var(--callout-padding, 16px);
+    background-color: rgb(var(--callout-color, 152 128 232) / 0.08);
+}
+
+.callout-title {
+    font-weight: 600;
+    color: rgb(var(--callout-color, 152 128 232));
+}
+
+.callout-title .callout-icon {
+    color: rgb(var(--callout-color, 152 128 232));
+}
+
+/* Solace icons (default) */
+.callout[data-callout="note"] { --callout-icon: lucide-pencil; }
+.callout[data-callout="info"] { --callout-icon: lucide-info; }
+.callout[data-callout="todo"] { --callout-icon: lucide-circle-check; }
+.callout[data-callout="tip"],
+.callout[data-callout="hint"] { --callout-icon: lucide-lightbulb; }
+.callout[data-callout="important"] { --callout-icon: lucide-star; }
+.callout[data-callout="success"] { --callout-icon: lucide-check-circle-2; }
+.callout[data-callout="warning"],
+.callout[data-callout="caution"],
+.callout[data-callout="attention"] { --callout-icon: lucide-alert-triangle; }
+.callout[data-callout="danger"],
+.callout[data-callout="error"] { --callout-icon: lucide-x; }
+.callout[data-callout="failure"] { --callout-icon: lucide-x; }
+.callout[data-callout="bug"] { --callout-icon: lucide-bug; }
+.callout[data-callout="example"] { --callout-icon: lucide-list; }
+.callout[data-callout="quote"],
+.callout[data-callout="cite"] { --callout-icon: lucide-quote; }
+.callout[data-callout="abstract"],
+.callout[data-callout="summary"] { --callout-icon: lucide-clipboard-list; }
+.callout[data-callout="question"],
+.callout[data-callout="help"],
+.callout[data-callout="faq"] { --callout-icon: lucide-help-circle; }
+
+/* Callout style: Outlined */
+.callout-style-outlined .callout {
+    background-color: transparent;
+    border: 1px solid rgb(var(--callout-color, 152 128 232) / 0.25);
+    border-left: 4px solid rgb(var(--callout-color, 152 128 232));
+    border-radius: var(--callout-radius, 8px);
+}
+
+.callout-style-outlined .callout .callout-title {
+    background-color: rgb(var(--callout-color, 152 128 232) / 0.08);
+    margin: 0 0 8px 0;
+    padding: 8px 16px;
+    border-radius: var(--callout-radius, 8px) var(--callout-radius, 8px) 0 0;
+}
+
+.callout-style-outlined .callout .callout-content {
+    padding: 0 16px 16px 16px;
+}
+
+/* Callout style: Minimal */
+.callout-style-minimal .callout {
+    background-color: rgb(var(--callout-color, 152 128 232) / 0.06);
+    border: none;
+    border-left: 3px solid rgb(var(--callout-color, 152 128 232));
+    border-radius: 0;
+    padding: 8px 16px;
 }
 
 .theme-dark .markdown-preview-view a,
@@ -3800,11 +3851,6 @@
 .theme-dark .markdown-preview-view,
 .theme-light .markdown-preview-view {
     max-width: var(--solace-reading-max-width, 800px);
-}
-
-.theme-dark .nav-files-container,
-.theme-light .nav-files-container {
-    width: var(--solace-sidebar-width, 260px);
 }
 
 .theme-dark .side-dock-ribbon,
@@ -4099,8 +4145,8 @@
     color: #a09ab8;
 }
 
-.theme-dark .workspace-tab-header:hover,
-.theme-dark.solace-dusk .workspace-tab-header:hover {
+.theme-dark .workspace-tab-header:not(.is-active):hover,
+.theme-dark.solace-dusk .workspace-tab-header:not(.is-active):hover {
     background-color: #231f30;
 }
 
@@ -4114,8 +4160,8 @@
     color: #736c86;
 }
 
-.theme-light .workspace-tab-header:hover,
-.theme-dark.solace-light .workspace-tab-header:hover {
+.theme-light .workspace-tab-header:not(.is-active):hover,
+.theme-dark.solace-light .workspace-tab-header:not(.is-active):hover {
     background-color: #e8e0f2;
 }
 
@@ -4261,6 +4307,197 @@
     padding-top: 24px;
     padding-bottom: 48px;
     line-height: 1.7;
+}
+
+/* ── Properties / Frontmatter ───────────────────────────────── */
+
+.theme-dark .metadata-container,
+.theme-dark.solace-dusk .metadata-container {
+    background-color: #1b1827;
+    border: 1px solid #231f30;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+}
+
+.theme-light .metadata-container,
+.theme-dark.solace-light .metadata-container {
+    background-color: #ece7f6;
+    border: 1px solid #d8d0e6;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+}
+
+.theme-dark .metadata-row,
+.theme-dark.solace-dusk .metadata-row {
+    border-bottom-color: #231f30;
+}
+
+.theme-light .metadata-row,
+.theme-dark.solace-light .metadata-row {
+    border-bottom-color: #d8d0e6;
+}
+
+.theme-dark .metadata-key,
+.theme-dark.solace-dusk .metadata-key {
+    color: #a09ab8;
+    font-weight: 500;
+}
+
+.theme-light .metadata-key,
+.theme-dark.solace-light .metadata-key {
+    color: #736c86;
+    font-weight: 500;
+}
+
+.theme-dark .metadata-value,
+.theme-dark.solace-dusk .metadata-value {
+    color: #f1eef8;
+}
+
+.theme-light .metadata-value,
+.theme-dark.solace-light .metadata-value {
+    color: #2c2638;
+}
+
+.theme-dark .metadata-input,
+.theme-dark.solace-dusk .metadata-input {
+    background-color: #1d1a2b;
+    border-color: #231f30;
+    color: #f1eef8;
+}
+
+.theme-light .metadata-input,
+.theme-dark.solace-light .metadata-input {
+    background-color: #e7e0f1;
+    border-color: #d8d0e6;
+    color: #2c2638;
+}
+
+.theme-dark .metadata-input:focus,
+.theme-dark.solace-dusk .metadata-input:focus,
+.theme-light .metadata-input:focus,
+.theme-dark.solace-light .metadata-input:focus {
+    border-color: var(--interactive-accent);
+}
+
+.theme-dark .metadata-add-field,
+.theme-dark.solace-dusk .metadata-add-field {
+    color: #504a68;
+}
+
+.theme-light .metadata-add-field,
+.theme-dark.solace-light .metadata-add-field {
+    color: #9a94aa;
+}
+
+.theme-dark .metadata-add-field:hover,
+.theme-dark.solace-dusk .metadata-add-field:hover {
+    color: #c9a8ff;
+}
+
+.theme-light .metadata-add-field:hover,
+.theme-dark.solace-light .metadata-add-field:hover {
+    color: #8a63d2;
+}
+
+/* Frontmatter in reading view */
+
+.theme-dark .markdown-preview-view .frontmatter,
+.theme-dark.solace-dusk .markdown-preview-view .frontmatter {
+    background-color: #1b1827;
+    border: 1px solid #231f30;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+}
+
+.theme-light .markdown-preview-view .frontmatter,
+.theme-dark.solace-light .markdown-preview-view .frontmatter {
+    background-color: #ece7f6;
+    border: 1px solid #d8d0e6;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+}
+
+/* ── Tables ──────────────────────────────────────────────────── */
+
+.theme-dark {
+    --table-background: transparent;
+    --table-border-width: 1px;
+    --table-border-color: var(--background-modifier-border);
+    --table-header-background: var(--background-secondary);
+    --table-header-border-width: var(--table-border-width);
+    --table-header-border-color: var(--table-border-color);
+    --table-header-color: var(--text-accent);
+    --table-header-weight: 600;
+    --table-cell-padding: 8px 12px;
+    --table-row-alt-background: var(--background-secondary);
+    --table-row-background-hover: var(--background-modifier-hover);
+}
+
+.theme-light,
+.theme-dark.solace-light {
+    --table-background: transparent;
+    --table-border-width: 1px;
+    --table-border-color: var(--background-modifier-border);
+    --table-header-background: var(--background-secondary);
+    --table-header-border-width: var(--table-border-width);
+    --table-header-border-color: var(--table-border-color);
+    --table-header-color: var(--text-accent);
+    --table-header-weight: 600;
+    --table-cell-padding: 8px 12px;
+    --table-row-alt-background: var(--background-secondary);
+    --table-row-background-hover: var(--background-modifier-hover);
+}
+
+.theme-dark.solace-dusk {
+    --table-background: transparent;
+    --table-border-width: 1px;
+    --table-border-color: var(--background-modifier-border);
+    --table-header-background: var(--background-secondary);
+    --table-header-border-width: var(--table-border-width);
+    --table-header-border-color: var(--table-border-color);
+    --table-header-color: var(--text-accent);
+    --table-header-weight: 600;
+    --table-cell-padding: 8px 12px;
+    --table-row-alt-background: var(--background-secondary);
+    --table-row-background-hover: var(--background-modifier-hover);
+}
+
+.markdown-preview-view table,
+.markdown-source-view.mod-cm6 table {
+    border: var(--table-border-width) solid var(--table-border-color);
+    border-collapse: collapse;
+}
+
+.markdown-preview-view th,
+.markdown-source-view.mod-cm6 th {
+    background-color: var(--table-header-background);
+    color: var(--table-header-color);
+    font-weight: var(--table-header-weight);
+    border-bottom-width: var(--table-header-border-width);
+    border-bottom-color: var(--table-header-border-color);
+}
+
+.markdown-preview-view td,
+.markdown-preview-view th,
+.markdown-source-view.mod-cm6 td,
+.markdown-source-view.mod-cm6 th {
+    padding: var(--table-cell-padding);
+    border-color: var(--table-border-color);
+}
+
+.markdown-preview-view tr:nth-child(even),
+.markdown-source-view.mod-cm6 tr:nth-child(even) {
+    background-color: var(--table-row-alt-background);
+}
+
+.markdown-preview-view tr:hover,
+.markdown-source-view.mod-cm6 tr:hover {
+    background-color: var(--table-row-background-hover);
 }
 
 /* ── Task List Checkboxes (source mode) ─────────────────────── */
