@@ -62,6 +62,12 @@
     --shadow-s: 0 1px 2px rgba(0, 0, 0, 0.3);
     --shadow-l: 0 4px 12px rgba(0, 0, 0, 0.4);
 
+    /* Scrollbar */
+    --scrollbar-thumb: #a09ab815;
+    --scrollbar-thumb-active: #504a68;
+    --scrollbar-thumb-hover: #3a3448;
+    --scrollbar-track: transparent;
+
     /* Fonts */
     --font-interface:
         "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
@@ -1344,6 +1350,12 @@
     --shadow-s: 0 1px 2px rgba(0, 0, 0, 0.06);
     --shadow-l: 0 4px 12px rgba(0, 0, 0, 0.08);
 
+    /* Scrollbar */
+    --scrollbar-thumb: rgba(115, 108, 134, 0.08);
+    --scrollbar-thumb-active: #b0a9c0;
+    --scrollbar-thumb-hover: #cfc8de;
+    --scrollbar-track: transparent;
+
     --tab-active-background: #faf8fd;
     --tab-active-border: #8a63d2;
     --tab-active-border-color: #8a63d2;
@@ -1434,6 +1446,46 @@
 .theme-light ::selection,
 .theme-dark.solace-light ::selection {
     background-color: rgba(138, 99, 210, 0.25);
+}
+
+/* ── Scrollbar (Light) ──────────────────────────────────────── */
+
+.theme-light ::-webkit-scrollbar,
+.theme-dark.solace-light ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.theme-light ::-webkit-scrollbar-track,
+.theme-dark.solace-light ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.theme-light ::-webkit-scrollbar-thumb,
+.theme-dark.solace-light ::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 4px;
+}
+
+.theme-light ::-webkit-scrollbar-thumb:hover,
+.theme-dark.solace-light ::-webkit-scrollbar-thumb:hover {
+    background: rgba(115, 108, 134, 0.35);
+}
+
+.theme-light ::-webkit-scrollbar-thumb:active,
+.theme-dark.solace-light ::-webkit-scrollbar-thumb:active {
+    background: #b0a9c0;
+}
+
+.theme-light,
+.theme-dark.solace-light {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+
+.theme-light:hover,
+.theme-dark.solace-light:hover {
+    scrollbar-color: rgba(115, 108, 134, 0.2) transparent;
 }
 
 /* ── Solace Light: UI Chrome ────────────────────────────────── */
@@ -2422,6 +2474,12 @@
     --shadow-s: 0 1px 2px rgba(0, 0, 0, 0.3);
     --shadow-l: 0 4px 12px rgba(0, 0, 0, 0.4);
 
+    /* Scrollbar */
+    --scrollbar-thumb: rgba(138, 132, 160, 0.08);
+    --scrollbar-thumb-active: #504a68;
+    --scrollbar-thumb-hover: #3a3448;
+    --scrollbar-track: transparent;
+
     --tab-active-background: #141220;
     --tab-active-border: #b89ef0;
     --tab-active-border-color: #b89ef0;
@@ -2511,6 +2569,39 @@
 
 .theme-dark.solace-dusk ::selection {
     background-color: rgba(184, 158, 240, 0.35);
+}
+
+/* ── Scrollbar (Dusk) ──────────────────────────────────────── */
+
+.theme-dark.solace-dusk ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.theme-dark.solace-dusk ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.theme-dark.solace-dusk ::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 4px;
+}
+
+.theme-dark.solace-dusk ::-webkit-scrollbar-thumb:hover {
+    background: rgba(138, 132, 160, 0.4);
+}
+
+.theme-dark.solace-dusk ::-webkit-scrollbar-thumb:active {
+    background: #504a68;
+}
+
+.theme-dark.solace-dusk {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+
+.theme-dark.solace-dusk:hover {
+    scrollbar-color: rgba(138, 132, 160, 0.25) transparent;
 }
 
 /* ── Solace Dusk: Syntax Highlighting ───────────────────────── */
