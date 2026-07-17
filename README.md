@@ -37,7 +37,7 @@ Switch variants from **Settings** > **Appearance** > **Solace** > **Style Settin
 
 ## Preview
 
-<div align="center">
+<div align="left">
     <img src="./preview/demo2.png" alt="Solace Dark" width="800">
     <img src="./preview/demo1.png" alt="Solace Light" width="800">
 </div>
