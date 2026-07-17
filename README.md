@@ -1,6 +1,6 @@
 <div align="center">
 
-   <img src="preview/demo-2.png" alt="Solace" width="800" />
+   <img src="preview/demo-2.png" alt="Solace" width="100%" />
 
 </div>
 
@@ -25,9 +25,9 @@ Switch variants from **Settings** > **Appearance** > **Solace** > **Style Settin
 - **Syntax highlighting:** Full pastel palette for comments, keywords, strings, variables, definitions, operators, and more.
 - **Custom checkboxes:** Half-filled checkboxes for in-progress tasks with `- [/]`.
 - **Properties panel:** Styled frontmatter with themed backgrounds, borders, and accent-colored keys.
-- **[Tables](#tables):** Themed headers, alternating row colors, and hover effects using Obsidian's CSS variables.
+- **Tables:** Themed headers, alternating row colors, and hover effects using Obsidian's CSS variables.
 - **Tags:** Properly styled inline tags in both editor and reading view with pill-shaped borders.
-- **[Callouts](#callouts):** Color-coded callouts with type-specific accent colors, custom Lucide icons, and three style variants (Filled, Outlined, Minimal).
+- **Callouts:** Color-coded callouts with [type-specific accent colors, custom Lucide icons](#callouts), and three style variants (Filled, Outlined, Minimal).
 - **Code blocks:** Themed syntax highlighting with language-specific accent colors.
 - **Text selection:** Violet-tinted selection highlight across all variants.
 - **UI theming:** Sidebar, tabs, modals, command palette, graph view, file explorer, settings, and reading view.
@@ -37,63 +37,29 @@ Switch variants from **Settings** > **Appearance** > **Solace** > **Style Settin
 
 ## Preview
 
-<div align="center">
+<div align="left">
     <img src="./preview/dark-theme.png" alt="Solace Dark" width="800">
-</div>
-
-<div align="center">
     <img src="./preview/light-theme.png" alt="Solace Light" width="800">
-</div>
-
-<div align="center">
     <img src="./preview/dusk-theme.png" alt="Solace Dusk" width="800">
 </div>
 
-### Tables
+## Callouts
 
-<div align="center">
-    <img src="./preview/table.png" alt="Table styling" width="800">
-</div>
-
-### Callouts
-
-<div align="center">
-    <img src="./preview/callouts/call1.png" alt="Callouts 1" width="800">
-</div>
-
-<div align="center">
-    <img src="./preview/callouts/call2.png" alt="Callouts 2" width="800">
-</div>
-
-<div align="center">
-    <img src="./preview/callouts/call3.png" alt="Callouts 3" width="800">
-</div>
-
-<div align="center">
-    <img src="./preview/callouts/call4.png" alt="Callouts 4" width="800">
-</div>
-
-<div align="center">
-    <img src="./preview/callouts/call5.png" alt="Callouts 5" width="800">
-</div>
-
-## Callout Types
-
-| Type       | Aliases                | Description                   |
-| ---------- | ---------------------- | ----------------------------- |
-| `note`     |                        | General notes, violet         |
-| `info`     |                        | Informational content, violet |
-| `todo`     |                        | Action items, violet          |
-| `tip`      | `hint`, `important`    | Helpful suggestions, teal     |
-| `success`  |                        | Positive outcomes, teal       |
-| `warning`  | `caution`, `attention` | Cautionary messages, yellow   |
-| `danger`   | `error`                | Critical warnings, rose       |
-| `failure`  |                        | Failed operations, rose       |
-| `bug`      |                        | Bug reports, rose             |
-| `example`  |                        | Code or usage examples, pink  |
-| `quote`    | `cite`                 | Quoted text, gray             |
-| `abstract` | `summary`              | Summaries, gray               |
-| `question` | `help`, `faq`          | Questions, violet             |
+| Type       | Aliases                | Color     | Icon                    |
+| ---------- | ---------------------- | --------- | ----------------------- |
+| `note`     |                        | `#9880e8` | `lucide-pencil`         |
+| `info`     |                        | `#9880e8` | `lucide-info`           |
+| `todo`     |                        | `#9880e8` | `lucide-circle-check`   |
+| `tip`      | `hint`, `important`    | `#a8ffec` | `lucide-lightbulb`      |
+| `success`  |                        | `#a8ffec` | `lucide-check-circle-2` |
+| `warning`  | `caution`, `attention` | `#ffd666` | `lucide-alert-triangle` |
+| `danger`   | `error`                | `#ff80c8` | `lucide-x`              |
+| `failure`  |                        | `#ff80c8` | `lucide-x`              |
+| `bug`      |                        | `#ff80c8` | `lucide-bug`            |
+| `example`  |                        | `#ffb3d1` | `lucide-list`           |
+| `quote`    | `cite`                 | `#a09ab8` | `lucide-quote`          |
+| `abstract` | `summary`              | `#a09ab8` | `lucide-clipboard-list` |
+| `question` | `help`, `faq`          | `#9880e8` | `lucide-help-circle`    |
 
 ## Installation
 
