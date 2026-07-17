@@ -44,13 +44,12 @@ Switch variants from **Settings** > **Appearance** > **Solace** > **Style Settin
 
 ### Tables
 
-<div align="center">
-    <img src="./preview/table.png" alt="Table styling" width="600">
-</div>
+<img src="./preview/table.png" alt="Table styling" width="600">
+
 
 ### Callouts
 
-<div align="center">
+<div align="left">
     <table>
         <tr>
             <td><img src="./preview/call1.png" alt="Callouts 1" width="400"></td>
