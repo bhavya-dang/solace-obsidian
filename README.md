@@ -23,7 +23,7 @@ Switch variants from **Settings** > **Appearance** > **Solace** > **Style Settin
 ## Features
 
 - **Syntax highlighting:** Full pastel palette for comments, keywords, strings, variables, definitions, operators, and more.
-- **Custom checkboxes:** Half-filled checkboxes for in-progress tasks with `- [/]`.
+- **Custom checkboxes:** Four checkbox variants — done (`[x]`), in-progress (`[ ]`), question (`[?]`) with purple fill, halfway (`[/]`) with split fill, and canceled (`[-]`) with soft-red fill and strikethrough text.
 - **Properties panel:** Styled frontmatter with themed backgrounds, borders, and accent-colored keys.
 - **Tables:** Themed headers, alternating row colors, and hover effects using Obsidian's CSS variables.
 - **Tags:** Properly styled inline tags in both editor and reading view with pill-shaped borders.
@@ -33,7 +33,7 @@ Switch variants from **Settings** > **Appearance** > **Solace** > **Style Settin
 - **UI theming:** Sidebar, tabs, modals, command palette, graph view, file explorer, settings, and reading view.
 - **Plugin support:** Styled for Dataview, Kanban, and DB Folder.
 - **Mobile optimized:** Dedicated styles for sidebar, ribbon, and markdown preview.
-- **Style Settings:** Full integration with [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) for customizing accent colors, fonts, density, callout styles, and more.
+- **Style Settings:** Full integration with [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) for customizing theme variant, fonts, and callout style.
 
 ## Preview
 
@@ -42,6 +42,10 @@ Switch variants from **Settings** > **Appearance** > **Solace** > **Style Settin
     <img src="./preview/light-theme.png" alt="Solace Light" width="800">
     <img src="./preview/dusk-theme.png" alt="Solace Dusk" width="800">
 </div>
+
+### Checkboxes
+
+![checkboxes preview](preview/checkboxes/full.png)
 
 ## Callouts
 
@@ -82,12 +86,9 @@ Switch variants from **Settings** > **Appearance** > **Solace** > **Style Settin
 Solace integrates with the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin for deep customization:
 
 - **Theme Variant** - Switch between Dark, Light, and Dusk
-- **Typography** - Interface, text, and monospace font families
-- **Colors** - Accent, background, and text colors
-- **Editor** - Line height, font size, and max width
-- **Code Blocks** - Font size, line height, and padding
-- **UI** - Border radius and transition speed
-- **Tables, Images, Links, Headings** - Fine-tune individual elements
+- **Interface Font** - Set the UI and text font family (default: Inter)
+- **Editor Font** - Set the monospace font family (default: JetBrains Mono, Fira Code, SF Mono, Cascadia Code, Source Code Pro)
+- **Callout Style** - Choose between Filled, Outlined, or Minimal variants
 
 ## Typography
 

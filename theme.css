@@ -722,8 +722,8 @@
 }
 
 .theme-dark .markdown-preview-view pre {
-    background-color: #0e0d14;
-    border-color: #1e1b2e;
+    background-color: #252236;
+    border: 1px solid #2a2540;
 }
 
 .theme-dark .markdown-preview-view pre code {
@@ -801,6 +801,63 @@
     height: 100%;
     background-color: var(--checkbox-color-halfway);
     -webkit-mask-image: none;
+}
+
+/* Markdown preview — task lists (question) */
+.theme-dark .markdown-preview-view input[data-task="?"]:checked,
+.theme-dark .markdown-preview-view li[data-task="?"] > input:checked,
+.theme-dark .markdown-preview-view li[data-task="?"] > p > input:checked {
+    --checkbox-marker-color: transparent;
+    background-color: #c9a8ff;
+    border-color: #c9a8ff;
+    position: relative;
+}
+
+.theme-dark .markdown-preview-view input[data-task="?"]:checked::before,
+.theme-dark .markdown-preview-view li[data-task="?"] > input:checked::before,
+.theme-dark .markdown-preview-view li[data-task="?"] > p > input:checked::before {
+    content: "?";
+    -webkit-mask-image: none;
+    background-color: transparent;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #16141f;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* Markdown preview — task lists (canceled) */
+.theme-dark .markdown-preview-view input[data-task="-"]:checked,
+.theme-dark .markdown-preview-view li[data-task="-"] > input:checked,
+.theme-dark .markdown-preview-view li[data-task="-"] > p > input:checked {
+    --checkbox-marker-color: transparent;
+    background-color: #ff7369;
+    border-color: #ff7369;
+    position: relative;
+}
+
+.theme-dark .markdown-preview-view input[data-task="-"]:checked::before,
+.theme-dark .markdown-preview-view li[data-task="-"] > input:checked::before,
+.theme-dark .markdown-preview-view li[data-task="-"] > p > input:checked::before {
+    content: "−";
+    -webkit-mask-image: none;
+    background-color: transparent;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.theme-dark .markdown-preview-view li[data-task="-"] {
+    text-decoration: line-through;
+    color: #504a68;
 }
 
 /* Markdown preview — tags */
@@ -1674,8 +1731,8 @@
 
 .theme-light .markdown-preview-view pre,
 .theme-dark.solace-light .markdown-preview-view pre {
-    background-color: #ece7f6;
-    border-color: #d8d0e6;
+    background-color: #e2dcee;
+    border: 1px solid #d8d0e6;
 }
 
 .theme-light .markdown-preview-view pre code,
@@ -1774,6 +1831,76 @@
     height: 100%;
     background-color: var(--checkbox-color-halfway);
     -webkit-mask-image: none;
+}
+
+/* Markdown preview — task lists (question) */
+.theme-light .markdown-preview-view input[data-task="?"]:checked,
+.theme-light .markdown-preview-view li[data-task="?"] > input:checked,
+.theme-light .markdown-preview-view li[data-task="?"] > p > input:checked,
+.theme-dark.solace-light .markdown-preview-view input[data-task="?"]:checked,
+.theme-dark.solace-light .markdown-preview-view li[data-task="?"] > input:checked,
+.theme-dark.solace-light .markdown-preview-view li[data-task="?"] > p > input:checked {
+    --checkbox-marker-color: transparent;
+    background-color: #8a63d2;
+    border-color: #8a63d2;
+    position: relative;
+}
+
+.theme-light .markdown-preview-view input[data-task="?"]:checked::before,
+.theme-light .markdown-preview-view li[data-task="?"] > input:checked::before,
+.theme-light .markdown-preview-view li[data-task="?"] > p > input:checked::before,
+.theme-dark.solace-light .markdown-preview-view input[data-task="?"]:checked::before,
+.theme-dark.solace-light .markdown-preview-view li[data-task="?"] > input:checked::before,
+.theme-dark.solace-light .markdown-preview-view li[data-task="?"] > p > input:checked::before {
+    content: "?";
+    -webkit-mask-image: none;
+    background-color: transparent;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f6f3fc;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* Markdown preview — task lists (canceled) */
+.theme-light .markdown-preview-view input[data-task="-"]:checked,
+.theme-light .markdown-preview-view li[data-task="-"] > input:checked,
+.theme-light .markdown-preview-view li[data-task="-"] > p > input:checked,
+.theme-dark.solace-light .markdown-preview-view input[data-task="-"]:checked,
+.theme-dark.solace-light .markdown-preview-view li[data-task="-"] > input:checked,
+.theme-dark.solace-light .markdown-preview-view li[data-task="-"] > p > input:checked {
+    --checkbox-marker-color: transparent;
+    background-color: #fa4c4c;
+    border-color: #fa4c4c;
+    position: relative;
+}
+
+.theme-light .markdown-preview-view input[data-task="-"]:checked::before,
+.theme-light .markdown-preview-view li[data-task="-"] > input:checked::before,
+.theme-light .markdown-preview-view li[data-task="-"] > p > input:checked::before,
+.theme-dark.solace-light .markdown-preview-view input[data-task="-"]:checked::before,
+.theme-dark.solace-light .markdown-preview-view li[data-task="-"] > input:checked::before,
+.theme-dark.solace-light .markdown-preview-view li[data-task="-"] > p > input:checked::before {
+    content: "−";
+    -webkit-mask-image: none;
+    background-color: transparent;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.theme-light .markdown-preview-view li[data-task="-"],
+.theme-dark.solace-light .markdown-preview-view li[data-task="-"] {
+    text-decoration: line-through;
+    color: #9a94aa;
 }
 
 .theme-light .markdown-preview-view .tag,
@@ -2739,8 +2866,8 @@
 }
 
 .theme-dark.solace-dusk .markdown-preview-view pre {
-    background-color: #11101a;
-    border-color: #232031;
+    background-color: #232035;
+    border: 1px solid #2a2540;
 }
 
 .theme-dark.solace-dusk .markdown-preview-view pre code {
@@ -2824,6 +2951,63 @@
     height: 100%;
     background-color: var(--checkbox-color-halfway);
     -webkit-mask-image: none;
+}
+
+/* Markdown preview — task lists (question) */
+.theme-dark.solace-dusk .markdown-preview-view input[data-task="?"]:checked,
+.theme-dark.solace-dusk .markdown-preview-view li[data-task="?"] > input:checked,
+.theme-dark.solace-dusk .markdown-preview-view li[data-task="?"] > p > input:checked {
+    --checkbox-marker-color: transparent;
+    background-color: #b89ef0;
+    border-color: #b89ef0;
+    position: relative;
+}
+
+.theme-dark.solace-dusk .markdown-preview-view input[data-task="?"]:checked::before,
+.theme-dark.solace-dusk .markdown-preview-view li[data-task="?"] > input:checked::before,
+.theme-dark.solace-dusk .markdown-preview-view li[data-task="?"] > p > input:checked::before {
+    content: "?";
+    -webkit-mask-image: none;
+    background-color: transparent;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #191725;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* Markdown preview — task lists (canceled) */
+.theme-dark.solace-dusk .markdown-preview-view input[data-task="-"]:checked,
+.theme-dark.solace-dusk .markdown-preview-view li[data-task="-"] > input:checked,
+.theme-dark.solace-dusk .markdown-preview-view li[data-task="-"] > p > input:checked {
+    --checkbox-marker-color: transparent;
+    background-color: #ff7369;
+    border-color: #ff7369;
+    position: relative;
+}
+
+.theme-dark.solace-dusk .markdown-preview-view input[data-task="-"]:checked::before,
+.theme-dark.solace-dusk .markdown-preview-view li[data-task="-"] > input:checked::before,
+.theme-dark.solace-dusk .markdown-preview-view li[data-task="-"] > p > input:checked::before {
+    content: "−";
+    -webkit-mask-image: none;
+    background-color: transparent;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.theme-dark.solace-dusk .markdown-preview-view li[data-task="-"] {
+    text-decoration: line-through;
+    color: #504a68;
 }
 
 .theme-dark.solace-dusk .markdown-preview-view .tag {
@@ -3434,250 +3618,51 @@ version: 1.0.0
 minimumVersion: 1.0.0
 
 settings:
-    - id: solace-variant
-      title: Theme Variant
-      type: class-select
-      allowEmpty: false
-      default: solace-dark
-      description: "Switch between Dark, Light, and Dusk."
-      options:
-          -
-              label: Dark
-              value: solace-dark
-          -
-              label: Light
-              value: solace-light
-          -
-              label: Dusk
-              value: solace-dusk
+    -
+        id: solace-variant
+        title: Theme Variant
+        type: class-select
+        allowEmpty: false
+        default: solace-dark
+        description: "Switch between Dark, Light, and Dusk."
+        options:
+            -
+                label: Dark
+                value: solace-dark
+            -
+                label: Light
+                value: solace-light
+            -
+                label: Dusk
+                value: solace-dusk
 
-    - title: Typography
-      settings:
-          - id: solace-font-family
-            title: Interface font
-            type: variable-text
-            default: inherit
-          - id: solace-font-text
-            title: Text font
-            type: variable-text
-            default: inherit
-          - id: solace-font-mono
-            title: Monospace font
-            type: variable-text
-            default: "JetBrains Mono, Fira Code, SF Mono, Cascadia Code, Source Code Pro, monospace"
+    -
+        id: solace-font-family
+        title: Interface font
+        type: variable-text
+        default: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif'
+    -
+        id: solace-font-text
+        title: Editor font
+        type: variable-text
+        default: '"JetBrains Mono", "Fira Code", "SF Mono", "Cascadia Code", "Source Code Pro", monospace'
 
-    - title: Colors
-      settings:
-          - id: solace-accent
-            title: Accent color
-            type: variable-color
-            default: "#C9A8FF"
-            format: hex6
-          - id: solace-text-accent
-            title: Text accent color
-            type: variable-color
-            default: "#C9A8FF"
-            format: hex6
-          - id: solace-background
-            title: Background color
-            type: variable-color
-            default: "#16141F"
-            format: hex6
-          - id: solace-text
-            title: Text color
-            type: variable-color
-            default: "#F1EEF8"
-            format: hex6
-          - id: solace-checkbox-halfway
-            title: Halfway checkbox color
-            type: variable-color
-            default: "#C9A8FF"
-            format: hex6
-            description: "Color for [/] in-progress task checkboxes."
-
-    - title: Editor
-      settings:
-          - id: solace-line-height
-            title: Line height
-            type: variable-number
-            default: 1.6
-            min: 1.2
-            max: 2.0
-            step: 0.1
-            description: "Line height for the editor."
-          - id: solace-font-size
-            title: Font size
-            type: variable-number
-            default: 16
-            min: 12
-            max: 24
-            step: 1
-            description: "Font size in pixels for the editor."
-          - id: solace-max-width
-            title: Maximum width
-            type: variable-number
-            default: 900
-            min: 600
-            max: 1400
-            step: 50
-            description: "Maximum width of the editor in pixels."
-
-    - title: Code Blocks
-      settings:
-          - id: solace-code-font-size
-            title: Code font size
-            type: variable-number
-            default: 14
-            min: 10
-            max: 20
-            step: 1
-          - id: solace-code-line-height
-            title: Code line height
-            type: variable-number
-            default: 1.5
-            min: 1.0
-            max: 2.0
-            step: 0.1
-          - id: solace-code-padding
-            title: Code block padding
-            type: variable-number
-            default: 16
-            min: 8
-            max: 32
-            step: 4
-
-    - title: UI
-      settings:
-          - id: solace-radius
-            title: Border radius
-            type: variable-number
-            default: 8
-            min: 0
-            max: 20
-            step: 1
-            description: "Border radius for UI elements."
-          - id: solace-transition
-            title: Transition speed
-            type: variable-number
-            default: 150
-            min: 0
-            max: 500
-            step: 25
-            description: "Transition speed in milliseconds."
-
-    - title: Callouts
-      settings:
-          - id: solace-callout-style
-            title: Callout style
-            type: class-select
-            allowEmpty: false
-            default: callout-style-filled
-            options:
-                -
-                    label: Filled
-                    value: callout-style-filled
-                -
-                    label: Outlined
-                    value: callout-style-outlined
-                -
-                    label: Minimal
-                    value: callout-style-minimal
-          - id: solace-callout-radius
-            title: Callout border radius
-            type: variable-number
-            default: 8
-            min: 0
-            max: 20
-            step: 1
-          - id: solace-callout-padding
-            title: Callout padding
-            type: variable-number
-            default: 16
-            min: 8
-            max: 32
-            step: 4
-          - id: solace-callout-border-width
-            title: Callout border width
-            type: variable-number
-            default: 4
-            min: 0
-            max: 8
-            step: 1
-
-    - title: Tables
-      settings:
-          - id: solace-table-radius
-            title: Table border radius
-            type: variable-number
-            default: 8
-            min: 0
-            max: 20
-            step: 1
-          - id: solace-table-padding
-            title: Table cell padding
-            type: variable-number
-            default: 12
-            min: 4
-            max: 24
-            step: 2
-
-    - title: Images
-      settings:
-          - id: solace-image-radius
-            title: Image border radius
-            type: variable-number
-            default: 8
-            min: 0
-            max: 20
-            step: 1
-          - id: solace-image-border
-            title: Image border
-            type: variable-text
-            default: "none"
-            description: "Border for images."
-
-    - title: Links
-      settings:
-          - id: solace-link-underline
-            title: Link underline
-            type: variable-text
-            default: "underline"
-            description: "Underline style for links."
-
-    - title: Headings
-      settings:
-          - id: solace-heading-color
-            title: Heading color
-            type: variable-color
-            default: "#C9A8FF"
-            format: hex6
-          - id: solace-heading-decoration
-            title: Heading decoration
-            type: variable-text
-            default: "none"
-            description: "Text decoration for headings."
-
-    - title: Reading view
-      settings:
-          - id: solace-reading-max-width
-            title: Reading view max width
-            type: variable-number
-            default: 800
-            min: 600
-            max: 1200
-            step: 50
-            description: "Maximum width of the reading view in pixels."
-
-    - title: Sidebar
-      settings:
-          - id: solace-sidebar-width
-            title: Sidebar width
-            type: variable-number
-            default: 260
-            min: 200
-            max: 400
-            step: 10
-            description: "Width of the sidebar in pixels."
+    -
+        id: solace-callout-style
+        title: Callout style
+        type: class-select
+        allowEmpty: false
+        default: callout-style-filled
+        options:
+            -
+                label: Filled
+                value: callout-style-filled
+            -
+                label: Outlined
+                value: callout-style-outlined
+            -
+                label: Minimal
+                value: callout-style-minimal
 
 */
 
@@ -3689,96 +3674,33 @@ settings:
         "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
         Arial, sans-serif;
     --font-text:
-        "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-        Arial, sans-serif;
-    --font-monospace:
         "JetBrains Mono", "Fira Code", "SF Mono", "Cascadia Code",
         "Source Code Pro", monospace;
 }
 
 .theme-dark .app-container,
-.theme-light .app-container {
-    font-family: var(--font-interface);
+.theme-light .app-container,
+.theme-dark.solace-light .app-container,
+.theme-dark.solace-dusk .app-container {
+    font-family: var(--solace-font-family, var(--font-interface));
 }
 
-.theme-dark .markdown-preview-view,
-.theme-light .markdown-preview-view {
-    font-family: var(--font-text);
+.theme-dark .cm-s-obsidian .cm-content,
+.theme-light .cm-s-obsidian .cm-content,
+.theme-dark.solace-light .cm-s-obsidian .cm-content,
+.theme-dark.solace-dusk .cm-s-obsidian .cm-content {
+    font-family: var(--solace-font-text, var(--font-text));
 }
 
 .theme-dark .markdown-preview-view code,
 .theme-dark .markdown-preview-view pre,
 .theme-light .markdown-preview-view code,
 .theme-light .markdown-preview-view pre,
-.theme-dark .cm-s-obsidian .cm-content,
-.theme-light .cm-s-obsidian .cm-content {
-    font-family: var(--font-monospace);
-}
-
-/* ── Style Settings: Color overrides ────────────────────────── */
-
-.theme-dark {
-    --interactive-accent: var(--solace-accent, #c9a8ff);
-    --text-accent: var(--solace-text-accent, #c9a8ff);
-    --background-primary: var(--solace-background, #16141f);
-    --text-normal: var(--solace-text, #f1eef8);
-}
-
-.theme-light,
-.theme-dark.solace-light {
-    --interactive-accent: var(--solace-accent, #8a63d2);
-    --text-accent: var(--solace-text-accent, #8a63d2);
-    --background-primary: var(--solace-background, #f6f3fc);
-    --text-normal: var(--solace-text, #2c2638);
-}
-
-.theme-dark.solace-dusk {
-    --interactive-accent: var(--solace-accent, #b89ef0);
-    --text-accent: var(--solace-text-accent, #b89ef0);
-    --background-primary: var(--solace-background, #191725);
-    --text-normal: var(--solace-text, #d4cfe4);
-}
-
-/* ── Style Settings: Editor overrides ───────────────────────── */
-
-.theme-dark .cm-s-obsidian .cm-content,
-.theme-light .cm-s-obsidian .cm-content {
-    line-height: var(--solace-line-height, 1.6);
-    font-size: var(--solace-font-size, 16px);
-}
-
-/* ── Style Settings: Code block overrides ───────────────────── */
-
-.theme-dark .markdown-preview-view pre code,
-.theme-dark .markdown-preview-view code,
-.theme-light .markdown-preview-view pre code,
-.theme-light .markdown-preview-view code {
-    font-size: var(--solace-code-font-size, 14px);
-    line-height: var(--solace-code-line-height, 1.5);
-}
-
-.theme-dark .markdown-preview-view pre,
-.theme-light .markdown-preview-view pre {
-    padding: var(--solace-code-padding, 16px);
-}
-
-/* ── Style Settings: UI overrides ───────────────────────────── */
-
-.theme-dark .markdown-preview-view img,
-.theme-light .markdown-preview-view img {
-    border-radius: var(--solace-image-radius, 8px);
-    border: var(--solace-image-border, none);
-}
-
-.theme-dark .markdown-preview-view table,
-.theme-light .markdown-preview-view table {
-    border-radius: var(--solace-table-radius, 8px);
-    overflow: hidden;
-}
-
-.theme-dark .markdown-preview-view td,
-.theme-light .markdown-preview-view td {
-    padding: var(--solace-table-padding, 12px);
+.theme-dark.solace-light .markdown-preview-view code,
+.theme-dark.solace-light .markdown-preview-view pre,
+.theme-dark.solace-dusk .markdown-preview-view code,
+.theme-dark.solace-dusk .markdown-preview-view pre {
+    font-family: var(--solace-font-text, var(--font-text));
 }
 
 /* ── Callout Base ────────────────────────────────────────────── */
@@ -3826,67 +3748,43 @@ settings:
 .callout[data-callout="faq"] { --callout-icon: lucide-help-circle; }
 
 /* Callout style: Outlined */
-.callout-style-outlined .callout {
+.theme-dark.callout-style-outlined .callout,
+.theme-light.callout-style-outlined .callout,
+.theme-dark.solace-light.callout-style-outlined .callout,
+.theme-dark.solace-dusk.callout-style-outlined .callout {
     background-color: transparent;
     border: 1px solid rgb(var(--callout-color, 152 128 232) / 0.25);
     border-left: 4px solid rgb(var(--callout-color, 152 128 232));
     border-radius: var(--callout-radius, 8px);
 }
 
-.callout-style-outlined .callout .callout-title {
+.theme-dark.callout-style-outlined .callout .callout-title,
+.theme-light.callout-style-outlined .callout .callout-title,
+.theme-dark.solace-light.callout-style-outlined .callout .callout-title,
+.theme-dark.solace-dusk.callout-style-outlined .callout .callout-title {
     background-color: rgb(var(--callout-color, 152 128 232) / 0.08);
     margin: 0 0 8px 0;
     padding: 8px 16px;
     border-radius: var(--callout-radius, 8px) var(--callout-radius, 8px) 0 0;
 }
 
-.callout-style-outlined .callout .callout-content {
+.theme-dark.callout-style-outlined .callout .callout-content,
+.theme-light.callout-style-outlined .callout .callout-content,
+.theme-dark.solace-light.callout-style-outlined .callout .callout-content,
+.theme-dark.solace-dusk.callout-style-outlined .callout .callout-content {
     padding: 0 16px 16px 16px;
 }
 
 /* Callout style: Minimal */
-.callout-style-minimal .callout {
+.theme-dark.callout-style-minimal .callout,
+.theme-light.callout-style-minimal .callout,
+.theme-dark.solace-light.callout-style-minimal .callout,
+.theme-dark.solace-dusk.callout-style-minimal .callout {
     background-color: rgb(var(--callout-color, 152 128 232) / 0.06);
     border: none;
     border-left: 3px solid rgb(var(--callout-color, 152 128 232));
     border-radius: 0;
     padding: 8px 16px;
-}
-
-.theme-dark .markdown-preview-view a,
-.theme-light .markdown-preview-view a {
-    text-decoration: var(--solace-link-underline, underline);
-}
-
-.theme-dark .markdown-preview-view h1,
-.theme-dark .markdown-preview-view h2,
-.theme-dark .markdown-preview-view h3,
-.theme-dark .markdown-preview-view h4,
-.theme-dark .markdown-preview-view h5,
-.theme-dark .markdown-preview-view h6,
-.theme-light .markdown-preview-view h1,
-.theme-light .markdown-preview-view h2,
-.theme-light .markdown-preview-view h3,
-.theme-light .markdown-preview-view h4,
-.theme-light .markdown-preview-view h5,
-.theme-light .markdown-preview-view h6 {
-    color: var(--solace-heading-color, #c9a8ff);
-    text-decoration: var(--solace-heading-decoration, none);
-}
-
-.theme-dark .markdown-preview-view,
-.theme-light .markdown-preview-view {
-    max-width: var(--solace-reading-max-width, 800px);
-}
-
-.theme-dark .side-dock-ribbon,
-.theme-light .side-dock-ribbon {
-    width: var(--solace-ribbon-width, 48px);
-}
-
-.theme-dark .search-match,
-.theme-light .search-match {
-    background-color: var(--solace-search-highlight-color, #c9a8ff);
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -3917,6 +3815,20 @@ settings:
     color: var(--text-normal);
 }
 
+/* Notice: Info */
+.theme-dark .notice-info,
+.theme-dark.solace-dusk .notice-info {
+    background-color: rgba(201, 168, 255, 0.09);
+    border-left: 3px solid #c9a8ff;
+}
+
+.theme-light .notice-info,
+.theme-dark.solace-light .notice-info {
+    background-color: rgba(138, 99, 210, 0.09);
+    border-left: 3px solid #8a63d2;
+}
+
+/* Notice: Success */
 .theme-dark .notice-success,
 .theme-dark.solace-dusk .notice-success {
     background-color: rgba(168, 255, 236, 0.09);
@@ -3925,22 +3837,24 @@ settings:
 
 .theme-light .notice-success,
 .theme-dark.solace-light .notice-success {
-    background-color: rgba(63, 154, 133, 0.09);
+    background-color: rgba(63, 154, 133, 0.12);
     border-left: 3px solid #3f9a85;
 }
 
+/* Notice: Warning */
 .theme-dark .notice-warning,
 .theme-dark.solace-dusk .notice-warning {
-    background-color: rgba(201, 168, 255, 0.09);
-    border-left: 3px solid #c9a8ff;
+    background-color: rgba(255, 214, 102, 0.09);
+    border-left: 3px solid #ffd666;
 }
 
 .theme-light .notice-warning,
 .theme-dark.solace-light .notice-warning {
-    background-color: rgba(192, 122, 44, 0.09);
+    background-color: rgba(192, 122, 44, 0.12);
     border-left: 3px solid #c07a2c;
 }
 
+/* Notice: Error */
 .theme-dark .notice-error,
 .theme-dark.solace-dusk .notice-error {
     background-color: rgba(255, 128, 200, 0.08);
@@ -3949,7 +3863,7 @@ settings:
 
 .theme-light .notice-error,
 .theme-dark.solace-light .notice-error {
-    background-color: rgba(211, 91, 147, 0.09);
+    background-color: rgba(211, 91, 147, 0.12);
     border-left: 3px solid #d35b93;
 }
 
@@ -4290,7 +4204,7 @@ settings:
 
 .theme-dark .inline-title,
 .theme-dark.solace-dusk .inline-title {
-    color: var(--inline-title-color);
+    color: var(--inline-title-color) !important;
     font-weight: 700;
     border-bottom: 2px solid #231f30;
     padding-bottom: 4px;
@@ -4298,7 +4212,7 @@ settings:
 
 .theme-light .inline-title,
 .theme-dark.solace-light .inline-title {
-    color: var(--inline-title-color);
+    color: var(--inline-title-color) !important;
     font-weight: 700;
     border-bottom: 2px solid #e5ddf3;
     padding-bottom: 4px;
@@ -4575,6 +4489,60 @@ settings:
     -webkit-mask-image: none;
 }
 
+/* Source mode — task lists (question) */
+.theme-dark .markdown-source-view input[data-task="?"]:checked,
+.theme-dark.solace-dusk .markdown-source-view input[data-task="?"]:checked {
+    --checkbox-marker-color: transparent;
+    background-color: #c9a8ff;
+    border-color: #c9a8ff;
+    position: relative;
+}
+
+.theme-dark .markdown-source-view input[data-task="?"]:checked::before,
+.theme-dark.solace-dusk .markdown-source-view input[data-task="?"]:checked::before {
+    content: "?";
+    -webkit-mask-image: none;
+    background-color: transparent;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #16141f;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* Source mode — task lists (canceled) */
+.theme-dark .markdown-source-view input[data-task="-"]:checked,
+.theme-dark.solace-dusk .markdown-source-view input[data-task="-"]:checked {
+    --checkbox-marker-color: transparent;
+    background-color: #ff7369;
+    border-color: #ff7369;
+    position: relative;
+}
+
+.theme-dark .markdown-source-view input[data-task="-"]:checked::before,
+.theme-dark.solace-dusk .markdown-source-view input[data-task="-"]:checked::before {
+    content: "−";
+    -webkit-mask-image: none;
+    background-color: transparent;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.theme-dark .markdown-source-view li[data-task="-"],
+.theme-dark.solace-dusk .markdown-source-view li[data-task="-"] {
+    text-decoration: line-through;
+    color: #504a68;
+}
+
 .theme-light .markdown-source-view .task-list-item-checkbox,
 .theme-dark.solace-light .markdown-source-view .task-list-item-checkbox {
     border-color: #9a94aa;
@@ -4624,6 +4592,60 @@ settings:
     -webkit-mask-image: none;
 }
 
+/* Source mode — task lists (question) */
+.theme-light .markdown-source-view input[data-task="?"]:checked,
+.theme-dark.solace-light .markdown-source-view input[data-task="?"]:checked {
+    --checkbox-marker-color: transparent;
+    background-color: #8a63d2;
+    border-color: #8a63d2;
+    position: relative;
+}
+
+.theme-light .markdown-source-view input[data-task="?"]:checked::before,
+.theme-dark.solace-light .markdown-source-view input[data-task="?"]:checked::before {
+    content: "?";
+    -webkit-mask-image: none;
+    background-color: transparent;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f6f3fc;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* Source mode — task lists (canceled) */
+.theme-light .markdown-source-view input[data-task="-"]:checked,
+.theme-dark.solace-light .markdown-source-view input[data-task="-"]:checked {
+    --checkbox-marker-color: transparent;
+    background-color: #fa4c4c;
+    border-color: #fa4c4c;
+    position: relative;
+}
+
+.theme-light .markdown-source-view input[data-task="-"]:checked::before,
+.theme-dark.solace-light .markdown-source-view input[data-task="-"]:checked::before {
+    content: "−";
+    -webkit-mask-image: none;
+    background-color: transparent;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.theme-light .markdown-source-view li[data-task="-"],
+.theme-dark.solace-light .markdown-source-view li[data-task="-"] {
+    text-decoration: line-through;
+    color: #9a94aa;
+}
+
 .theme-dark .task-list-item-checkbox,
 .theme-dark.solace-dusk .task-list-item-checkbox {
     border-color: #504a68;
@@ -4663,6 +4685,60 @@ settings:
     -webkit-mask-image: none;
 }
 
+/* General — task lists (question) */
+.theme-dark input[data-task="?"]:checked,
+.theme-dark.solace-dusk input[data-task="?"]:checked {
+    --checkbox-marker-color: transparent;
+    background-color: #c9a8ff;
+    border-color: #c9a8ff;
+    position: relative;
+}
+
+.theme-dark input[data-task="?"]:checked::before,
+.theme-dark.solace-dusk input[data-task="?"]:checked::before {
+    content: "?";
+    -webkit-mask-image: none;
+    background-color: transparent;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #16141f;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* General — task lists (canceled) */
+.theme-dark input[data-task="-"]:checked,
+.theme-dark.solace-dusk input[data-task="-"]:checked {
+    --checkbox-marker-color: transparent;
+    background-color: #ff7369;
+    border-color: #ff7369;
+    position: relative;
+}
+
+.theme-dark input[data-task="-"]:checked::before,
+.theme-dark.solace-dusk input[data-task="-"]:checked::before {
+    content: "−";
+    -webkit-mask-image: none;
+    background-color: transparent;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.theme-dark li[data-task="-"],
+.theme-dark.solace-dusk li[data-task="-"] {
+    text-decoration: line-through;
+    color: #504a68;
+}
+
 .theme-light .task-list-item-checkbox,
 .theme-dark.solace-light .task-list-item-checkbox {
     border-color: #9a94aa;
@@ -4700,6 +4776,60 @@ settings:
     height: 100%;
     background-color: var(--checkbox-color-halfway);
     -webkit-mask-image: none;
+}
+
+/* General — task lists (question) */
+.theme-light input[data-task="?"]:checked,
+.theme-dark.solace-light input[data-task="?"]:checked {
+    --checkbox-marker-color: transparent;
+    background-color: #8a63d2;
+    border-color: #8a63d2;
+    position: relative;
+}
+
+.theme-light input[data-task="?"]:checked::before,
+.theme-dark.solace-light input[data-task="?"]:checked::before {
+    content: "?";
+    -webkit-mask-image: none;
+    background-color: transparent;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f6f3fc;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* General — task lists (canceled) */
+.theme-light input[data-task="-"]:checked,
+.theme-dark.solace-light input[data-task="-"]:checked {
+    --checkbox-marker-color: transparent;
+    background-color: #fa4c4c;
+    border-color: #fa4c4c;
+    position: relative;
+}
+
+.theme-light input[data-task="-"]:checked::before,
+.theme-dark.solace-light input[data-task="-"]:checked::before {
+    content: "−";
+    -webkit-mask-image: none;
+    background-color: transparent;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.theme-light li[data-task="-"],
+.theme-dark.solace-light li[data-task="-"] {
+    text-decoration: line-through;
+    color: #9a94aa;
 }
 
 /* ── Drag and Drop ──────────────────────────────────────────── */
